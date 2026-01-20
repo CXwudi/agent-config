@@ -1,6 +1,6 @@
 ---
 name: plan
-description: Agent Skill that brainstorm and produce a plan (not implementation). Use when the user asks for planning, a roadmap, an investigation/debug plan, or approach comparisons; gather context, ask clarifying questions, propose 1–3 options with tradeoffs, then produce a step-by-step plan with verification checkpoints and write it to a markdown file.
+description: Agent Skill that brainstorm and produce a plan (not implementation). Use when the user asks for planning, a roadmap, an investigation/debug plan, or approach comparisons; gather context, ask clarifying questions, propose 1–3 options with tradeoffs, then produce a step-by-step plan with verification checkpoints.
 ---
 
 # Plan
