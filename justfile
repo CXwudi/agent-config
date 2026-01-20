@@ -28,7 +28,9 @@ link-config:
   #!/usr/bin/env bash
   set -euo pipefail
   
-  TARGET_DIR="linked-agent-config"
+  # Just runs from the project root by default, but we use $(pwd) to ensure 
+  # we have an absolute path for clarity and to avoid any ambiguity.
+  TARGET_DIR="$(pwd)/linked-agent-config"
   mkdir -p "$TARGET_DIR"
   echo "Creating symlinks in $TARGET_DIR..."
 
