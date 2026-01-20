@@ -1,5 +1,6 @@
 # Claude Code local settings
 .claude/
+linked-agent-config/
 
 # Python
 __pycache__/

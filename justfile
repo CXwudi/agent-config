@@ -23,3 +23,54 @@ reset-link:
   rm -f ${HOME}/.gemini/skills
   rm -f ${HOME}/.codex/skills
   echo "Symbolic links reset successfully."
+
+link-config:
+  #!/usr/bin/env bash
+  set -euo pipefail
+  
+  TARGET_DIR="linked-agent-config"
+  mkdir -p "$TARGET_DIR"
+  echo "Creating symlinks in $TARGET_DIR..."
+
+  # Function to create symlink
+  create_link() {
+      local source=$1
+      local name=$2
+      local target="$TARGET_DIR/$name"
+
+      # Expand tilde if present
+      source="${source/#\~/$HOME}"
+
+      if [ -e "$source" ] || [ -d "$source" ]; then
+          echo "Linking $name -> $source"
+          ln -sfn "$source" "$target"
+      else
+          echo "Warning: Source $source does not exist. Skipping $name."
+      fi
+  }
+
+  # 1. ~/.claude.json
+  create_link "$HOME/.claude.json" ".claude.json"
+
+  # 2. ~/.claude/
+  create_link "$HOME/.claude" ".claude"
+
+  # 3. ~/.codex/
+  create_link "$HOME/.codex" ".codex"
+
+  # 4. ~/.gemini (Gemini CLI)
+  create_link "$HOME/.gemini" ".gemini"
+
+  # 5. ~/.config/opencode (Opencode)
+  create_link "$HOME/.config/opencode" "opencode"
+
+  # 6. Cline MCP settings json
+  # Using the path found in .vscode-server
+  CLINE_SETTINGS="$HOME/.vscode-server/data/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
+  # Fallback for local vscode if server path fails
+  if [ ! -e "$CLINE_SETTINGS" ]; then
+      CLINE_SETTINGS="$HOME/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
+  fi
+  create_link "$CLINE_SETTINGS" "cline_mcp_settings.json"
+
+  echo "Symlink creation complete."
