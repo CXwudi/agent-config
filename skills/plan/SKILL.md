@@ -33,30 +33,18 @@ Brainstorm and produce an actionable plan.
 
 ### Produce the step-by-step plan
 
-- Once the user picks an option (or confirms the recommendation), draft a step-by-step-plan:
-  - For each step, brainstorm and finalize details with user. The goal is to eliminate as much ambiguity as possible as early as possible.
-    - If still unclear, explicit “open questions / assumptions” section
-  - After each major step, add a verification step/checkpoint that can be executed to ensure correctness (tests/build/lint/typecheck/etc.).
-- The final step-by-step plan has:
-  - incremental checkpoints (after each major step)
-  - verification commands at each checkpoint (tests/build/lint/typecheck/etc.)
+- Once the user picks an option (or confirms the recommendation), to come up with a detailed step-by-step plan, you need to proactively ask users about the details of each step. Do not assume anything.
+  - For each step, you ask question to clarify the details of the step.
+  - If still unclear, explicit “open questions / assumptions” section
+- In detailed step-by-step plan, a verification step/checkpoint should be added after each major step, to ensure correctness (tests/build/lint/typecheck/etc.).
 
-REMEMBER: If anything is unclear, pause and ask; iterate until steps are unambiguous.
+REMEMBER: The goal is to eliminate as much ambiguity as possible as early as possible.
 
 ### Finalize + write to file
 
-- Save the finalized plan to a markdown file in the repo/workspace:
+- Ask the user to save the final plan to a markdown file or not.
+- If no, just output the plan in your response.
+- If yes, save the finalized plan to a markdown file in the repo/workspace:
   - default path: `plans/` if it exists, else current directory
   - filename: `plan-<slug>-YYYYMMDD.md` (kebab-case slug)
 - In your response: mention the file path and confirm you will follow the plan in subsequent steps.
-
-## Plan file structure (suggested)
-
-- Title
-- Context
-- Goals / Non-goals
-- Constraints
-- Chosen approach (and other options if any, with pros/cons/tradeoffs)
-- Step-by-step plan (with verification steps, open questions / assumptions” subsection if any)
-- Acceptance criteria
-- Open questions / assumptions / Next steps (of the whole plan, if any)
