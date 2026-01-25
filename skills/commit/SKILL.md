@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Safely handles the git commit process. Smartly groups changes into single or multiple commits, drafts messages with gitmoji, and includes detailed bodies for larger changes.
+description: Safely handles the git commit process. Uses when asked for doing git commit. Smartly groups changes into single or multiple commits, drafts messages with gitmoji, and includes detailed bodies for larger changes.
 ---
 
 # Commit Skill
