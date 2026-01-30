@@ -8,6 +8,8 @@ allowed-tools: Bash(browser-use:*)
 
 The `browser-use` command provides fast, persistent browser automation. It maintains browser sessions across commands, enabling complex multi-step workflows.
 
+If `browser-use` is not installed, run it via `uvx browser-use`.
+
 ## Quick Start
 
 ```bash
