@@ -1,6 +1,6 @@
 ---
 name: codex-cli
-description: Use when the user asks to run Codex CLI (codex exec, codex resume) or references OpenAI Codex for code analysis, refactoring, or automated editing. Idea for brainstorming and planning.
+description: Agent Skill for running Codex CLI for coding tasks. Ideal for brainstorming and planning. Can also be used for code analysis, refactoring, or when the user asks to run Codex CLI.
 ---
 
 # Codex Skill Guide
@@ -8,12 +8,12 @@ description: Use when the user asks to run Codex CLI (codex exec, codex resume) 
 ## Running a Task
 
 1. Search what is the latest models available for Codex CLI currently. (If unsure, assume `gpt-5.2-codex` is the latest).
-2. Ask the user (via `AskUserQuestion`) which reasoning effort to use (`xhigh`,`high`, `medium`, or `low`). User can override model if needed (see Model Options below).
-3. Select the sandbox mode required for the task; default to `--sandbox read-only` unless edits or network access are necessary.
+2. Ask the user which reasoning effort to use (`xhigh`,`high`, `medium`, or `low`). User can override model if needed (see Model Options below).
+3. Select the sandbox mode required for the task; User can override model if needed (see Model Options below). `workspace-write` is required for Codex to  perform web search or web fetch.
 4. Assemble the command with the appropriate options:
    - `-m, --model <MODEL>` (this can be omitted to use user-specified default model)
-   - `--config model_reasoning_effort="<high|medium|low>"`
-   - `--sandbox <read-only|workspace-write|danger-full-access>`
+   - `--config model_reasoning_effort="<high|medium|low>"` (this can be omitted to use user-specified default model)
+   - `--sandbox <read-only|workspace-write|danger-full-access>` (this can be omitted to use user-specified default model)
    - `--full-auto`
    - `-C, --cd <DIR>`
    - `--skip-git-repo-check`
@@ -46,7 +46,7 @@ description: Use when the user asks to run Codex CLI (codex exec, codex resume) 
 
 ## Following Up
 
-- After every `codex` command, immediately use `AskUserQuestion` to confirm next steps, collect clarifications, or decide whether to resume with `codex exec resume --last`.
+- After every `codex` command, immediately ask user to confirm next steps, collect clarifications, or decide whether to resume with `codex exec resume --last`.
 - When resuming, pipe the new prompt via stdin: `echo "new prompt" | codex exec resume --last 2>/dev/null`. The resumed session automatically uses the same model, reasoning effort, and sandbox mode from the original session.
 - Restate the chosen model, reasoning effort, and sandbox mode when proposing follow-up actions.
 

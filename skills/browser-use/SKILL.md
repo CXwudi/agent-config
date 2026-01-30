@@ -1,6 +1,6 @@
 ---
 name: browser-use
-description: Automates browser interactions for web testing, form filling, screenshots, and data extraction. Use when the user needs to navigate websites, interact with web pages, fill forms, take screenshots, or extract information from web pages.
+description: Agent Skill of workflow automation on browser. Use when the user needs to perform any workflow on browser like navigating websites, interacting with pages, filling forms, capturing screenshots, or extracting on-page data.
 allowed-tools: Bash(browser-use:*)
 ---
 

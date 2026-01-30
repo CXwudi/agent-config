@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Safely handles the git commit process. Uses when asked for doing git commit. Smartly groups changes into single or multiple commits, drafts messages with gitmoji, and includes detailed bodies for larger changes.
+description: Agent Skill for safely handling the git commit process. Use whenever the user asks to create commits
 ---
 
 # Commit Skill
@@ -44,14 +44,14 @@ This skill handles the git commit workflow with a focus on logical grouping and 
 
 ## Examples
 
-**Scenario 1: Mixed Changes**
+### Scenario 1: Mixed Changes
 
 * *Changes*: `auth.py` (bug fix), `README.md` (typo fix).
 * *Action*: Split into two commits.
     1. `git add auth.py` -> `git commit -m "🐛 fix(auth): resolve token expiration issue"`
     2. `git add README.md` -> `git commit -m "📝 docs: fix typo in installation guide"`
 
-**Scenario 2: Large Feature**
+### Scenario 2: Large Feature
 
 * *Changes*: 5 files related to a new "Dark Mode".
 * *Action*: Single commit.

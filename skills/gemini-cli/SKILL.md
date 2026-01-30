@@ -1,6 +1,6 @@
 ---
 name: gemini-cli
-description: Use when the user asks to run Gemini CLI for any tasks or if big context (>200k) is needed. Ideal for Code Review, Plan Review, Multi-file Analysis, and any task that requires large context windows (>200k). Uses latest models by default for state-of-the-art reasoning and coding.
+description: Agent Skill for using Gemini CLI on coding tasks. Ideal for any task benefitial from large context windows. Can also be used for multi-file analysis, code reviews, or when the user asks to run Gemini CLI.
 ---
 
 # Gemini Skill Guide

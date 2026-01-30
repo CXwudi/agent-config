@@ -1,6 +1,6 @@
 ---
 name: python
-description: Use when writing, editing, or reviewing Python code; enforces type hints and scalable design patterns.
+description: Agent Skill for working on Python codebases. Use when writing, editing, or reviewing Python code and enforcing type hints and scalable design patterns.
 ---
 
 # Python
