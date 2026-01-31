@@ -1,7 +1,7 @@
 ---
 name: browser-use
-description: Agent Skill of workflow automation on browser. Use when the user needs to perform any workflow on browser like navigating websites, interacting with pages, filling forms, capturing screenshots, or extracting on-page data.
-allowed-tools: Bash(browser-use:*)
+description: Agent Skill of workflow automation on browser. Use for any workflow on browser like navigating websites, interacting with pages, filling forms, capturing screenshots, or extracting on-page data. Can also be used as a backup method for web fetching if the website is heavily JS-based, or Captcha-protected. Can also be used for frontend testing but prefer `agent-browser` skill for that.
+allowed-tools: Bash(browser-use:*), Bash(uvx browser-use:*)
 ---
 
 # Browser Automation with browser-use CLI
