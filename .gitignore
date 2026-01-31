@@ -9,6 +9,26 @@ __pycache__/
 *.so
 .Python
 
+# JavaScript / Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.bun/
+.tmp/
+dist/
+build/
+coverage/
+.cache/
+.parcel-cache/
+.next/
+out/
+
+# agent-browser
+*.auth-state.json
+.agent-browser-sock/
+
 # OS files
 .DS_Store
 Thumbs.db
