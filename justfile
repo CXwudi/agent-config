@@ -8,6 +8,7 @@ setup-link:
   mkdir -p ${HOME}/.codex
   ln -sfT $(pwd)/agents ${HOME}/.config/opencode/agents
   ln -sfT $(pwd)/prompts ${HOME}/.config/opencode/prompts
+  ln -sfT $(pwd)/skills ${HOME}/.agent/skills # common pattern that some agents are supporting, codex is one
   ln -sfT $(pwd)/skills ${HOME}/.claude/skills # This also cover opencode
   ln -sfT $(pwd)/skills ${HOME}/.gemini/skills
   ln -sfT $(pwd)/skills ${HOME}/.codex/skills
@@ -19,6 +20,7 @@ reset-link:
   echo "Resetting symbolic links..."
   rm -rf ${HOME}/.config/opencode/agents
   rm -rf ${HOME}/.config/opencode/prompts
+  rm -rf ${HOME}/.agent/skills
   rm -rf ${HOME}/.claude/skills
   rm -rf ${HOME}/.gemini/skills
   rm -rf ${HOME}/.codex/skills
@@ -36,19 +38,19 @@ link-config:
 
   # Function to create symlink
   create_link() {
-      local source=$1
-      local name=$2
-      local target="$TARGET_DIR/$name"
+    local source=$1
+    local name=$2
+    local target="$TARGET_DIR/$name"
 
-      # Expand tilde if present
-      source="${source/#\~/$HOME}"
+    # Expand tilde if present
+    source="${source/#\~/$HOME}"
 
-      if [ -e "$source" ] || [ -d "$source" ]; then
-          echo "Linking $name -> $source"
-          ln -sfn "$source" "$target"
-      else
-          echo "Warning: Source $source does not exist. Skipping $name."
-      fi
+    if [ -e "$source" ] || [ -d "$source" ]; then
+        echo "Linking $name -> $source"
+        ln -sfn "$source" "$target"
+    else
+        echo "Warning: Source $source does not exist. Skipping $name."
+    fi
   }
 
   # 1. ~/.claude.json
@@ -71,7 +73,7 @@ link-config:
   CLINE_SETTINGS="$HOME/.vscode-server/data/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
   # Fallback for local vscode if server path fails
   if [ ! -e "$CLINE_SETTINGS" ]; then
-      CLINE_SETTINGS="$HOME/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
+    CLINE_SETTINGS="$HOME/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
   fi
   create_link "$CLINE_SETTINGS" "cline_mcp_settings.json"
 
