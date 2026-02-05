@@ -18,12 +18,13 @@ reset-link:
   #!/usr/bin/env bash
   set -euo pipefail
   echo "Resetting symbolic links..."
-  rm -rf ${HOME}/.config/opencode/agents
-  rm -rf ${HOME}/.config/opencode/prompts
-  rm -rf ${HOME}/.agent/skills
-  rm -rf ${HOME}/.claude/skills
-  rm -rf ${HOME}/.gemini/skills
-  rm -rf ${HOME}/.codex/skills
+  # not using rm -rf to be safe to only delete symbolinks, not real directories
+  rm -f ${HOME}/.config/opencode/agents
+  rm -f ${HOME}/.config/opencode/prompts
+  rm -f ${HOME}/.agent/skills
+  rm -f ${HOME}/.claude/skills
+  rm -f ${HOME}/.gemini/skills
+  rm -f ${HOME}/.codex/skills
   echo "Symbolic links reset successfully."
 
 link-config:
