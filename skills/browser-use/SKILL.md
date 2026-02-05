@@ -1,6 +1,6 @@
 ---
 name: browser-use
-description: Agent Skill of workflow automation on browser. Use for any workflow on browser like navigating websites, interacting with pages, filling forms, capturing screenshots, or extracting on-page data. Can also be used as a backup method for web fetching if the website is heavily JS-based, or Captcha-protected. Can also be used for frontend testing but prefer `agent-browser` skill for that.
+description: Agent Skill of workflow automation on browser. Connect to browser via Chrome DevTools Protocol. Use when user need to automate some works on the browser. Can also be used as a backup method for web fetching if the website is heavily JS-based, or Captcha-protected. Can also be used for frontend testing but prefer `agent-browser` skill for that.
 allowed-tools: Bash(browser-use:*), Bash(uvx browser-use:*)
 ---
 

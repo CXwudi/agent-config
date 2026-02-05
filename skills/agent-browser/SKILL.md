@@ -1,6 +1,6 @@
 ---
 name: agent-browser
-description: Agent Skill for frontend testing via browser interaction and visual verification. Use when the user needs to test web applications or validate UI behavior. For general workflows automation, prefer `browser-use` skill.
+description: Agent Skill for frontend testing. Connect to browser via Playwright. Use when the user needs to test web applications or validate UI behavior. For general workflows automation, prefer `browser-use` skill.
 allowed-tools: Bash(agent-browser:*), Bash(bun x agent-browser:*)
 ---
 
