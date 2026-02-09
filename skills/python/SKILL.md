@@ -1,6 +1,6 @@
 ---
 name: python
-description: Agent Skill for working on Python codebases. Use when writing, editing, or reviewing Python code and enforcing type hints and scalable design patterns.
+description: Agent Skill for working with Python. Use when writing, editing, or reviewing Python code and scripts.
 ---
 
 # Python
@@ -8,7 +8,7 @@ description: Agent Skill for working on Python codebases. Use when writing, edit
 ## General
 
 - For complex python projects, use OOP and Dependency Injection pattern.
-- Use `uv run` to execute Python scripts.
+- Use `uv run` to execute Python scripts. Do not assume `python` or `python3` commands are available.
 - Prefer `black` + `ruff` defaults unless the project specifies otherwise.
 - Use absolute imports; avoid wildcard imports.
 - Raise specific exceptions; avoid bare `except`.
