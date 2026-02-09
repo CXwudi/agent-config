@@ -6,6 +6,7 @@ setup-link:
   mkdir -p ${HOME}/.claude
   mkdir -p ${HOME}/.gemini
   mkdir -p ${HOME}/.codex
+  mkdir -p ${HOME}/.agent
   ln -sfT $(pwd)/agents ${HOME}/.config/opencode/agents
   ln -sfT $(pwd)/prompts ${HOME}/.config/opencode/prompts
   ln -sfT $(pwd)/skills ${HOME}/.agent/skills # common pattern that some agents are supporting, codex is one
