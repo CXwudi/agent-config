@@ -2,17 +2,24 @@ setup-link:
   #!/usr/bin/env bash
   set -euo pipefail
   echo "Setting up symbolic links..."
+  # Create target directories if they don't exist
   mkdir -p ${HOME}/.config/opencode
   mkdir -p ${HOME}/.claude
   mkdir -p ${HOME}/.gemini
   mkdir -p ${HOME}/.codex
   mkdir -p ${HOME}/.agent
+  # Start linking
   ln -sfT $(pwd)/agents ${HOME}/.config/opencode/agents
   ln -sfT $(pwd)/prompts ${HOME}/.config/opencode/prompts
   ln -sfT $(pwd)/skills ${HOME}/.agent/skills # common pattern that some agents are supporting, codex is one
   ln -sfT $(pwd)/skills ${HOME}/.claude/skills # This also cover opencode
   ln -sfT $(pwd)/skills ${HOME}/.gemini/skills
   ln -sfT $(pwd)/skills ${HOME}/.codex/skills
+  # Linking the global instruction files
+  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.codex/AGENTS.md
+  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.claude/CLAUDE.md
+  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.gemini/GEMINI.md
+  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.config/opencode/AGENTS.md
   echo "Symbolic links set up successfully."
 
 reset-link:
@@ -26,6 +33,11 @@ reset-link:
   rm -f ${HOME}/.claude/skills
   rm -f ${HOME}/.gemini/skills
   rm -f ${HOME}/.codex/skills
+  # Remove the link of prompt file AGENTS.md
+  rm -f ${HOME}/.codex/AGENTS.md
+  rm -f ${HOME}/.claude/CLAUDE.md
+  rm -f ${HOME}/.gemini/GEMINI.md
+  rm -f ${HOME}/.config/opencode/AGENTS.md
   echo "Symbolic links reset successfully."
 
 link-config:
