@@ -1,6 +1,6 @@
 ---
 name: context-skill
-description: Agent Skill for recording contexts in a proper, consistent format. Use in any situation where context is needed, such as creating a new chat session, handing a prompt to a new AI agent, compacting chat history, or preparing summaries and reports that benefit from context, and etc. This skill is usually invoked by other skills, although user can also directly invoke this skill too.
+description: Agent Skill for recording contexts in a proper, consistent format. Use in any situation where context is needed, such as creating a new chat session, handing a prompt to a new AI agent, compacting chat history, or preparing summaries and reports that benefit from context, and etc. This skill is usually invoked by other skills, commands or tasks, but user can also directly invoke this skill.
 ---
 
 # Contex Skill
