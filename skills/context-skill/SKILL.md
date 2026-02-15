@@ -10,16 +10,16 @@ description: Agent Skill for recording contexts in a proper, consistent format. 
 To properly record a context, following the following format in markdown:
 
 ```markdown
-<!-- This section only lists references that an AI Agent should knows -->
 ## References
 
 ### Must Read
 
-<!-- one or several markdown table that AI Agents must read -->
+<!-- one or several markdown table listing key files (usually key source files, key documentation) that AI Agents must read -->
 
 ### Optional Read
 
 <!-- one or several markdown table that AI Agents can optionally read -->
+<!-- this section can also be used to refer other contexts files -->
 
 ## Contexts
 
@@ -29,3 +29,4 @@ To properly record a context, following the following format in markdown:
 ## Notes
 
 - Contexts can be recorded in a new markdown file, or appended at the end of an existing markdown file. Depends on the task.
+- If any file is too large, you can use the github format `<file-path>#L<start-line>-L<end-line>` to refer to a specific section of the file, and only record that section as context.
