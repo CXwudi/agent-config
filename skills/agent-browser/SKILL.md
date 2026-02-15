@@ -25,3 +25,5 @@ Public Internet Access is preferred but not required
 ## User Convenience
 
 Always use connect to browser via CDP
+
+Use `bun x agent-browser`
