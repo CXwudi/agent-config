@@ -1,0 +1,34 @@
+---
+name: yolo-subagent
+description: Agent Skill for spawning a self-running subagent process. Use when offloading tasks that do not require user interaction or approval. Prefer this skill for parallel, bounded work that can be summarized on completion.
+---
+
+# YOLO Subagent
+
+Use this skill to delegate a well-scoped task to a subagent that can run independently without asking the user questions.
+
+## When To Use
+
+- The task is self-contained and can be completed without additional user input.
+- The task benefits from parallelism or exploratory work.
+- The task is not sensitive, destructive, or user-approval dependent.
+
+## Workflow
+
+1. Define a clear, bounded task with explicit deliverables.
+2. Spawn a subagent with `functions.spawn_agent`, including any necessary context or file paths.
+3. Wait for completion with `functions.wait` and collect the subagent output.
+4. Summarize results succinctly and proceed with next steps.
+5. Close the subagent with `functions.close_agent` when done.
+
+## Guardrails
+
+- Do not use for tasks that require user confirmation or interactive choices.
+- Avoid delegating tasks that can mutate critical files or run destructive commands.
+- Keep context minimal and task ownership explicit.
+
+## Example
+
+Task: "Scan the repo for duplicate configuration files and report findings."
+
+Expected result: A short list of duplicates and suggested consolidation steps.
