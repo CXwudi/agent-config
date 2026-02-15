@@ -47,5 +47,6 @@ REMEMBER: The goal is to eliminate as much ambiguity as possible as early as pos
 - If yes, save the finalized plan to a markdown file in the repo/workspace:
   - default path: `plans/` if it exists, else current directory
   - filename: `plan-<slug>-YYYYMMDD.md` (kebab-case slug)
-  - In your response: mention the file path and confirm you will follow the plan in subsequent steps.
+  - Also use the `context-skill` Agent SKill to record any related context at the end of the markdown file.
+  - In your response: mention the file path
 - When the user ask you to start the plan, if you have Todo tools/skills, create a todo list for the plan steps to help you track and manage the progress.
