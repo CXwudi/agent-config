@@ -1,0 +1,5 @@
+---
+name: context-skill
+description: Agent Skill for recording contexts in a proper, consistent format. Use when creating a new chat session, handing a prompt to a new AI agent, compacting chat history, or preparing summaries and reports that benefit from context, or whenever user requested. Prefer this skill when a structured context file will improve handoff or continuity.
+---
+
