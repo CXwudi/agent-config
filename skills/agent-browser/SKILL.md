@@ -28,4 +28,4 @@ A local copy of each reference is available as a fallback, but it may be outdate
 
 Always use connect to browser via CDP
 
-Use `bun x agent-browser`
+Use `pnpm dlx agent-browser`
