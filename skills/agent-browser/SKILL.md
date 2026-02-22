@@ -7,7 +7,7 @@ description: Agent Skill for browser access over a Chrome DevTools Protocol conn
 
 ## Prerequisites
 
-A Chromium-based browser (e.g. Chrome, Edge) must be running with the `--remote-debugging-port=<port>` flag to enable the Chrome DevTools Protocol (CDP) connection. Port by default is `9222`, IP by default is just `localhost`. Check if the browser is accessible at `http://<ip>:<port>/json/version` to confirm CDP is available.
+A Chromium-based browser (e.g. Chrome, Edge) must be running with the `--remote-debugging-port=<port>` flag to enable the Chrome DevTools Protocol (CDP) connection. Port by default is `9222`, IP by default is just `localhost`. Check if `http://<ip>:<port>/json/version` returns a websocket URL to confirm CDP is available.
 
 Public Internet Access is preferred but not required
 
@@ -26,6 +26,9 @@ A local copy of each reference is available as a fallback, but it may be outdate
 
 ## User Convenience
 
-Always use connect to browser via CDP
+Always connect to browser via CDP
+
+Avoid default session name on Windows, always use session name `ab1`,
+as it is a known good name in windows that resolve to a port that is not reserved by windows WSL/Hyper-V.
 
 Use `pnpm dlx agent-browser`
