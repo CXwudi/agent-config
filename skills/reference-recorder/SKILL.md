@@ -1,13 +1,13 @@
 ---
-name: context-recorder
-description: Agent Skill for recording contexts in a proper, consistent format. Use in any situation where context is needed, such as creating a new chat session, handing a prompt to a new AI agent, compacting chat history, or preparing summaries and reports, and etc. The purpose of recording context is to avoid repeated exploration work between multiple agents/humans. This skill is usually invoked by other skills, commands or tasks, but user can also directly invoke this skill for other purposes.
+name: reference-recorder
+description: Agent Skill for recording references in a proper, consistent format. Use in any situation where listing references can be beneficial, such as creating a new chat session, handing a prompt to a new AI agent, compacting chat history, or preparing summaries and reports, and etc. The purpose of references is to provide a catalog of resources. This skill is usually invoked by other skills, commands or tasks, but user can also directly invoke this skill for other purposes.
 ---
 
-# Contex Skill
+# Reference Recorder Skill
 
 ## Format
 
-To properly record a context, following the following format in markdown:
+To properly record references, following the following format in markdown:
 
 ```markdown
 ## References
