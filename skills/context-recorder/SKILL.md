@@ -13,10 +13,10 @@ To properly record a context, following the following format in markdown:
 ## References
 <!-- list of references, such as files, urls, or other resources -->
 
-| Resouce | Description | Must Read or Not |
+| Resouce | Description | Other Notes if any |
 | --- | --- | --- |
-| ![a file](path/to/file) | a brief description of the file | Must Read / Optional Read |
-| [a url](https://example.com) | a brief description of the url | Must Read / Optional Read |
+| ![a file](path/to/file) | a brief description of the file | |
+| [a url](https://example.com) | a brief description of the url | |
 ```
 
 ## Notes
@@ -26,3 +26,4 @@ To properly record a context, following the following format in markdown:
     - For example, a report or a plan file will have their own format, followed by the context format mentioned above.
 - When referring a file, if such file is too large, and only specific sections are needed. You can use the format `<file-path>:<start-line>:<end-line>` to guide the AI Agent to read only the required section of such file to avoid context overflow.
     - You can refer to a file several times with different sections
+- Other Notes column is optional and can leave empty. However, for important files or urls, you can add "Must Read" or "Important" to make it stand out for AI Agents
