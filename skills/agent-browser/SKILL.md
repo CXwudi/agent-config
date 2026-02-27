@@ -82,6 +82,41 @@ visibility or cleanup issues, set a known writable directory:
 $env:AGENT_BROWSER_SOCKET_DIR="C:\path\to\writable\agent-browser-sock"
 ```
 
+#### 4. Keep `AGENT_BROWSER_SOCKET_DIR` consistent per workflow
+
+`AGENT_BROWSER_SOCKET_DIR` affects where session metadata (`*.pid`, `*.port`) is
+stored. If you switch this value between commands, `session list` may not show
+sessions started under the other directory.
+
+Pick one strategy for the whole workflow:
+
+- leave it unset to use `~/.agent-browser`
+- set a custom directory once and reuse it for every command
+
+#### 5. Bootstrap environment once before first command (Windows)
+
+On this Windows machine, `AGENT_BROWSER_HOME` is required for reliable daemon
+cold-start. Set it before the first `agent-browser` command in a shell.
+
+```powershell
+$env:AGENT_BROWSER_HOME="D:\local\pnpm\global\5\node_modules\agent-browser"
+# Optional. If you set this, keep it consistent for the whole workflow.
+# $env:AGENT_BROWSER_SOCKET_DIR="C:\Users\11134\AppData\Local\Temp\agent-browser-sock"
+agent-browser --session default --cdp 9222 tab
+```
+
+#### Windows Troubleshooting Quick Map
+
+- Symptom: `Daemon failed to start (socket: ...default.sock)` on first command.
+  Likely checks: `AGENT_BROWSER_HOME` is set and points to the installed
+  `agent-browser` package.
+- Symptom: `Daemon failed to start (socket: ...<session>.sock)` for one session
+  name.
+  Likely checks: mapped session port is excluded by Windows.
+- Symptom: `session list` does not show expected sessions.
+  Likely checks: current `AGENT_BROWSER_SOCKET_DIR` matches the one used when
+  those sessions were started.
+
 #### Example Commands
 
 ```powershell
