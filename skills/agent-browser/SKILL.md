@@ -17,6 +17,10 @@ to confirm CDP is available.
 
 Public Internet Access is preferred but not required
 
+## Windows
+
+If you are on Windows, read [windows-specific-convenience](windows-specific-convenience.md) before running your first `agent-browser` command.
+
 ## References
 
 | Reference | When to Use | Local Fallback |
@@ -34,5 +38,3 @@ A local copy of each reference is available as a fallback, but it may be outdate
 ## User Convenience
 
 Always connect to browser via CDP
-
-If you are in Windows OS, follow [windows-specific-convenience](windows-specific-convenience.md) guidelines to avoid common pitfalls and ensure smooth experience.
