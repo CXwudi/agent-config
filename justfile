@@ -16,7 +16,7 @@ setup-link:
   # Linking the global instruction files
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.codex/AGENTS.md
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.claude/CLAUDE.md
-  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.gemini/GEMINI.md
+  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.gemini/AGENTS.md
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.config/opencode/AGENTS.md
   echo "Symbolic links set up successfully."
 
@@ -34,7 +34,8 @@ reset-link:
   # Remove the link of prompt file AGENTS.md
   rm -f ${HOME}/.codex/AGENTS.md
   rm -f ${HOME}/.claude/CLAUDE.md
-  rm -f ${HOME}/.gemini/GEMINI.md
+  rm -f ${HOME}/.gemini/AGENTS.md
+  rm -f ${HOME}/.gemini/GEMINI.md # legacy Gemini context filename
   rm -f ${HOME}/.config/opencode/AGENTS.md
   echo "Symbolic links reset successfully."
 
