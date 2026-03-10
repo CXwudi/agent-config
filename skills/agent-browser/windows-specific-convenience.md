@@ -52,11 +52,12 @@ If the calculated port ever looks wrong, check the upstream
 
 ## 3. Use writable socket directory only if needed
 
-`~/.agent-browser` should be writable by default. If you hit socket dir
-visibility or cleanup issues, set a known writable directory:
+In a normal local shell, `~/.agent-browser` is usually writable. In sandboxed
+environments such as Codex, it may not be. If you hit socket dir visibility,
+cleanup, or write-permission issues, set a known writable directory:
 
 ```powershell
-$env:AGENT_BROWSER_SOCKET_DIR="C:\path\to\writable\agent-browser-sock"
+$env:AGENT_BROWSER_SOCKET_DIR="$env:TEMP\agent-browser-sock"
 ```
 
 ## 4. Keep `AGENT_BROWSER_SOCKET_DIR` consistent per workflow
@@ -78,7 +79,7 @@ cold-start. Set it before the first `agent-browser` command in a shell.
 ```powershell
 $env:AGENT_BROWSER_HOME = (Resolve-Path (Join-Path (pnpm root -g) "agent-browser")).Path
 # Optional. If you set this, keep it consistent for the whole workflow.
-# $env:AGENT_BROWSER_SOCKET_DIR="C:\Users\11134\AppData\Local\Temp\agent-browser-sock"
+# $env:AGENT_BROWSER_SOCKET_DIR="$env:TEMP\agent-browser-sock"
 agent-browser --session default --cdp 9222 tab
 ```
 
@@ -103,7 +104,7 @@ agent-browser --cdp 9222 tab
 
 ```powershell
 $env:AGENT_BROWSER_HOME = (Resolve-Path (Join-Path (pnpm root -g) "agent-browser")).Path
-$env:AGENT_BROWSER_SOCKET_DIR="C:\path\to\writable\agent-browser-sock"
+$env:AGENT_BROWSER_SOCKET_DIR="$env:TEMP\agent-browser-sock"
 agent-browser --session ab10 --cdp 9222 snapshot -i
 ```
 
