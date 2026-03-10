@@ -7,14 +7,12 @@ setup-link:
   mkdir -p ${HOME}/.claude
   mkdir -p ${HOME}/.gemini
   mkdir -p ${HOME}/.codex
-  mkdir -p ${HOME}/.agent
+  mkdir -p ${HOME}/.agents
   # Start linking
   ln -sfT $(pwd)/agents ${HOME}/.config/opencode/agents
   ln -sfT $(pwd)/prompts ${HOME}/.config/opencode/prompts
-  ln -sfT $(pwd)/skills ${HOME}/.agent/skills # common pattern that some agents are supporting, codex is one
-  ln -sfT $(pwd)/skills ${HOME}/.claude/skills # This also cover opencode
-  ln -sfT $(pwd)/skills ${HOME}/.gemini/skills
-  ln -sfT $(pwd)/skills ${HOME}/.codex/skills
+  ln -sfT $(pwd)/skills ${HOME}/.agents/skills # common shared skills location supported by many agents
+  ln -sfT $(pwd)/skills ${HOME}/.claude/skills
   # Linking the global instruction files
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.codex/AGENTS.md
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.claude/CLAUDE.md
@@ -29,7 +27,7 @@ reset-link:
   # not using rm -rf to be safe to only delete symbolinks, not real directories
   rm -f ${HOME}/.config/opencode/agents
   rm -f ${HOME}/.config/opencode/prompts
-  rm -f ${HOME}/.agent/skills
+  rm -f ${HOME}/.agents/skills
   rm -f ${HOME}/.claude/skills
   rm -f ${HOME}/.gemini/skills
   rm -f ${HOME}/.codex/skills
@@ -73,16 +71,19 @@ link-config:
   # 2. ~/.claude/
   create_link "$HOME/.claude" ".claude"
 
-  # 3. ~/.codex/
+  # 3. ~/.agents/
+  create_link "$HOME/.agents" ".agents"
+
+  # 4. ~/.codex/
   create_link "$HOME/.codex" ".codex"
 
-  # 4. ~/.gemini (Gemini CLI)
+  # 5. ~/.gemini (Gemini CLI)
   create_link "$HOME/.gemini" ".gemini"
 
-  # 5. ~/.config/opencode (Opencode)
+  # 6. ~/.config/opencode (Opencode)
   create_link "$HOME/.config/opencode" "opencode"
 
-  # 6. Cline MCP settings json
+  # 7. Cline MCP settings json
   # Using the path found in .vscode-server
   CLINE_SETTINGS="$HOME/.vscode-server/data/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
   # Fallback for local vscode if server path fails
