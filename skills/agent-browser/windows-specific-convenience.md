@@ -27,7 +27,7 @@ Test-Path (Join-Path $env:AGENT_BROWSER_HOME "dist\daemon.js")
 
 ## 2. Choose session names that map to unblocked ports
 
-Run:
+First run:
 
 ```powershell
 netsh interface ipv4 show excludedportrange protocol=tcp
@@ -35,10 +35,8 @@ netsh interface ipv4 show excludedportrange protocol=tcp
 
 To get all ports reserved by Windows.
 
-Pick a session name whose port does not fall within any excluded range.
-First check if default session name `default` works.
-
-Calculate the port for a session name with Node.js:
+To be able to pick a session name whose port does not fall within any excluded range.
+You need the following Node.js script to calculate the port for a session name:
 
 ```powershell
 function Get-SessionPort($name) {
@@ -46,9 +44,12 @@ function Get-SessionPort($name) {
 }
 ```
 
-If the calculated port ever looks wrong, check the upstream
-`get_port_for_session` implementation in
-[`cli/src/connection.rs`](https://github.com/vercel-labs/agent-browser/blob/main/cli/src/connection.rs).
+> If the calculated port ever looks wrong, check the upstream
+> `get_port_for_session` implementation in
+> [`cli/src/connection.rs`](https://github.com/vercel-labs/agent-browser/blob/main/cli/src/connection.rs).
+
+First check if default session name `default` maps to an unblocked port.
+If not, try out a few different session names until you find one that maps to an unblocked port.
 
 ## 3. Use writable socket directory only if needed
 
@@ -78,8 +79,7 @@ cold-start. Set it before the first `agent-browser` command in a shell.
 
 ```powershell
 $env:AGENT_BROWSER_HOME = (Resolve-Path (Join-Path (pnpm root -g) "agent-browser")).Path
-# Optional. If you set this, keep it consistent for the whole workflow.
-# $env:AGENT_BROWSER_SOCKET_DIR="$env:TEMP\agent-browser-sock"
+$env:AGENT_BROWSER_SOCKET_DIR="$env:TEMP\agent-browser-sock" # Set this if needed
 agent-browser --session default --cdp 9222 tab
 ```
 
