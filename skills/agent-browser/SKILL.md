@@ -19,7 +19,9 @@ Public Internet Access is preferred but not required
 
 ## Windows
 
-If you are on Windows, read [windows-specific-convenience](windows-specific-convenience.md) before running your first `agent-browser` command.
+If you are on Windows, read
+[windows-specific-convenience](windows-specific-convenience.md) before
+running your first `agent-browser` command.
 
 ## References
 
@@ -37,4 +39,5 @@ A local copy of each reference is available as a fallback, but it may be outdate
 
 ## User Convenience
 
-Always connect to browser via CDP
+1. Always connect to the browser via CDP.
+2. Use `--color-scheme no-preference` to override the default light mode in agent-browser
