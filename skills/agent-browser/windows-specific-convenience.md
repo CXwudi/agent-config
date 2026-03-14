@@ -1,31 +1,8 @@
-
 # Windows Specific Convenience
 
-You must follow these:
+You must follow these to smoothly run `agent-browser` on Windows.
 
-## 1. Always set `AGENT_BROWSER_HOME` to avoid the `\\?\` path issue
-
-Set `AGENT_BROWSER_HOME` to the installed `agent-browser` package root
-
-If you installed `agent-browser` with pnpm, ask pnpm for its global modules
-directory and resolve `agent-browser` from there. This works even if pnpm is
-configured under a custom directory or on a different drive.
-
-```powershell
-$agentBrowserHome = (Resolve-Path (Join-Path (pnpm root -g) "agent-browser")).Path
-$env:AGENT_BROWSER_HOME = $agentBrowserHome
-```
-
-Use the same package manager that installed `agent-browser`. For a pnpm global
-install, prefer `pnpm root -g` over `npm root -g`.
-
-Required check:
-
-```powershell
-Test-Path (Join-Path $env:AGENT_BROWSER_HOME "dist\daemon.js")
-```
-
-## 2. Choose session names that map to unblocked ports
+## 1. Choose session names that map to unblocked ports
 
 First run:
 
@@ -51,7 +28,7 @@ function Get-SessionPort($name) {
 First check if default session name `default` maps to an unblocked port.
 If not, try out a few different session names until you find one that maps to an unblocked port.
 
-## 3. Use writable socket directory only if needed
+## 2. Use writable socket directory only if needed
 
 In a normal local shell, `~/.agent-browser` is usually writable. In sandboxed
 environments such as Codex, it may not be. If you hit socket dir visibility,
@@ -61,7 +38,7 @@ cleanup, or write-permission issues, set a known writable directory:
 $env:AGENT_BROWSER_SOCKET_DIR="$env:TEMP\agent-browser-sock"
 ```
 
-## 4. Keep `AGENT_BROWSER_SOCKET_DIR` consistent per workflow
+## 3. Keep `AGENT_BROWSER_SOCKET_DIR` consistent per workflow
 
 `AGENT_BROWSER_SOCKET_DIR` affects where session metadata (`*.pid`, `*.port`) is
 stored. If you switch this value between commands, `session list` may not show
@@ -72,13 +49,9 @@ Pick one strategy for the whole workflow:
 - leave it unset to use `~/.agent-browser`
 - set a custom directory once and reuse it for every command
 
-## 5. Bootstrap environment once before first command (Windows)
-
-On this Windows machine, `AGENT_BROWSER_HOME` is required for reliable daemon
-cold-start. Set it before the first `agent-browser` command in a shell.
+Bootstrap environment once before first command (Windows):
 
 ```powershell
-$env:AGENT_BROWSER_HOME = (Resolve-Path (Join-Path (pnpm root -g) "agent-browser")).Path
 $env:AGENT_BROWSER_SOCKET_DIR="$env:TEMP\agent-browser-sock" # Set this if needed
 agent-browser --session default --cdp 9222 tab
 ```
@@ -98,12 +71,10 @@ agent-browser --session default --cdp 9222 tab
 ## Example Commands
 
 ```powershell
-$env:AGENT_BROWSER_HOME = (Resolve-Path (Join-Path (pnpm root -g) "agent-browser")).Path
 agent-browser --cdp 9222 tab
 ```
 
 ```powershell
-$env:AGENT_BROWSER_HOME = (Resolve-Path (Join-Path (pnpm root -g) "agent-browser")).Path
 $env:AGENT_BROWSER_SOCKET_DIR="$env:TEMP\agent-browser-sock"
 agent-browser --session ab10 --cdp 9222 snapshot -i
 ```
