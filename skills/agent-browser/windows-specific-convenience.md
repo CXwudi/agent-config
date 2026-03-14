@@ -72,6 +72,8 @@ agent-browser --session default --cdp 9222 tab
 - Symptom: `session list` does not show expected sessions.
   Likely checks: current `AGENT_BROWSER_SOCKET_DIR` matches the one used when
   those sessions were started.
+- In PowerShell, `@` is a special character, so if you want to interact with
+  any elements that include `@`, warp them into quotes.
 
 ## Example Commands
 
