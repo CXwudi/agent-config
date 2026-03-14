@@ -15,9 +15,8 @@ Public Internet Access is preferred but not required
 
 A Chromium-based browser (e.g. Chrome, Edge, Chromium, Brave) must be running
 
-
-Prefer `--cdp` first. If `--cdp` is unavailable or inconvenient, try
-`--auto-connect`.
+Prefer `--cdp` first as it has better reliability.
+Use `--auto-connect` as fallback.
 
 ### Option 1: `--cdp` (Preferred)
 
