@@ -2,6 +2,11 @@
 
 You must follow these to smoothly run `agent-browser` on Windows.
 
+## Available scripts
+
+- `scripts/get-session-port.js` -- Computes the Windows daemon port for a
+  session name using the upstream `get_port_for_session` logic.
+
 ## 1. Choose session names that map to unblocked ports
 
 First run:
@@ -13,20 +18,20 @@ netsh interface ipv4 show excludedportrange protocol=tcp
 To get all ports reserved by Windows.
 
 To be able to pick a session name whose port does not fall within any excluded range.
-You need the following Node.js script to calculate the port for a session name:
+Use the bundled helper script:
 
 ```powershell
-function Get-SessionPort($name) {
-  node -e 'const name = process.argv[1]; let hash = 0; for (const c of name) { hash = ((hash << 5) - hash + c.charCodeAt(0)) | 0; } console.log(49152 + (Math.abs(hash) % 16383));' $name
-}
+node scripts/get-session-port.js default
+node scripts/get-session-port.js ab10
 ```
 
-> If the calculated port ever looks wrong, check the upstream
-> `get_port_for_session` implementation in
-> [`cli/src/connection.rs`](https://github.com/vercel-labs/agent-browser/blob/main/cli/src/connection.rs).
+This script mirrors the upstream
+[`get_port_for_session`](https://github.com/vercel-labs/agent-browser/blob/main/cli/src/connection.rs)
+implementation.
 
 First check if default session name `default` maps to an unblocked port.
-If not, try out a few different session names until you find one that maps to an unblocked port.
+If not, try out a few different session names until you find one that maps to
+an unblocked port.
 
 ## 2. Use writable socket directory only if needed
 
@@ -80,5 +85,5 @@ agent-browser --session ab10 --cdp 9222 snapshot -i
 ```
 
 ```powershell
-Get-SessionPort "ab10"
+node scripts/get-session-port.js ab10
 ```
