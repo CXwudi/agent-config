@@ -15,33 +15,43 @@ Public Internet Access is preferred but not required
 
 A Chromium-based browser (e.g. Chrome, Edge, Chromium, Brave) must be running
 
-Prefer `--cdp` first as it has better reliability.
-Use `--auto-connect` as fallback.
+Prefer `--auto-connect` first. If auto-discovery fails or you already know the
+exact CDP endpoint, use `--cdp`.
 
-### Option 1: `--cdp` (Preferred)
+### Option 1: `--auto-connect` (Preferred)
 
-A Chromium-based browser (e.g. Chrome, Edge, Chromium, Brave) can be connected
-directly over the Chrome DevTools Protocol (CDP) when it is running with the
-`--remote-debugging-port=<port>` flag. Port by default is `9222`, IP by
-default is just `localhost`.
+Use `--auto-connect` when a supported Chromium-based browser is already running
+with remote debugging enabled and you want `agent-browser` to discover the CDP
+endpoint automatically.
 
-Use `curl` to check if `http://<ip>:<port>/json/version` returns a websocket URL
-to confirm CDP is available.
+It is most reliable for Chrome, Chrome Canary, and Chromium in default user
+data locations where `DevToolsActivePort` can be discovered. Other
+Chromium-based browsers may still work if they expose CDP on common local
+ports such as `9222` or `9229`.
 
-### Option 2: `--auto-connect` (Fallback)
+Example: `agent-browser --auto-connect tab`
 
-For some Chromium-based browsers, especially Chrome or Chromium `144+`,
-`agent-browser --auto-connect` can discover a running browser without
-explicitly providing a port.
+### Option 2: `--cdp` (Explicit)
 
-This requires remote debugging to already be enabled for that browser session.
-In practice, `agent-browser` usually relies on the browser exposing a
-discoverable DevTools endpoint, such as a `DevToolsActivePort` file in the
-browser's user data directory. The exact setup flow and file location vary by
-browser and operating system.
+Use `--cdp` when you already know the CDP endpoint and want a predictable
+connection.
 
-If both `--cdp` and `--auto-connect` failed, notify the user to start
-their browser with remote debugging enabled.
+This is the best choice for a known local port, a full CDP WebSocket URL, or a
+browser-as-a-service provider over `ws://` or `wss://`.
+
+Use `curl` to check if `http://<ip>:<port>/json/version` returns a websocket
+URL when connecting by local port.
+
+Examples:
+
+```bash
+agent-browser --cdp 9222 tab
+agent-browser --cdp ws://127.0.0.1:9222/devtools/browser/<id> tab
+agent-browser --cdp wss://your-provider.example.com/devtools/browser/<id> tab
+```
+
+If both `--auto-connect` and `--cdp` fail, notify the user to start their
+browser with remote debugging enabled.
 
 ## Windows
 
