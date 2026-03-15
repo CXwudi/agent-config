@@ -15,7 +15,19 @@ You should always proactively ask for clarification whenever you find something 
 
 During planning or implementing, you can always pause at the middle and ask for clarification, before you move on.
 
-## Terminal Tools
+## Environment
+
+### Languages
+
+The following should be installed and available in the environment:
+
+- `uv`
+  - however `python` is not available, use `uv run <command>` instead
+- `mise` for managing JS related
+  - `node`, `pnpm` (prefer this over `npm`), `bun`, `deno`, are all available
+- `java`
+
+### Terminal Tools
 
 Prefer these terminal tools over any tools that provide similar functionalities.
 All these tools are installed and safe to execute:
@@ -25,6 +37,7 @@ All these tools are installed and safe to execute:
 - `rg` to search for text in files
 - `yq` to process JSON, YAML, and XML files
 - `lsd` to list files and directories, replacement for `ls`
+- `gh` to interact with GitHub, shall already be authenticated and configured to work
 
 Notes:
 
