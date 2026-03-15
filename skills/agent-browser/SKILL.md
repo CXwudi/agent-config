@@ -75,5 +75,4 @@ A local copy of each reference is available as a fallback, but it may be outdate
 
 ## User Convenience
 
-1. Prefer `--cdp`, and use `--auto-connect` as the fallback path.
-2. Use `--color-scheme no-preference` to override the default light mode in agent-browser
+1. Use `--color-scheme no-preference` to override the default light mode in agent-browser
