@@ -18,6 +18,7 @@ adaptation notes.
 | Local skill | Local attribution | Upstream | Version | License | Notes |
 | --- | --- | --- | --- | --- | --- |
 | [`brainstorming`](brainstorming/SKILL.md) | [attribution](brainstorming/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT` | Local paths; generic wording |
+| [`writing-plans`](writing-plans/SKILL.md) | [attribution](writing-plans/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT` | Merged local `plan` behavior |
 
 ## License Text
 

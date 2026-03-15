@@ -1,6 +1,8 @@
 ---
 name: writing-plans
 description: Agent Skill for writing comprehensive implementation plans with bite-sized tasks. Use when you have a spec, requirements, or approved design for a multi-step task, before touching code. Can also be invoked standalone to gather context and plan from scratch.
+metadata:
+  attribution: attribution.md
 ---
 
 # Writing Plans
