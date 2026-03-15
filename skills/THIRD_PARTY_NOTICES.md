@@ -19,6 +19,7 @@ adaptation notes.
 | --- | --- | --- | --- | --- | --- |
 | [`brainstorming`](brainstorming/SKILL.md) | [attribution](brainstorming/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT` | Local paths; generic wording |
 | [`writing-plans`](writing-plans/SKILL.md) | [attribution](writing-plans/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT` | Merged local `plan` behavior |
+| [`dispatching-parallel-agents`](dispatching-parallel-agents/SKILL.md) | [attribution](dispatching-parallel-agents/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT` | Generic dispatch wording |
 
 ## License Text
 

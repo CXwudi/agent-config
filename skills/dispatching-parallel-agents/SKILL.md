@@ -1,6 +1,8 @@
 ---
 name: dispatching-parallel-agents
 description: Agent Skill for dispatching parallel subagents to solve independent problems concurrently. Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies. Includes prompt crafting patterns and integration verification.
+metadata:
+  attribution: attribution.md
 ---
 
 # Dispatching Parallel Agents
