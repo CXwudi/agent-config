@@ -1,6 +1,8 @@
 ---
 name: brainstorming
 description: Agent Skill for collaborative design and specification before implementation. Use when the user wants to brainstorm, explore an idea, or design a feature before building it. Covers every project regardless of perceived simplicity.
+metadata:
+  attribution: attribution.md
 ---
 
 # Brainstorming
