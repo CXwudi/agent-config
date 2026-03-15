@@ -9,7 +9,8 @@ description: Agent Skill for markdownlint-compliant Markdown. Use after creating
 
 1. Identify the Markdown file(s) being created or edited.
 1. Run `markdownlint-cli2` after every Markdown change on the modified file(s).
-1. And learn from the linter's feedback to improve your Markdown writing skills over time.
+1. And learn from the linter's feedback to improve your Markdown writing
+   skills over time.
 
 ## Lint Command
 
@@ -40,6 +41,9 @@ guidance.
 - `MD042` No empty links like `[]()` or `[text]()`.
 - `MD047` File should end with a single newline.
 
-## Common AI Mistakes
+## User Convention and Common AI Mistakes
 
-This section is intentionally left blank for the user to fill in later.
+1. Avoid extensive use of bolding.
+2. Do not use bolding as a header. Use proper Markdown headings instead.
+3. Usually a code block is fenced inside a triple backtick.
+   But for code blocks of Markdown, use 4 backticks instead of 3.
