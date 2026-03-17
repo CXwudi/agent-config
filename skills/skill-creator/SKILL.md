@@ -23,14 +23,14 @@ while ensure the following user conventions are followed:
 
 ### User Conventions
 
-Description field format: 3 sentences:
+Description field format: 3 parts:
 
 1. A short intro of the skill, usually within 10 words.
    E.g. "Agent Skill of ...", "Skill for ...", etc.
 2. A sentence about when to use this skill.
    E.g. "Use when ...", "Ideal to ...", "Prefer this skill for ...", etc.
 3. Optional: anything else helps the agent decide when to use this skill, or
-   when not to use it.
+   when not to use it. Can be one or more sentences.
 
 ## Evaluation
 
