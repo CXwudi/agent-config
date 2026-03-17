@@ -1,9 +1,6 @@
 ---
 name: gemini-files
-description: >-
-  Agent Skill for uploading files to Gemini File API and questioning them with
-  Gemini models. Use when a task requires analyzing, transcribing, or asking
-  questions about files (video, audio, images, PDFs, documents, etc.)
+description: Agent Skill for uploading files to Gemini File API and questioning them with Gemini models. Use when a task requires analyzing, transcribing, or asking questions about files (video, audio, images, PDFs, documents, etc.)
 ---
 # Gemini Files
 
