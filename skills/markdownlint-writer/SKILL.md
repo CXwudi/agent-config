@@ -8,19 +8,24 @@ description: Agent Skill for markdownlint-compliant Markdown. Use after creating
 ## Workflow
 
 1. Identify the Markdown file(s) being created or edited.
-1. Run `markdownlint-cli2` after every Markdown change on the modified file(s).
-1. And learn from the linter's feedback to improve your Markdown writing
+1. Run `deno fmt` on the modified Markdown file(s) first.
+1. Run `markdownlint-cli2 --fix` after formatting on the same file(s).
+1. Use these tools to auto-format Markdown before relying on LLM-written edits
+   for style-only cleanup.
+1. Learn from formatter and linter feedback to improve your Markdown writing
    skills over time.
 
-## Lint Command
+## Format And Lint Commands
 
-Run the linter on the exact files you changed.
+Run the formatter and linter on the exact Markdown files you changed, in this
+order:
 
 ```sh
-markdownlint-cli2 "README.md" "docs/guide.md"
+deno fmt "README.md" "docs/guide.md"
+markdownlint-cli2 --fix "README.md" "docs/guide.md"
 ```
 
-If the tool is unavailable or fails unexpectedly, tell the user and request
+If either tool is unavailable or fails unexpectedly, tell the user and request
 guidance.
 
 ## Checklist Of Common Rules
@@ -45,5 +50,5 @@ guidance.
 
 1. Avoid extensive use of bolding.
 2. Do not use bolding as a header. Use proper Markdown headings instead.
-3. Usually a code block is fenced inside a triple backtick.
-   But for code blocks of Markdown, use 4 backticks instead of 3.
+3. Usually a code block is fenced inside a triple backtick. But for code blocks
+   of Markdown, use 4 backticks instead of 3.
