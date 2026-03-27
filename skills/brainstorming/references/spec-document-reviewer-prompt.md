@@ -4,56 +4,63 @@ Use this template when dispatching a spec document reviewer subagent.
 
 ## Purpose
 
-Verify the spec is complete, consistent, and ready for implementation
-planning.
+Verify that the full spec is clear, consistent, decision-oriented, and ready
+for implementation planning.
 
 ## Dispatch After
 
-Spec document is written to `plans/spec-<slug>-YYYYMMDD.md`
+Spec document is written to `spec/spec-<slug>-YYYYMMDD.md` and its
+`## References` section has been generated via `reference-recorder`.
 
-```text
-Task tool (general-purpose):
-  description: "Review spec document"
-  prompt: |
-    You are a spec document reviewer.
-    Verify this spec is complete and ready for planning.
+````markdown
+You are a spec document reviewer.
+Review this full design spec for planning readiness.
 
-    **Spec to review:** [SPEC_FILE_PATH]
+**Spec to review:** [SPEC_FILE_PATH]
+**Source of truth:** [USER_REQUEST_SUMMARY, ISSUE_URL, REQUIREMENTS_DOC, OR OTHER INPUT]
 
-    ## What to Check
+## What to Check
 
-    | Category | What to Look For |
-    |----------|------------------|
-    | Completeness | TODOs, placeholders, "TBD", incomplete sections |
-    | Coverage | Missing error handling, edge cases, integration points |
-    | Consistency | Internal contradictions, conflicting requirements |
-    | Clarity | Ambiguous requirements |
-    | YAGNI | Unrequested features, over-engineering |
-    | Scope | Focused enough for one plan, not multiple subsystems |
-    | Architecture | Clear units, interfaces, and testable boundaries |
+| Category | What to Look For |
+|----------|------------------|
+| Problem and Context | Clear problem statement and enough context to understand the design |
+| Recommended Design | Recommendation is clear and justified |
+| Alternatives | Viable alternatives are mentioned when relevant, with reasons they were not chosen |
+| Scope and Non-Goals | Boundaries are explicit and realistic |
+| Consistency | No internal contradictions or conflicting decisions |
+| Clarity | Requirements and design decisions are not ambiguous |
+| Risks and Open Questions | Important risks, assumptions, or unknowns are surfaced |
+| References | Includes a `## References` section generated via `reference-recorder` |
+| Planning Readiness | Spec is detailed enough to hand off to `plan` without guesswork |
 
-    ## CRITICAL
+## CRITICAL
 
-    Look especially hard for:
-    - Any TODO markers or placeholder text
-    - Sections saying "to be defined later" or "will spec when X is done"
-    - Sections noticeably less detailed than others
-    - Units that lack clear boundaries or interfaces.
-      Can you understand what each unit does without reading its internals?
+Look especially hard for:
+- Any TODO markers or placeholder text
+- Missing rationale for the recommended design
+- Missing alternatives when meaningful trade-offs clearly exist
+- Missing scope boundaries or non-goals
+- Missing references
+- Hidden assumptions or prerequisites
+- Large unexplained jumps from problem statement to design decision
+- Important risks or open questions that are left implicit
 
-    ## Output Format
+## Output Format
 
-    ## Spec Review
+## Spec Review
 
-    **Status:** ✅ Approved | ❌ Issues Found
+**Status:** Approved | Issues Found
 
-    **Issues (if any):**
-    - [Section X]: [specific issue] - [why it matters]
+**Blocking Issues (if any):**
+- [Section X]: [specific issue] - [why it matters]
 
-    **Recommendations (advisory):**
-    - [suggestions that don't block approval]
-```
+**Recommendations (advisory):**
+- [suggestion that would improve the spec but does not block approval]
+
+**Missing References (if any):**
+- [file, doc, issue, or URL that should be included]
+````
 
 ## Reviewer Returns
 
-Status, Issues (if any), Recommendations
+Status, Blocking Issues if any, Recommendations, and Missing References.
