@@ -18,7 +18,7 @@ adaptation notes.
 | Local skill | Local attribution | Upstream | Version | License | Notes |
 | --- | --- | --- | --- | --- | --- |
 | [`brainstorming`](brainstorming/SKILL.md) | [attribution](brainstorming/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT` | Local paths; generic wording |
-| [`writing-plans`](writing-plans/SKILL.md) | [attribution](writing-plans/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT` | Merged local `plan` behavior |
+| [`plan`](plan/SKILL.md) | [attribution](plan/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT` | Substantially rewritten into a plan-centric skill; retained upstream provenance |
 | [`dispatching-parallel-agents`](dispatching-parallel-agents/SKILL.md) | [attribution](dispatching-parallel-agents/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT` | Generic dispatch wording |
 
 ## ast-grep/agent-skill

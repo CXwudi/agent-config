@@ -45,7 +45,7 @@ You MUST create a task for each of these items and complete them in order:
    approved, max 5 iterations, then surface to a human
 7. User reviews written spec: ask the user to review the spec file before
    proceeding
-8. Transition to implementation: invoke `writing-plans` to create the
+8. Transition to implementation: invoke `plan` to create the
    implementation plan
 
 ## Process Flow
@@ -63,10 +63,10 @@ flowchart TD
   H -- "issues found" --> G
   H -- approved --> I{"User reviews spec?"}
   I -- "changes requested" --> F
-  I -- approved --> J(["Invoke writing-plans"])
+  I -- approved --> J(["Invoke plan"])
 ```
 
-The terminal state is invoking `writing-plans`. Do NOT invoke any other
+The terminal state is invoking `plan`. Do NOT invoke any other
 implementation skill directly from brainstorming.
 
 ## The Process
@@ -150,8 +150,8 @@ spec review loop. Only proceed once the user approves.
 
 ### Implementation
 
-- Invoke `writing-plans` to create a detailed implementation plan
-- Do NOT invoke any other implementation skill. `writing-plans` is the next
+- Invoke `plan` to create a detailed implementation plan
+- Do NOT invoke any other implementation skill. `plan` is the next
   step.
 
 ## Key Principles
