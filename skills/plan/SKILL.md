@@ -75,7 +75,6 @@ Before defining tasks, map which files or areas are likely to change and why.
 This is where decomposition decisions get locked in.
 
 - Prefer clear boundaries and well-defined interfaces
-- Follow existing codebase conventions and structure
 - Split by responsibility, not by technical fashion
 - Surface risky interfaces, migrations, or cross-cutting dependencies early
 - If an existing file is already too large or overloaded, it is reasonable to

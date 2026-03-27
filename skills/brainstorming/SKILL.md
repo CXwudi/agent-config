@@ -12,18 +12,20 @@ durable spec artifact.
 
 Use this skill when the direction is not settled or when meaningful design
 trade-offs need to be surfaced. If the implementation direction is already
-clear and the next step is execution planning, use `plan` instead.
+clear, use `plan` instead.
 
 Start by understanding the current project context, then ask focused questions
 one at a time. Once you understand what should be built, present the
-recommended design, mention viable alternatives and why they were not chosen,
-then save the approved design as a spec under `spec/`.
+2-3 viable design options with balanced treatment, recommend one when
+appropriate, explain why, confirm the chosen direction with the user, then
+save the approved design as a spec under `spec/`.
 
 ## Hard Gate
 
 Once this skill is active, do NOT invoke `plan`, write implementation code,
 scaffold a project, or take implementation action until you have presented a
-design and the user has approved it.
+design, the user has confirmed the chosen direction, and the saved spec has
+been reviewed and approved.
 
 ## Checklist
 
@@ -32,9 +34,10 @@ You MUST create a task for each of these items and complete them in order:
 1. Explore project context: check files, docs, and recent commits
 2. Ask clarifying questions: one at a time, understand goals, constraints,
    success criteria, and risks
-3. Evaluate meaningful design options: recommend one choice, mention viable
-   alternatives, and explain why they were not chosen
-4. Present design: scale the depth to the complexity and get user approval
+3. Evaluate meaningful design options: present 2-3 viable options with balanced
+   treatment, recommend one, and explain why it is preferred
+4. Present design options and recommendation: scale the depth to the complexity
+   and confirm the chosen direction with the user
 5. Write design spec: save to `spec/spec-<slug>-YYYYMMDD.md`
 6. Invoke `reference-recorder` to generate a `## References` section
 7. Spec review loop: dispatch a reviewer subagent using
@@ -51,9 +54,9 @@ You MUST create a task for each of these items and complete them in order:
 ```mermaid
 flowchart TD
   A["Explore project context"] --> B["Ask clarifying questions"]
-  B --> C["Evaluate design options"]
-  C --> D["Present recommended design"]
-  D --> E{"User approves design?"}
+  B --> C["Evaluate 2-3 design options"]
+  C --> D["Present options and recommendation"]
+  D --> E{"User confirms direction?"}
   E -- "no, revise" --> D
   E -- yes --> F["Write spec"]
   F --> G["Generate references"]
@@ -85,11 +88,13 @@ skill directly from brainstorming.
 
 ### Evaluating Options
 
-- Recommend one design choice and explain why it fits best
-- Mention other viable options so the user understands the trade-offs
-- Explain why each alternative was not chosen when that helps decision-making
-- If there is no meaningful alternative, say so plainly instead of inventing
-  extra options
+- Present 2-3 viable options with balanced treatment when meaningful trade-offs
+  exist
+- Recommend one option and explain why it fits best
+- Explain the trade-offs of each option and why the recommended one is
+  preferred
+- If the solution space is genuinely narrow, say so plainly instead of
+  inventing extra options
 
 ### Presenting the Design
 
@@ -97,8 +102,9 @@ skill directly from brainstorming.
 - Scale each section to its complexity: a few sentences if straightforward, up
   to 200-300 words if nuanced
 - Ask after each section whether it looks right so far
-- Cover the recommended design, alternatives considered, scope, risks, and
-  validation considerations
+- Cover the design options, your recommendation, scope, risks, and validation
+  considerations
+- Confirm which direction the user wants before writing the spec
 - Be ready to go back and clarify if something does not make sense
 
 ### Design for Isolation and Clarity
@@ -113,8 +119,7 @@ skill directly from brainstorming.
 
 ### Working in Existing Codebases
 
-- Explore the current structure before proposing changes. Follow existing
-  patterns
+- Explore the current structure before proposing changes.
 - Where existing code has problems that affect the work, include targeted
   improvements as part of the design
 - Do not propose unrelated refactoring. Stay focused on the current goal
@@ -141,11 +146,19 @@ Use a structure like this and adapt the detail to the task:
 ## Context
 [Relevant codebase, product, or operational context]
 
-## Recommended Design
-[The chosen design and why it is recommended]
+## Design Options
 
-## Alternatives Considered
-- [Alternative]: [Why it was considered and why it was not chosen]
+### Option 1: [Name]
+[Description, trade-offs, and implications]
+
+### Option 2: [Name]
+[Description, trade-offs, and implications]
+
+### Option 3: [Name]
+[Description, trade-offs, and implications]
+
+## Recommendation
+[Which option is recommended and why]
 
 ## Scope and Non-Goals
 - In scope: [What this spec covers]
@@ -194,9 +207,8 @@ user approves the saved spec.
 ## Key Principles
 
 - One question at a time: do not overwhelm the user with multiple questions
-- Lead with a recommendation: make the preferred design clear and explain why
-- Mention alternatives: help the user understand viable options and why they
-  were not selected
+- Present options fairly: show 2-3 viable choices with balanced treatment when
+  trade-offs exist. Recommend one and confirm with the user with your explanation
 - Save durable artifacts: the spec should remain useful even if conversation
   context is lost
 - Review before handoff: the saved spec must be reviewed before transitioning

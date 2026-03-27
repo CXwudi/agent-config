@@ -24,8 +24,8 @@ Review this full design spec for planning readiness.
 | Category | What to Look For |
 |----------|------------------|
 | Problem and Context | Clear problem statement and enough context to understand the design |
-| Recommended Design | Recommendation is clear and justified |
-| Alternatives | Viable alternatives are mentioned when relevant, with reasons they were not chosen |
+| Design Options | 2-3 viable options are presented with balanced treatment when trade-offs exist |
+| Recommendation | Recommendation is clear and justified |
 | Scope and Non-Goals | Boundaries are explicit and realistic |
 | Consistency | No internal contradictions or conflicting decisions |
 | Clarity | Requirements and design decisions are not ambiguous |
@@ -37,8 +37,9 @@ Review this full design spec for planning readiness.
 
 Look especially hard for:
 - Any TODO markers or placeholder text
-- Missing rationale for the recommended design
-- Missing alternatives when meaningful trade-offs clearly exist
+- Missing rationale for the recommendation
+- Missing 2-3 viable options when meaningful trade-offs clearly exist
+- Options presented unfairly or as strawmen instead of real choices
 - Missing scope boundaries or non-goals
 - Missing references
 - Hidden assumptions or prerequisites

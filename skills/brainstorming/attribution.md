@@ -28,8 +28,8 @@ This skill was adapted from `obra/superpowers`.
 - Narrowed the skill trigger to underdefined or tradeoff-heavy work instead of
   treating every project as mandatory brainstorming.
 - Switched design save paths to `spec/spec-<slug>-YYYYMMDD.md`.
-- Reworked the workflow around recommending one design, mentioning viable
-  alternatives, and explaining why they were not chosen.
+- Reworked the workflow around presenting 2-3 viable options with balanced
+  treatment, plus a clear recommendation.
 - Made `reference-recorder` a required dependency for generating the
   `## References` section in every saved spec.
 - Made spec review mandatory and required user review of the saved spec before
