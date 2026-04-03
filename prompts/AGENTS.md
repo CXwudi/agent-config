@@ -33,7 +33,6 @@ Prefer these terminal tools over any tools that provide similar functionalities.
 All these tools are installed and safe to execute:
 
 - `ast-grep` to search for symbols/snippets in source code based on abstract syntax tree, prefer this over regex-based search tools for code searching
-- `tre` to list files and directories (use `tre -l <depth>` to limit depth of the tree), replacement for `tree`
 - `rg` to search for text in files
 - `yq` to process JSON, YAML, and XML files, replacement for `jq`
 - `lsd` to list files and directories, replacement for `ls`
