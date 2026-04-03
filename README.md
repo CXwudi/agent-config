@@ -12,4 +12,5 @@ Supporting:
 1. Claude Code
 2. Gemini CLI
 3. Codex CLI
-4. OpenCode
+4. Pi Coding Agent
+5. OpenCode
