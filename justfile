@@ -23,7 +23,7 @@ setup-link:
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.config/opencode/AGENTS.md
   echo "Symbolic links set up successfully."
 
-reset-link:
+unset-link:
   #!/usr/bin/env bash
   set -euo pipefail
   echo "Resetting symbolic links..."
@@ -44,7 +44,7 @@ reset-link:
   rm -f ${HOME}/.config/opencode/AGENTS.md
   echo "Symbolic links reset successfully."
 
-link-config:
+link-config-to-here:
   #!/usr/bin/env bash
   set -euo pipefail
   
