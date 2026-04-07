@@ -1,6 +1,7 @@
-# Claude Code local settings
+# AI local settings
 .claude/
 linked-agent-config/
+.codex
 
 # Python
 __pycache__/
