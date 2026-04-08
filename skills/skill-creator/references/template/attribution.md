@@ -1,11 +1,5 @@
 # Attribution
 
-Copy this file into the ported skill directory as `attribution.md` and replace
-the placeholders with project-specific values.
-
-````markdown
-# Attribution
-
 This skill was adapted from `<owner/repo>`.
 
 ## Upstream Source
@@ -31,11 +25,3 @@ This skill was adapted from `<owner/repo>`.
 
 - `<adaptation-note-1>`
 - `<adaptation-note-2>`
-````
-
-Then, add following into the corresponding `SKILL.md` frontmatter:
-
-```yaml
-metadata:
-  attribution: attribution.md
-```
