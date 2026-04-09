@@ -37,6 +37,7 @@ All these tools are installed and safe to execute:
 - `yq` to process JSON, YAML, and XML files, replacement for `jq`
 - `lsd` to list files and directories, replacement for `ls`
 - `gh` to interact with GitHub, shall already be authenticated and configured to work
+- `tmux` to handle background process, interactive CLI, or even spawn sub AI agent. On Windows, `tmux` is an alias of `psmux` which is highly compatible with `tmux` CLI options.
 
 Notes:
 
