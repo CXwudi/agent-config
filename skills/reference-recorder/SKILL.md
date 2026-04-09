@@ -13,10 +13,15 @@ To properly record references, following the following format in markdown:
 ## References
 <!-- list of references, such as files, urls, or other resources -->
 
+<!-- markdownlint-disable MD013 -->
+
 | Resouce | Description | Other Notes if any |
 | --- | --- | --- |
 | ![a file](path/to/file) | a brief description of the file | |
 | [a url](https://example.com) | a brief description of the url | |
+
+<!-- markdownlint-enable MD013 -->
+
 ```
 
 ## Notes
