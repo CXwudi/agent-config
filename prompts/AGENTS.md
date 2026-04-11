@@ -8,6 +8,7 @@
 - when unsure or unclear about something, ask the user for clarification (more details below)
 - about documentation, at least functions and classes should be documented
 - about comments, focus on why (tradeoffs, constraints), not what; do not “talk to the user” through comments
+- for anything new, use web search and crawl to gather newest info online
 
 ### About asking for clarification
 
@@ -36,8 +37,10 @@ All these tools are installed and safe to execute:
 - `rg` to search for text in files
 - `yq` to process JSON, YAML, and XML files, replacement for `jq`
 - `lsd` to list files and directories, replacement for `ls`
+  - `lsd --depth <depth> --tree` to visualize directory structure, replacement for `tree`
 - `gh` to interact with GitHub, shall already be authenticated and configured to work
-- `tmux` to handle background process, interactive CLI, or even spawn sub AI agent. On Windows, `tmux` is an alias of `psmux` which is highly compatible with `tmux` CLI options.
+- `tmux` to handle background process, interactive CLI, or even spawn other AI agents.
+  - `tmux` is an alias of `psmux` on Windows, which shares almost identical CLI with `tmux`.
 
 Notes:
 
