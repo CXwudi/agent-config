@@ -1,7 +1,6 @@
 ---
 name: fallback-web-crawl
 description: Agent skill of web crawl. Use only when built-in web crawl tools are unavailable or failed, and the task needs to fetch content from URL
-compatibility: Requires network access and either the jina CLI from jina-cli or curl. JINA_API_KEY is optional for basic Reader use and required for most CLI/API commands.
 ---
 
 # Jina Crawl
