@@ -1,5 +1,5 @@
 ---
-name: fullback-web-search
+name: fallback-web-search
 description: Agent skill of web search. Use only when built-in web search tools are unavailable or failed, and the task requires web search
 compatibility: Requires network access, curl, yq, and EXA_API_KEY.
 ---
