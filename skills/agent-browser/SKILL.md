@@ -63,3 +63,4 @@ running your first `agent-browser` command.
 
 1. Start with `agent-browser --help` to see the latest manual and all available options.
 1. Use `--color-scheme no-preference` to override the default light mode in agent-browser.
+1. Must use either `--auto-connect` or `--cdp` to connect to a browser.
