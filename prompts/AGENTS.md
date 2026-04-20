@@ -8,7 +8,6 @@
 - when unsure or unclear about something, ask the user for clarification (more details below)
 - about documentation, at least functions and classes should be documented
 - about comments, focus on why (tradeoffs, constraints), not what; do not “talk to the user” through comments
-- for anything new, use web search and crawl to gather newest info online
 
 ### About asking for clarification
 
