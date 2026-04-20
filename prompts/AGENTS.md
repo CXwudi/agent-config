@@ -2,12 +2,12 @@
 
 ## General
 
-- prefer 2 spaces indentation instead of 4
-- follow existing conventions (naming, formatting, structure, tone, templates) before introducing new patterns
-- avoid large change in one go, apply changes incrementally
-- when unsure or unclear about something, ask the user for clarification (more details below)
-- about documentation, at least functions and classes should be documented
-- about comments, focus on why (tradeoffs, constraints), not what; do not “talk to the user” through comments
+- Prefer 2 spaces indentation instead of 4
+- Follow existing conventions (naming, formatting, structure, tone, templates) before introducing new patterns
+- Avoid large change in one go, apply changes incrementally
+- When unsure or unclear about something, ask the user for clarification (more details below)
+- About documentation on code, at least functions and classes should be documented
+- About comments on code, focus on why (tradeoffs, constraints), not what. Do not “talk to the user” through comments
 
 ### About asking for clarification
 
