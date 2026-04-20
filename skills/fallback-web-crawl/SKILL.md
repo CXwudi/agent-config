@@ -1,6 +1,6 @@
 ---
 name: fallback-web-crawl
-description: Agent skill of web crawl. Use only when built-in web crawl tools are unavailable or failed, and the task needs to fetch content from URL
+description: Agent Skill for web crawl. Use only when built-in web crawl tools are unavailable or failed, and the task needs to fetch content from URL
 ---
 
 # Jina Crawl
