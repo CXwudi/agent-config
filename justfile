@@ -17,6 +17,7 @@ setup-link:
   ln -sfT $(pwd)/skills ${HOME}/.claude/skills
   # Linking the global instruction files
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.codex/AGENTS.md
+  ln -sfT $(pwd)/prompts/minimal.md ${HOME}/.codex/minimal.md
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.claude/CLAUDE.md
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.gemini/AGENTS.md
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.pi/agent/AGENTS.md
@@ -37,6 +38,7 @@ unset-link:
   rm -f ${HOME}/.codex/skills
   # Remove the link of prompt file AGENTS.md
   rm -f ${HOME}/.codex/AGENTS.md
+  rm -f ${HOME}/.codex/minimal.md
   rm -f ${HOME}/.claude/CLAUDE.md
   rm -f ${HOME}/.gemini/AGENTS.md
   rm -f ${HOME}/.pi/agent/AGENTS.md
