@@ -7,7 +7,7 @@
 - Avoid large change in one go, apply changes incrementally
 - When unsure or unclear about something, ask the user for clarification (more details below)
 - About documentation on code, at least functions and classes should be documented
-- About comments on code, focus on why (tradeoffs, constraints), not what. Do not “talk to the user” through comments
+- About comments on code, focus on why (tradeoffs, constraints). Do not “talk to the user” through comments
 
 ### About asking for clarification
 
