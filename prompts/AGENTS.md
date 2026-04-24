@@ -48,6 +48,5 @@ Notes:
 ## Typical Workflow
 
 1. understand: gather context, inspect patterns and conventions; never assume, always verify with evidence
-2. plan: plan your approach with incremental steps; verify your plan with the user
-3. implement: incrementally based on the plan, consistent with conventions and patterns; ask for clarification whenever needed
-4. verify: if applicable, verify the changes with tests
+2. react: complete task incrementally, ask for clarification when needed. if applicable, plan before acting
+3. verify: if applicable, verify the changes with tests
