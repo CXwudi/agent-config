@@ -30,8 +30,8 @@ The latest CLI README is at `https://github.com/jina-ai/cli`.
 
 ## REST Fallback
 
-Jina has Reader OpenAPI specs are at `https://r.jina.ai/openapi.json` and
-`https://s.jina.ai/openapi.json`. Use `curl` to fetch the spec.
+When the CLI is unavailable or REST fallback is needed, use the
+`openapi-inspection` skill to read Jina Reader OpenAPI specs at
+`https://r.jina.ai/openapi.json` and `https://s.jina.ai/openapi.json`.
 
-Be aware that the OpenAPI spec file is large. Avoid loading the entire file into
-context. Use search or `yq` to query the spec file.
+Then make REST API calls following the spec.

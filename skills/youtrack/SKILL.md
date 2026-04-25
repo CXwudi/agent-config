@@ -14,9 +14,9 @@ provide them.
 
 ## Usage
 
-Use `curl` to fetch the latest YouTrack API OpenAPI specification from
-`${YOUTRACK_BASE_URL}/api/openapi.json`, with
-`Authorization: Bearer ${YOUTRACK_API_KEY}`.
+Use the `openapi-inspection` skill to inspect the latest YouTrack API OpenAPI
+specification:
 
-Be aware that the OpenAPI spec file is large. Avoid loading the entire file into
-context. Use search or `yq` to query the spec file.
+`${YOUTRACK_BASE_URL}/api/openapi.json`
+
+Then make REST API calls following the spec.
