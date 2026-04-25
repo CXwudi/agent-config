@@ -2,16 +2,17 @@
 
 ## General
 
+- Understand user intent before acting
 - Prefer 2 spaces indentation instead of 4
 - Follow existing conventions (naming, formatting, structure, tone, templates) before introducing new patterns
 - Avoid large change in one go, apply changes incrementally
-- When unsure or unclear about something, ask the user for clarification (more details below)
+- When unsure or unclear about anything, ask the user for clarification (more details below)
 - About documentation on code, at least functions and classes should be documented
 - About comments on code, focus on why (tradeoffs, constraints). Do not “talk to the user” through comments
 
 ### About asking for clarification
 
-You should always proactively ask for clarification whenever you find something unclear, missing, or even conflicting with user requests.
+You should always proactively ask for clarification whenever you find anything (including user's input) is unclear, missing, or even conflicting with user requests.
 
 During planning or implementing, you can always pause at the middle and ask for clarification, before you move on.
 
