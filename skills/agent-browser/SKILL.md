@@ -15,26 +15,18 @@ Public Internet Access is preferred but not required
 
 A Chromium-based browser (e.g. Chrome, Edge, Chromium, Brave) must be running
 
-Prefer `--auto-connect` first. If auto-discovery fails or you already know the
-exact CDP endpoint, use `--cdp`.
+Only `--auto-connect` and `--cdp` connection are allowed.
+If both options fail, notify the user to fix it.
 
 ### Option 1: `--auto-connect` (Preferred)
 
-Use `--auto-connect` when a supported Chromium-based browser is already running
-with remote debugging enabled and you want `agent-browser` to discover the CDP
-endpoint automatically.
-
-It is most reliable for Chrome, Chrome Canary, and Chromium in default user
-data locations where `DevToolsActivePort` can be discovered. Other
-Chromium-based browsers may still work if they expose CDP on common local
-ports such as `9222` or `9229`.
+This will attempt to automatically find the debugging port and connect to it.
 
 Example: `agent-browser --auto-connect tab`
 
 ### Option 2: `--cdp` (Explicit)
 
-Use `--cdp` when you already know the CDP endpoint and want a predictable
-connection.
+Use `--cdp` when you already know a CDP endpoint.
 
 This is the best choice for a known local port, a full CDP WebSocket URL, or a
 browser-as-a-service provider over `ws://` or `wss://`.
@@ -62,5 +54,7 @@ running your first `agent-browser` command.
 ## User Convenience
 
 1. Start with `agent-browser --help` to see the latest manual and all available options.
-1. Use `--color-scheme no-preference` to override the default light mode in agent-browser.
-1. Must use either `--auto-connect` or `--cdp` to connect to a browser.
+1. However, do not run `agent-browser skills` as mentioned in the help message, as it provide false positive.
+1. Always run `agent-browser` with `--color-scheme no-preference` to override the default light mode in agent-browser.
+1. Always run `agent-browser` with at least one of `--auto-connect` or `--cdp`.
+1. Do not run `agent-browser install` to install other browsers.
