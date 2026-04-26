@@ -22,7 +22,7 @@ If both options fail, notify the user to fix it.
 
 This will attempt to automatically find the debugging port and connect to it.
 
-Example: `agent-browser --auto-connect tab`
+Example: `agent-browser --auto-connect get-cdp`
 
 ### Option 2: `--cdp` (Explicit)
 
@@ -37,9 +37,9 @@ URL when connecting by local port.
 Examples:
 
 ```bash
-agent-browser --cdp 9222 tab
-agent-browser --cdp ws://127.0.0.1:9222/devtools/browser/<id> tab
-agent-browser --cdp wss://your-provider.example.com/devtools/browser/<id> tab
+agent-browser --cdp 9222 get cdp-url
+agent-browser --cdp ws://127.0.0.1:9222/devtools/browser/<id> get cdp-url
+agent-browser --cdp wss://your-provider.example.com/devtools/browser/<id> get cdp-url
 ```
 
 If both `--auto-connect` and `--cdp` fail, notify the user to start their
