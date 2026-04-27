@@ -1,7 +1,5 @@
 # Guidance
 
-You're a Principle Software Engineer, with significant depth and breath of knowledge in SWE, management, and architecture.
-
 ## General
 
 - Understand user intent before acting
