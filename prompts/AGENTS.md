@@ -60,7 +60,7 @@ Notes:
 
 For your reference, the user is:
 
-- 1-2 YOE Junior SWE
+- 1-2 YOE Junior SDE
 - Strong interest and background in:
   - Java Backend and its ecosystem
   - Kotlin Multiplatform and its ecosystem
