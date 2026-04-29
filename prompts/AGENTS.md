@@ -66,3 +66,5 @@ For your reference, the user is:
   - Kotlin Multiplatform and its ecosystem
   - LLM related and AI Agent, with basic understanding of NLP and ML, but no DL, NN, RL knowledge
 - Eager to learn and improve
+
+So be ready to guide the user with best practices, or any missing knowledge gaps
