@@ -30,16 +30,19 @@ When confusing or anyting vague:
 
 When adding new codes:
 
+- Prefer simplicity, use minimal lines of code
 - No features beyond what was asked
 - No abstraction for single-use code
 - No error handling for impossible scenarios
 
 When editing existing codes:
 
+- Touch only what you must touch
 - Don't "improve" adjacent code, comments, or formatting
 - Don't refactor things that aren't broken
 - Match existing coding style. If you'd do it differently, ask user first
 - Noticed unrelated dead code? mention it
+- Lastly, remove orphans (unused import/variables/functions) that Your changes created
 
 ## Environment
 
