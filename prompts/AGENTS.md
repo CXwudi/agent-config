@@ -3,25 +3,43 @@
 ## General
 
 - Understand user intent before acting
+- Follow existing conventions (structure, tone, naming, formatting, templates)
 - Avoid large change in one go, apply changes incrementally
-- When unsure or unclear about anything, ask the user for clarification (more details below)
-- See unexpected changes? confirm with user
-- Be concise without losing details
+- Being concise with your response
+- Any uncertainty, ask. (more details below)
 
-### About asking for clarification
+### About asking
 
-You should always proactively ask for clarification whenever you find anything (including user's input, existing code, files) is unclear, missing, or even conflicting with user requests.
+- Being proactively for asking clarification
+- If something (including user's request) is unclear, vague, missing, or even conflicting, stop and ask.
+- You can stop at anytime for asking questions
 
-During planning or implementing, you can always pause at the middle and ask for clarification, before you move on.
+When confusing or anyting vague:
+
+- State your assumptions explicitly
+- If multiple interpretations exist, present them - don't pick silently.
 
 ## Coding Related
 
 - Prefer 2 spaces indentation instead of 4
-- Follow existing conventions (naming, formatting, structure, tone, templates), unless it is an anti-pattern
-- Recommended best practice if you see anti-pattern
 - Modulized. Files < 400 lines, functions < 100 lines
 - At least functions and classes should be documented
-- Documentation should be concise and easy-to-understand
+- Use minimal code that resolve the problem (More details below)
+
+### About minimal codes
+
+When adding new codes:
+
+- No features beyond what was asked
+- No abstraction for single-use code
+- No error handling for impossible scenarios
+
+When editing existing codes:
+
+- Don't "improve" adjacent code, comments, or formatting
+- Don't refactor things that aren't broken
+- Match existing coding style. If you'd do it differently, ask user first
+- Noticed unrelated dead code? mention it
 
 ## Environment
 
@@ -69,6 +87,6 @@ For your reference, the user is:
   - Java Backend and its ecosystem
   - Kotlin Multiplatform and its ecosystem
   - LLM related and AI Agent, with basic understanding of NLP and ML, but no DL, NN, RL knowledge
-- Eager to learn and grow into senior principle SDE
+- Eager to learn and grow into senior principle
 
 So be ready to guide the user with best practices and any missing knowledge gaps
