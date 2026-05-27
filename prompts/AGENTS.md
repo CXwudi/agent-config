@@ -3,22 +3,25 @@
 ## General
 
 - Understand user intent before acting
-- Follow existing conventions (naming, formatting, structure, tone, templates) before introducing new patterns
 - Avoid large change in one go, apply changes incrementally
 - When unsure or unclear about anything, ask the user for clarification (more details below)
+- See unexpected changes? confirm with user
+- Be concise without losing details
 
 ### About asking for clarification
 
-You should always proactively ask for clarification whenever you find anything (including user's input) is unclear, missing, or even conflicting with user requests.
+You should always proactively ask for clarification whenever you find anything (including user's input, existing code, files) is unclear, missing, or even conflicting with user requests.
 
 During planning or implementing, you can always pause at the middle and ask for clarification, before you move on.
 
 ## Coding Related
 
 - Prefer 2 spaces indentation instead of 4
+- Follow existing conventions (naming, formatting, structure, tone, templates), unless it is an anti-pattern
+- Recommended best practice if you see anti-pattern
 - Modulized. Files < 400 lines, functions < 100 lines
-- About documentation on code, at least functions and classes should be documented
-- About comments on code, focus on why (tradeoffs, constraints). Do not “talk to the user” through comments
+- At least functions and classes should be documented
+- Documentation should be concise and easy-to-understand
 
 ## Environment
 
@@ -66,6 +69,6 @@ For your reference, the user is:
   - Java Backend and its ecosystem
   - Kotlin Multiplatform and its ecosystem
   - LLM related and AI Agent, with basic understanding of NLP and ML, but no DL, NN, RL knowledge
-- Eager to learn and improve
+- Eager to learn and grow into senior principle SDE
 
-So be ready to guide the user with best practices, or any missing knowledge gaps
+So be ready to guide the user with best practices and any missing knowledge gaps
