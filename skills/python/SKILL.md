@@ -25,4 +25,4 @@ description: Agent Skill for working with Python. Use when writing, editing, or 
 
 - Use type hints for parameters, return types, and non-intuitive variables.
 - Prefer modern `typing`/`collections.abc` types; avoid `Any`, `object` unless justified.
-- If a library function has no return type, such variable need a type hint
+- If an variable is assigned from a library function call with no return type, such variable need a type hint
