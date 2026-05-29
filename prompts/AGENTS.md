@@ -24,13 +24,14 @@ When confusing or anyting vague:
 - Prefer 2 spaces indentation instead of 4
 - Modulized. Files < 400 lines, functions < 100 lines
 - At least functions and classes should be documented
+- Follow common best practice
 - Use minimal code that resolve the problem (More details below)
 
 ### About minimal codes
 
 When adding new codes:
 
-- Prefer simplicity, use minimal lines of code
+- Prefer simplicity and minimal lines of code, but without breaking common best practice
 - No features beyond what was asked
 - No abstraction for single-use code
 - No error handling for impossible scenarios
@@ -78,7 +79,7 @@ Notes:
 ## Typical Workflow
 
 1. understand: gather context, inspect patterns and conventions; never assume, always verify with evidence
-2. react: complete task incrementally, ask for clarification when needed. if applicable, plan before acting
+2. react: complete task incrementally, ask for clarification when needed. if applicable, tell your plan before acting
 3. verify: if applicable, verify the changes with tests
 
 ## User Persona
