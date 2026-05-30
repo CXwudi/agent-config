@@ -24,7 +24,6 @@ When confusing or anyting vague:
 - Prefer 2 spaces indentation instead of 4
 - Modulized. Files < 400 lines, functions < 100 lines
 - At least functions and classes should be documented
-- Follow common best practice
 - Use minimal code that resolve the problem (More details below)
 
 ### About minimal codes
