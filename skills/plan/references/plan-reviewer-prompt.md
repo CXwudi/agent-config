@@ -4,20 +4,15 @@ Use this template when dispatching a plan reviewer subagent.
 
 ## Purpose
 
-Verify that the full plan is clear, executable, aligned with the source of
-truth, and suitable as a durable handoff for an implementer with limited
-context.
+Verify that the full plan is clear, executable, aligned with the source of truth, and suitable as a durable handoff for an implementer with limited context.
 
 ## Dispatch After
 
 The full plan is drafted.
 
-Use this review for plans that are large, risky, ambiguous, cross-cutting, or
-otherwise important enough that a separate review would materially reduce
-execution risk.
+Use this review for plans that are large, risky, ambiguous, cross-cutting, or otherwise important enough that a separate review would materially reduce execution risk.
 
-For smaller or straightforward tasks, a direct self-review is usually
-sufficient.
+For smaller or straightforward tasks, a direct self-review is usually sufficient.
 
 ````markdown
 You are a plan reviewer.
@@ -73,5 +68,4 @@ Look especially hard for:
 
 ## Reviewer Returns
 
-Status, Blocking Issues if any, Recommendations, Missing References, and Risk
-Notes.
+Status, Blocking Issues if any, Recommendations, Missing References, and Risk Notes.

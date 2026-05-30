@@ -20,8 +20,7 @@ This skill handles the git commit workflow with a focus on logical grouping and 
         * *Multiple Commits*: If changes cover distinct, unrelated tasks (e.g., "update documentation" AND "refactor database code"), split them into separate commits.
     * *Plan*: If multiple commits are needed, list which files go into which commit.
 
-3. **Draft Commit Messages**
-    For each identified commit group:
+3. **Draft Commit Messages** For each identified commit group:
     * **Header**: `gitmoji <type>(<scope>): <subject>`
         * **Gitmoji**: Use the [Gitmoji Guide](https://gitmoji.dev/) (e.g., ✨ for features, 🐛 for bugs, ♻️ for refactor, 📝 for docs).
         * **Type**: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
@@ -30,8 +29,7 @@ This skill handles the git commit workflow with a focus on logical grouping and 
         * *Small/Simple changes*: No body or 1-2 sentences explaining *why*.
         * *Large/Complex changes*: Use a bulleted list to detail specific changes.
 
-4. **Execute Commits**
-    For each group:
+4. **Execute Commits** For each group:
     1. `git add <specific_files>` (Do not lazy use `git add .` unless all changes truly belong to one commit).
     2. `git commit -m "header" -m "body"`
     3. Verify success.

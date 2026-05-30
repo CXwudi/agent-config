@@ -6,8 +6,7 @@ description: Agent Skill for uploading files to Gemini File API and questioning 
 
 ## Prerequisites
 
-Set `GEMINI_API_KEY` in the environment or pass `--api-key <key>` on the
-command line.
+Set `GEMINI_API_KEY` in the environment or pass `--api-key <key>` on the command line.
 
 Global options:
 
@@ -16,15 +15,10 @@ Global options:
 
 ## Commands
 
-- `upload`: Upload a local file and wait until it becomes `ACTIVE` or
-  `FAILED`. Example: `uv run scripts/gemini_files.py upload ./clip.mp4`
-- `query`: Ask Gemini a question about an uploaded file. Example:
-  `uv run scripts/gemini_files.py query files/abc123 "Summarize this
-  document"`
-- `list`: List uploaded Gemini files. Example:
-  `uv run scripts/gemini_files.py list`
-- `status`: Show the state and metadata for an uploaded file. Example:
-  `uv run scripts/gemini_files.py status files/abc123`
+- `upload`: Upload a local file and wait until it becomes `ACTIVE` or `FAILED`. Example: `uv run scripts/gemini_files.py upload ./clip.mp4`
+- `query`: Ask Gemini a question about an uploaded file. Example: `uv run scripts/gemini_files.py query files/abc123 "Summarize this document"`
+- `list`: List uploaded Gemini files. Example: `uv run scripts/gemini_files.py list`
+- `status`: Show the state and metadata for an uploaded file. Example: `uv run scripts/gemini_files.py status files/abc123`
 
 ### Upload
 
@@ -141,9 +135,6 @@ uv run scripts/gemini_files.py query files/abc123 \
 ## Notes
 
 - Gemini uploaded files expire after roughly 48 hours.
-- Large files can stay in `PROCESSING` for a while. Use `status` to check
-  progress.
-- The default model is `gemini-3.1-pro-preview`. Override it with `--model`
-  when needed.
-- If Google rotates preview model names, prefer setting `--model` explicitly
-  instead of editing the script in the middle of a task.
+- Large files can stay in `PROCESSING` for a while. Use `status` to check progress.
+- The default model is `gemini-3.1-pro-preview`. Override it with `--model` when needed.
+- If Google rotates preview model names, prefer setting `--model` explicitly instead of editing the script in the middle of a task.

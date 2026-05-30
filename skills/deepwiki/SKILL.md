@@ -14,5 +14,4 @@ Use the `mcporter` skill with this explicit MCP target:
 
 Then make MCP calls through `mcporter`.
 
-Prefer `ask_question` for focused questions. Use `read_wiki_structure` to
-discover topics and `read_wiki_contents` to read the generated docs.
+Prefer `ask_question` for focused questions. Use `read_wiki_structure` to discover topics and `read_wiki_contents` to read the generated docs.

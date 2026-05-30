@@ -9,17 +9,11 @@ metadata:
 
 ## Overview
 
-Delegate tasks to specialized agents with isolated context. By precisely
-crafting their instructions and context, you keep them focused and successful.
-They should not inherit your full session history by default. Construct exactly
-what they need, and preserve your own context for coordination work.
+Delegate tasks to specialized agents with isolated context. By precisely crafting their instructions and context, you keep them focused and successful. They should not inherit your full session history by default. Construct exactly what they need, and preserve your own context for coordination work.
 
-When you have multiple unrelated failures, different test files, different
-subsystems, or different bugs, investigating them sequentially wastes time.
-Each investigation can happen in parallel when the work is truly independent.
+When you have multiple unrelated failures, different test files, different subsystems, or different bugs, investigating them sequentially wastes time. Each investigation can happen in parallel when the work is truly independent.
 
-Core principle: dispatch one agent per independent problem domain and let them
-work concurrently.
+Core principle: dispatch one agent per independent problem domain and let them work concurrently.
 
 ## When to Use
 
@@ -57,8 +51,7 @@ Group failures by what is broken:
 - File B tests: batch completion behavior
 - File C tests: abort functionality
 
-Each domain should be independent. Fixing tool approval should not affect abort
-tests.
+Each domain should be independent. Fixing tool approval should not affect abort tests.
 
 ### 2. Create Focused Agent Tasks
 
@@ -71,8 +64,7 @@ Each agent gets:
 
 ### 3. Dispatch in Parallel
 
-Using your harness's subagent or delegation tool, start one agent per problem
-domain and launch them concurrently when safe to do so.
+Using your harness's subagent or delegation tool, start one agent per problem domain and launch them concurrently when safe to do so.
 
 ```text
 Agent 1
@@ -85,8 +77,7 @@ Agent 3
 - Scope: Fix tool-approval-race-conditions.test.ts failures
 ```
 
-Give each agent only the context it needs. Avoid forwarding your full session
-history unless the task genuinely depends on it.
+Give each agent only the context it needs. Avoid forwarding your full session history unless the task genuinely depends on it.
 
 ### 4. Review and Integrate
 
@@ -133,8 +124,7 @@ Return: Summary of what you found and what you fixed.
 - Too broad: "Fix all the tests" so the agent gets lost
 - Specific: "Fix agent-tool-abort.test.ts" keeps the scope focused
 - No context: "Fix the race condition" without naming the file or failure
-- Context included: paste the failing test names and the relevant error
-  messages
+- Context included: paste the failing test names and the relevant error messages
 - No constraints: the agent may refactor unrelated code
 - Constraints included: "Do NOT change production code" or "Fix tests only"
 - Vague output: "Fix it" gives you little to review
@@ -142,8 +132,7 @@ Return: Summary of what you found and what you fixed.
 
 ## When NOT to Use
 
-Related failures, exploratory debugging, or shared-state edits usually belong in
-one investigation, not many.
+Related failures, exploratory debugging, or shared-state edits usually belong in one investigation, not many.
 
 ## Real Example
 
@@ -155,8 +144,7 @@ Failures:
 - `batch-completion-behavior.test.ts`: 2 failures, tools not executing
 - `tool-approval-race-conditions.test.ts`: 1 failure, execution count is 0
 
-Decision: these were independent domains, abort logic separate from batch
-completion, separate from race conditions.
+Decision: these were independent domains, abort logic separate from batch completion, separate from race conditions.
 
 Dispatch:
 
@@ -170,8 +158,7 @@ Results:
 - Agent 2 fixed an event-structure bug
 - Agent 3 added a wait for async tool execution to complete
 
-Integration: all fixes were independent, there were no conflicts, and the full
-suite went green.
+Integration: all fixes were independent, there were no conflicts, and the full suite went green.
 
 Time saved: 3 problems solved in parallel instead of sequentially.
 

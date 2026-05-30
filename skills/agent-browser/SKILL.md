@@ -15,8 +15,7 @@ Public Internet Access is preferred but not required
 
 A Chromium-based browser (e.g. Chrome, Edge, Chromium, Brave) must be running
 
-Only `--auto-connect` and `--cdp` connection are allowed.
-If both options fail, notify the user to fix it.
+Only `--auto-connect` and `--cdp` connection are allowed. If both options fail, notify the user to fix it.
 
 ### Option 1: `--auto-connect` (Preferred)
 
@@ -28,11 +27,9 @@ Example: `agent-browser --auto-connect get-cdp`
 
 Use `--cdp` when you already know a CDP endpoint.
 
-This is the best choice for a known local port, a full CDP WebSocket URL, or a
-browser-as-a-service provider over `ws://` or `wss://`.
+This is the best choice for a known local port, a full CDP WebSocket URL, or a browser-as-a-service provider over `ws://` or `wss://`.
 
-Use `curl` to check if `http://<ip>:<port>/json/version` returns a websocket
-URL when connecting by local port.
+Use `curl` to check if `http://<ip>:<port>/json/version` returns a websocket URL when connecting by local port.
 
 Examples:
 
@@ -42,14 +39,11 @@ agent-browser --cdp ws://127.0.0.1:9222/devtools/browser/<id> get cdp-url
 agent-browser --cdp wss://your-provider.example.com/devtools/browser/<id> get cdp-url
 ```
 
-If both `--auto-connect` and `--cdp` fail, notify the user to start their
-browser with remote debugging enabled.
+If both `--auto-connect` and `--cdp` fail, notify the user to start their browser with remote debugging enabled.
 
 ## Windows
 
-If you are on Windows, read
-[windows-specific-convenience](windows-specific-convenience.md) before
-running your first `agent-browser` command.
+If you are on Windows, read [windows-specific-convenience](windows-specific-convenience.md) before running your first `agent-browser` command.
 
 ## User Convenience
 

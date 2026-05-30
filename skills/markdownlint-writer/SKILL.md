@@ -7,30 +7,21 @@ description: Agent Skill for finalizing markdownlint-compliant Markdown. Use bef
 
 ## Workflow
 
-1. Identify the Markdown file(s) created or edited during the current task or
-   phase of work.
-1. Do not run formatting or lint autofixes after every small Markdown edit. Keep
-   drafting and iterative edits flexible until a finalization checkpoint.
+1. Identify the Markdown file(s) created or edited during the current task or phase of work.
+1. Do not run formatting or lint autofixes after every small Markdown edit. Keep drafting and iterative edits flexible until a finalization checkpoint.
 1. Treat the following as finalization checkpoints:
    - Before `git commit`
    - When the user indicates the task is done
    - When you complete a meaningful phase of work
    - When the user explicitly asks for Markdown formatting or lint cleanup
-1. At a finalization checkpoint, run `markdownlint-cli2 --fix` on
-   the modified Markdown file(s).
-1. Before running `markdownlint-cli2`, check whether the target workspace has a
-   project-wide Markdownlint config. If not, use this skill's bundled fallback
-   config at `references/.markdownlint-cli2.yaml`, resolved relative to
-   `SKILL.md`.
-1. Use these tools for final cleanup before relying on LLM-written edits for
-   style-only fixes.
-1. Learn from formatter and linter feedback to improve your Markdown writing
-   habits over time.
+1. At a finalization checkpoint, run `markdownlint-cli2 --fix` on the modified Markdown file(s).
+1. Before running `markdownlint-cli2`, check whether the target workspace has a project-wide Markdownlint config. If not, use this skill's bundled fallback config at `references/.markdownlint-cli2.yaml`, resolved relative to `SKILL.md`.
+1. Use these tools for final cleanup before relying on LLM-written edits for style-only fixes.
+1. Learn from formatter and linter feedback to improve your Markdown writing habits over time.
 
 ## Format And Lint Commands
 
-At a finalization checkpoint, run the formatter and linter on the exact Markdown
-files you changed, in this order:
+At a finalization checkpoint, run the formatter and linter on the exact Markdown files you changed, in this order:
 
 ```sh
 markdownlint-cli2 --fix "README.md" "docs/guide.md"
@@ -42,8 +33,7 @@ To pass this skill's bundled fallback config:
 markdownlint-cli2 --config "/path/to/this-skill/references/.markdownlint-cli2.yaml" --fix "README.md" "docs/guide.md"
 ```
 
-If either tool is unavailable or fails unexpectedly, tell the user and request
-guidance.
+If either tool is unavailable or fails unexpectedly, tell the user and request guidance.
 
 ## User Convention on Markdown format
 

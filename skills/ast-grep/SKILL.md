@@ -6,16 +6,13 @@ compatibility: Requires the ast-grep CLI command `ast-grep`; `sg` may be availab
 
 # ast-grep Ad Hoc Search
 
-Use `ast-grep` for syntax-aware, structural source-code search when text search
-is too broad or fragile. This skill covers only one-off CLI searches with
-`ast-grep run`, which is also the default subcommand.
+Use `ast-grep` for syntax-aware, structural source-code search when text search is too broad or fragile. This skill covers only one-off CLI searches with `ast-grep run`, which is also the default subcommand.
 
 ## Scope
 
 Use this skill for:
 
-- Finding syntactic constructs such as calls, imports, decorators, assignments,
-  conditionals, or function/class declarations.
+- Finding syntactic constructs such as calls, imports, decorators, assignments, conditionals, or function/class declarations.
 - Searching with metavariables like `$FUNC($$$ARGS)` or `console.log($$$)`.
 - Narrowing searches by language, path, globs, context lines, or JSON output.
 
@@ -26,16 +23,11 @@ Do not use this skill for:
 
 ## Default Workflow
 
-1. Start with `ast-grep --help` or `ast-grep run --help` if option details may
-   have changed.
-2. Quote patterns with single quotes so the shell does not expand `$META`
-   variables.
-3. Prefer an explicit `--lang`/`-l` when searching a snippet, stdin, mixed
-   extensions, or when inference may be ambiguous. Otherwise, ast-grep can infer
-   language from file extensions.
+1. Start with `ast-grep --help` or `ast-grep run --help` if option details may have changed.
+2. Quote patterns with single quotes so the shell does not expand `$META` variables.
+3. Prefer an explicit `--lang`/`-l` when searching a snippet, stdin, mixed extensions, or when inference may be ambiguous. Otherwise, ast-grep can infer language from file extensions.
 4. Limit paths and globs early to keep results focused.
-5. If results are surprising, inspect the parsed pattern with
-   `--debug-query=ast` or add a `--selector` for the node kind to match.
+5. If results are surprising, inspect the parsed pattern with `--debug-query=ast` or add a `--selector` for the node kind to match.
 
 ## Command Basics
 
@@ -54,10 +46,8 @@ ast-grep -p '<pattern>' -l <lang> <paths...>
 Useful options for ad hoc search:
 
 - `-p, --pattern '<pattern>'`: AST pattern to match.
-- `-l, --lang <lang>`: pattern language such as `ts`, `tsx`, `js`, `py`, `rs`,
-  `go`, `java`, `yaml`, or `json`.
-- `--globs '<glob>'`: include or exclude paths; repeat as needed and prefix
-  exclusions with `!`.
+- `-l, --lang <lang>`: pattern language such as `ts`, `tsx`, `js`, `py`, `rs`, `go`, `java`, `yaml`, or `json`.
+- `--globs '<glob>'`: include or exclude paths; repeat as needed and prefix exclusions with `!`.
 - `-A`, `-B`, `-C`: show after, before, or surrounding context lines.
 - `--json=stream`: output one JSON object per match for downstream processing.
 - `--heading never`: print file paths inline, which is useful for piping.
@@ -67,19 +57,12 @@ Useful options for ad hoc search:
 
 ## Pattern Rules of Thumb
 
-- Patterns must be valid code, or close enough for the target tree-sitter parser
-  to recover. If a fragment is ambiguous or incomplete, add surrounding context
-  or use `--selector` to target the intended node.
-- `$NAME` matches one named AST node. Metavariable names use uppercase letters,
-  digits, and underscores.
-- `$$$ARGS` matches zero or more AST nodes, commonly arguments, parameters, or
-  statements.
-- Reusing the same metavariable name requires the same syntax to appear in each
-  position, such as `$A == $A`.
-- Use names starting with underscore, such as `$_`, for throwaway non-capturing
-  matches.
-- Use `$$OP` only when you need to capture unnamed syntax nodes such as some
-  operators; most ad hoc searches should start with normal `$META` variables.
+- Patterns must be valid code, or close enough for the target tree-sitter parser to recover. If a fragment is ambiguous or incomplete, add surrounding context or use `--selector` to target the intended node.
+- `$NAME` matches one named AST node. Metavariable names use uppercase letters, digits, and underscores.
+- `$$$ARGS` matches zero or more AST nodes, commonly arguments, parameters, or statements.
+- Reusing the same metavariable name requires the same syntax to appear in each position, such as `$A == $A`.
+- Use names starting with underscore, such as `$_`, for throwaway non-capturing matches.
+- Use `$$OP` only when you need to capture unnamed syntax nodes such as some operators; most ad hoc searches should start with normal `$META` variables.
 
 ## Examples
 
@@ -127,13 +110,7 @@ ast-grep -p 'console.log($$$)' -l js --debug-query=ast
 
 ## Search Strategy
 
-- Prefer ast-grep over `rg` when the user describes code shape rather than exact
-  text, for example "calls with any arguments", "same variable on both sides",
-  "functions decorated with", or "imports from this module".
-- Prefer `rg` first when searching comments, strings, documentation, arbitrary
-  text, or exact identifiers without structural constraints.
-- Combine both tools when useful: use `rg` to discover candidate files or terms,
-  then ast-grep to verify syntax-aware matches.
-- Keep patterns simple. If a one-liner pattern needs complex relational logic,
-  tell the user that persistent ast-grep rules are outside this skill's scope
-  and ask whether they want to switch to rule authoring.
+- Prefer ast-grep over `rg` when the user describes code shape rather than exact text, for example "calls with any arguments", "same variable on both sides", "functions decorated with", or "imports from this module".
+- Prefer `rg` first when searching comments, strings, documentation, arbitrary text, or exact identifiers without structural constraints.
+- Combine both tools when useful: use `rg` to discover candidate files or terms, then ast-grep to verify syntax-aware matches.
+- Keep patterns simple. If a one-liner pattern needs complex relational logic, tell the user that persistent ast-grep rules are outside this skill's scope and ask whether they want to switch to rule authoring.

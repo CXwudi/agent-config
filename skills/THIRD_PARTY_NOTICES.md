@@ -1,7 +1,6 @@
 # Third-Party Notices
 
-This file is the single source of truth for third-party provenance, version
-pinning, attribution links, and license notices for ported skills.
+This file is the single source of truth for third-party provenance, version pinning, attribution links, and license notices for ported skills.
 
 ## googleworkspace/cli
 
@@ -10,17 +9,13 @@ pinning, attribution links, and license notices for ported skills.
 - License: `Apache License 2.0`
 - License file: `https://github.com/googleworkspace/cli/blob/v0.22.5/LICENSE`
 
-This local skill is an adapted derivative of the `googleworkspace/cli`
-`gws-shared` skill. The per-skill `attribution.md` file records file-level
-provenance and local adaptation notes.
+This local skill is an adapted derivative of the `googleworkspace/cli` `gws-shared` skill. The per-skill `attribution.md` file records file-level provenance and local adaptation notes.
 
 <!-- markdownlint-disable MD013 -->
 
 | Local skill           | Local attribution                 | Upstream              | Version   | License      | Notes                                                                             |
 | --------------------- | --------------------------------- | --------------------- | --------- | ------------ | --------------------------------------------------------------------------------- |
 | [`gws`](gws/SKILL.md) | [attribution](gws/attribution.md) | `googleworkspace/cli` | `v0.22.5` | `Apache-2.0` | Single local discovery-based skill adapted from `gws-shared`; local auth workflow |
-
-<!-- markdownlint-enable MD013 -->
 
 ## obra/superpowers
 
@@ -29,9 +24,7 @@ provenance and local adaptation notes.
 - License: `MIT License`
 - License file: `https://github.com/obra/superpowers/blob/v5.0.2/LICENSE`
 
-These local skills are adapted derivatives of `obra/superpowers` skills.
-Per-skill `attribution.md` files record file-level provenance and local
-adaptation notes.
+These local skills are adapted derivatives of `obra/superpowers` skills. Per-skill `attribution.md` files record file-level provenance and local adaptation notes.
 
 <!-- markdownlint-disable MD013 -->
 
@@ -39,8 +32,6 @@ adaptation notes.
 | ----------------------------------------- | ------------------------------------------- | ------------------ | -------- | ------- | ------------------------------------------------------------------------------- |
 | [`brainstorming`](brainstorming/SKILL.md) | [attribution](brainstorming/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT`   | Local paths; generic wording                                                    |
 | [`plan`](plan/SKILL.md)                   | [attribution](plan/attribution.md)          | `obra/superpowers` | `v5.0.2` | `MIT`   | Substantially rewritten into a plan-centric skill; retained upstream provenance |
-
-<!-- markdownlint-enable MD013 -->
 
 ## License Text
 

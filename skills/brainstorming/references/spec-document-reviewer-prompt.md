@@ -4,13 +4,11 @@ Use this template when dispatching a spec document reviewer subagent.
 
 ## Purpose
 
-Verify that the full spec is clear, consistent, decision-oriented, and ready
-for implementation planning.
+Verify that the full spec is clear, consistent, decision-oriented, and ready for implementation planning.
 
 ## Dispatch After
 
-Spec document is written to `spec/spec-<slug>-YYYYMMDD.md` and its
-`## References` section has been generated via `reference-recorder`.
+Spec document is written to `spec/spec-<slug>-YYYYMMDD.md` and its `## References` section has been generated via `reference-recorder`.
 
 ````markdown
 You are a spec document reviewer.

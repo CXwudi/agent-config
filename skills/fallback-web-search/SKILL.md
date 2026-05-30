@@ -5,8 +5,7 @@ description: Agent Skill for web search. Use only when built-in web search tools
 
 # Exa Search
 
-Use this skill as a fallback. Only if there is no built-in web search tool, or
-the build-in search tool can not provide helpful results.
+Use this skill as a fallback. Only if there is no built-in web search tool, or the build-in search tool can not provide helpful results.
 
 ## Prerequisites
 
@@ -14,8 +13,7 @@ the build-in search tool can not provide helpful results.
 
 ## Usage
 
-Use the `openapi-inspection` skill to inspect the latest official Search API
-OpenAPI specification:
+Use the `openapi-inspection` skill to inspect the latest official Search API OpenAPI specification:
 
 `https://raw.githubusercontent.com/exa-labs/openapi-spec/refs/heads/master/exa-openapi-spec.yaml`
 

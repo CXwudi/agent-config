@@ -7,13 +7,11 @@ This skill was adapted from `obra/superpowers`.
 - Repository: `https://github.com/obra/superpowers`
 - Version: `v5.0.2`
 - License: `MIT License`
-- License file:
-  `https://github.com/obra/superpowers/blob/v5.0.2/LICENSE`
+- License file: `https://github.com/obra/superpowers/blob/v5.0.2/LICENSE`
 
 ## Source Files
 
-- Source root:
-  `https://github.com/obra/superpowers/tree/v5.0.2/skills/dispatching-parallel-agents`
+- Source root: `https://github.com/obra/superpowers/tree/v5.0.2/skills/dispatching-parallel-agents`
 - Files:
   - `SKILL.md`
 

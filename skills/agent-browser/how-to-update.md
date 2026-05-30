@@ -1,7 +1,6 @@
 # Agent Browser Reference Docs
 
-Source of truth:
-https://github.com/vercel-labs/agent-browser/tree/main/skills/agent-browser/references
+Source of truth: <https://github.com/vercel-labs/agent-browser/tree/main/skills/agent-browser/references>
 
 Update steps:
 
