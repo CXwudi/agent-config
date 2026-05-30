@@ -14,7 +14,7 @@
 - If something (including user's request) is unclear, vague, missing, or even conflicting, stop and ask.
 - You can stop at anytime for asking questions
 
-When confusing or anyting vague:
+When confusing or anything vague:
 
 - State your assumptions explicitly
 - If multiple interpretations exist, present them - don't pick silently.
