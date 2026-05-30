@@ -1,6 +1,6 @@
 ---
 name: python
-description: Agent Skill for working with Python. Use when writing, editing, or reviewing Python code and scripts.
+description: Agent Skill for working with Python. Use when writing, editing, or reviewing Python code and scripts. Can also be used by AI Agents that need to run one-off Python scripts for any tasks
 ---
 
 # Python
@@ -9,7 +9,8 @@ description: Agent Skill for working with Python. Use when writing, editing, or 
 
 - For complex python projects, use OOP and Dependency Injection pattern.
 - Use `uv run` to execute Python scripts. Do not assume `python` or `python3` commands are available.
-- Prefer `black` + `ruff` defaults unless the project specifies otherwise.
+- For standalone or one-off python scripts, declare libraries within the script using PEP 723.
+- Prefer `ty` + `ruff` defaults unless the project specifies otherwise.
 - Use absolute imports; avoid wildcard imports.
 - Raise specific exceptions; avoid bare `except`.
 - Prefer `pytest` for tests.
