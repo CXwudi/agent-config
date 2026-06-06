@@ -120,19 +120,11 @@ Use a structure like this and adapt the detail to the task:
 ## Context
 [Relevant codebase, product, or operational context]
 
-## Design Options
+## Design Decision
+[Chosen direction, why it was selected, and the key implications]
 
-### Option 1: [Name]
-[Description, trade-offs, and implications]
-
-### Option 2: [Name]
-[Description, trade-offs, and implications]
-
-### Option 3: [Name]
-[Description, trade-offs, and implications]
-
-## Recommendation
-[Which option is recommended and why]
+### Alternatives Considered
+- [Alternative]: [Reason it was not chosen]
 
 ## Scope and Non-Goals
 - In scope: [What this spec covers]
@@ -148,7 +140,7 @@ Use a structure like this and adapt the detail to the task:
 [Generated via `reference-recorder`]
 ````
 
-If design options were already explored in `brainstorming`, summarize the chosen direction and the rejected alternatives instead of re-deriving them.
+If options were already explored in `brainstorming`, mention only the chosen direction and briefly note rejected alternatives. Do not re-derive full option analysis.
 
 ## Spec Review
 
