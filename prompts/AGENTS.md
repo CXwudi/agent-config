@@ -30,7 +30,7 @@ When confusing or anything vague:
 
 When adding new codes:
 
-- Prefer simplicity and minimal lines of code, but without breaking common best practice
+- Prefer simple and intuitive logic, but without breaking common best practice
 - No features beyond what was asked
 - No abstraction for single-use code
 - No error handling for impossible scenarios
@@ -38,8 +38,6 @@ When adding new codes:
 When editing existing codes:
 
 - Touch only what you must touch
-- Don't "improve" adjacent code, comments, or formatting
-- Don't refactor things that aren't broken
 - Match existing coding style. If you'd do it differently, ask user first
 - Noticed unrelated dead code? mention it
 - Lastly, remove orphans (unused import/variables/functions) that Your changes created
