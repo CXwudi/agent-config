@@ -30,7 +30,8 @@ These local skills are adapted derivatives of `obra/superpowers` skills. Per-ski
 
 | Local skill                               | Local attribution                           | Upstream           | Version  | License | Notes                                                                           |
 | ----------------------------------------- | ------------------------------------------- | ------------------ | -------- | ------- | ------------------------------------------------------------------------------- |
-| [`brainstorming`](brainstorming/SKILL.md) | [attribution](brainstorming/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT`   | Local paths; generic wording                                                    |
+| [`brainstorming`](brainstorming/SKILL.md) | [attribution](brainstorming/attribution.md) | `obra/superpowers` | `v5.0.2` | `MIT`   | Exploration-only after splitting spec writing into `design-spec`                |
+| [`design-spec`](design-spec/SKILL.md)     | [attribution](design-spec/attribution.md)   | `obra/superpowers` | `v5.0.2` | `MIT`   | Split out of `brainstorming` to own spec writing and review                     |
 | [`plan`](plan/SKILL.md)                   | [attribution](plan/attribution.md)          | `obra/superpowers` | `v5.0.2` | `MIT`   | Substantially rewritten into a plan-centric skill; retained upstream provenance |
 
 ## License Text

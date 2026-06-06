@@ -1,35 +1,33 @@
 ---
 name: brainstorming
-description: Agent Skill for collaborative design and specification before implementation. Use when the user wants to brainstorm, explore an idea, compare meaningful options, or shape a design before execution.
+description: Agent Skill for collaborative brainstorming and design exploration. Use when the user wants to think through an idea, compare options, clarify trade-offs, or get a quick recommendation, without forcing a written artifact. If the user wants a saved, reviewed design spec, use `design-spec`.
 metadata:
   attribution: attribution.md
 ---
 
 # Brainstorming
 
-Help turn underdefined or tradeoff-heavy work into an approved design and a durable spec artifact.
+Help the user think through underdefined or tradeoff-heavy ideas without forcing a durable artifact.
 
-Use this skill when the direction is not settled or when meaningful design trade-offs need to be surfaced. If the implementation direction is already clear, use `plan` instead.
+Use this skill when the direction is not settled, when meaningful design trade-offs need to be surfaced, or when the user wants a quick collaborative brainstorm. If the user asks for a written, saved, reviewed, or approved spec, use `design-spec` instead. If the implementation direction is already clear and no design exploration is needed, use `plan` instead.
 
-Start by understanding the current project context, then ask focused questions one at a time. Once you understand what should be built, present the 2-3 viable design options with balanced treatment, recommend one when appropriate, explain why, confirm the chosen direction with the user, then save the approved design as a spec under `spec/`.
+The default output is lightweight: clarified goals, 2-3 meaningful options, a recommendation, a decision summary, or a next-step suggestion. Do not create a spec file unless the user explicitly asks to move into the `design-spec` workflow.
 
-## Hard Gate
+## Boundaries
 
-Once this skill is active, do NOT invoke `plan`, write implementation code, scaffold a project, or take implementation action until you have presented a design, the user has confirmed the chosen direction, and the saved spec has been reviewed and approved.
+- Do not invoke `plan`, write implementation code, scaffold a project, or take implementation action during the brainstorm.
+- Do not save a durable spec, generate references, dispatch a spec reviewer, or require a user review gate. Those belong to `design-spec`.
+- If the conversation reveals that the decision is too important or complex to keep informal, recommend switching to `design-spec` and explain why.
+- Do not transition to `plan` automatically. Planning is an opt-in next step after the user confirms the direction.
 
 ## Checklist
 
-You MUST create a task for each of these items and complete them in order:
+You need to follow each of these items and complete them in order:
 
-1. Explore project context: check files, docs, and recent commits
+1. Explore project context: check relevant files, docs, and recent commits as needed for the decision
 2. Ask clarifying questions: one at a time, understand goals, constraints, success criteria, and risks
 3. Evaluate meaningful design options: present 2-3 viable options with balanced treatment, recommend one, and explain why it is preferred
-4. Present design options and recommendation: scale the depth to the complexity and confirm the chosen direction with the user
-5. Write design spec: save to `spec/spec-<slug>-YYYYMMDD.md`
-6. Invoke `reference-recorder` to generate a `## References` section
-7. Spec review loop: dispatch a reviewer subagent using `references/spec-document-reviewer-prompt.md` with precisely crafted review context, never your session history; fix issues and re-dispatch until approved, max 5 iterations, then surface to a human
-8. User reviews written spec: ask the user to review the saved spec file before proceeding
-9. Transition to implementation: invoke `plan` to create the implementation plan
+4. Present and confirm: scale the depth to the complexity, confirm the chosen direction with the user, then offer next steps
 
 ## Process Flow
 
@@ -40,138 +38,69 @@ flowchart TD
   C --> D["Present options and recommendation"]
   D --> E{"User confirms direction?"}
   E -- "no, revise" --> D
-  E -- yes --> F["Write spec"]
-  F --> G["Generate references"]
-  G --> H["Spec review loop"]
-  H --> I{"Spec review passed?"}
-  I -- "issues found" --> F
-  I -- approved --> J{"User reviews saved spec?"}
-  J -- "changes requested" --> F
-  J -- approved --> K(["Invoke plan"])
+  E -- yes --> F{"Offer next steps"}
+  F -- "write a spec" --> G(["Hand off to design-spec"])
+  F -- "plan low-risk work" --> H(["Hand off to plan"])
+  F -- "stop here" --> I(["Done"])
 ```
 
-The terminal state is invoking `plan`. Do NOT invoke any other implementation skill directly from brainstorming.
+The default terminal state is stopping with a settled direction. Spec writing and planning are opt-in.
 
-## The Process
+## Process
 
-### Understanding the Problem
+### Understand the Problem
 
-- Check out the current project state first: files, docs, recent commits
-- Before asking detailed questions, assess scope. If the request describes multiple independent subsystems, flag this immediately
-- If the project is too large for a single spec, help the user decompose it into sub-projects. Each sub-project gets its own spec, plan, and implementation cycle
-- For appropriately scoped projects, ask questions one at a time to refine the idea
-- Prefer multiple choice questions when possible, but open-ended is fine too
-- Focus on understanding purpose, constraints, success criteria, and risks
+- Scale context gathering to the risk of the decision. For codebase work, check relevant files, docs, and recent commits before proposing changes.
+- If the request describes multiple independent subsystems, flag that early and help split the discussion into smaller topics.
+- Ask focused clarifying questions one at a time when goals, constraints, success criteria, or risks are unclear.
+- Prefer multiple choice questions when possible, but use open-ended questions when the user is still shaping the idea.
 
-### Evaluating Options
+### Explore Options
 
-- Present 2-3 viable options with balanced treatment when meaningful trade-offs exist
-- Recommend one option and explain why it fits best
-- Explain the trade-offs of each option and why the recommended one is preferred
-- If the solution space is genuinely narrow, say so plainly instead of inventing extra options
+- Present 2-3 viable options when meaningful trade-offs exist.
+- Treat options fairly; do not make one option a strawman just to support the recommendation.
+- Recommend one option when appropriate and explain why it fits the user's goals and constraints.
+- If the solution space is genuinely narrow, say so plainly instead of inventing extra options.
 
-### Presenting the Design
+### Shape the Decision
 
-- Once you believe you understand what should be built, present the design
-- Scale each section to its complexity: a few sentences if straightforward, up to 200-300 words if nuanced
-- Ask after each section whether it looks right so far
-- Cover the design options, your recommendation, scope, risks, and validation considerations
-- Confirm which direction the user wants before writing the spec
-- Be ready to go back and clarify if something does not make sense
+- Cover scope, risks, validation considerations, and non-goals at a depth that matches the decision.
+- For quick brainstorming, keep the response compact and useful instead of turning it into a spec.
+- If the user wants to preserve the decision, or the decision is high-risk, cross-cutting, or likely to be resumed later, offer to continue with `design-spec`.
+- If the user confirms a direction and wants implementation planning for low-risk work that does not need a durable spec, transition to `plan`.
 
 ### Design for Isolation and Clarity
 
-- Break the system into smaller units that each have one clear purpose, communicate through well-defined interfaces, and can be understood and tested independently
-- For each unit, answer what it does, how it is used, and what it depends on
-- If someone cannot understand what a unit does without reading its internals, the boundaries need work
-- Smaller, well-bounded units are easier to reason about and safer to edit
+- Break proposed systems into smaller units with clear responsibilities and interfaces.
+- For each unit, clarify what it does, how it is used, and what it depends on.
+- If someone cannot understand what a unit does without reading its internals, the boundaries need work.
 
 ### Working in Existing Codebases
 
 - Explore the current structure before proposing changes.
-- Where existing code has problems that affect the work, include targeted improvements as part of the design
-- Do not propose unrelated refactoring. Stay focused on the current goal
+- Include targeted improvements only when existing problems affect the current goal.
+- Do not propose unrelated refactoring.
 
-## Spec Structure
+## Next Steps
 
-Save the approved design to `spec/spec-<slug>-YYYYMMDD.md`.
+Once the user confirms the direction, summarize the settled design briefly and offer the next step. Default to stopping; do not run anything automatically.
 
-User preferences for the spec location override this default.
+> "Design settled. Want me to write a durable spec (`design-spec`), go straight to a plan for this low-risk work (`plan`), or stop here?"
 
-Do NOT commit the spec unless the user explicitly asks.
-
-Every saved spec MUST include a `## References` section generated by invoking the `reference-recorder` skill.
-
-Use a structure like this and adapt the detail to the task:
-
-````markdown
-# [Feature Name] Design Spec
-
-## Problem or Goal
-[What problem this solves and why it matters]
-
-## Context
-[Relevant codebase, product, or operational context]
-
-## Design Options
-
-### Option 1: [Name]
-[Description, trade-offs, and implications]
-
-### Option 2: [Name]
-[Description, trade-offs, and implications]
-
-### Option 3: [Name]
-[Description, trade-offs, and implications]
-
-## Recommendation
-[Which option is recommended and why]
-
-## Scope and Non-Goals
-- In scope: [What this spec covers]
-- Out of scope: [What this spec intentionally excludes]
-
-## Risks and Open Questions
-- [Risk, assumption, or unresolved question]
-
-## Validation Considerations
-[How the design should be validated once implemented]
-
-## References
-[Generated via `reference-recorder`]
-````
-
-## Spec Review
-
-Spec review is mandatory for this skill.
-
-After writing the spec and generating references:
-
-1. Dispatch a reviewer subagent using `references/spec-document-reviewer-prompt.md`
-2. If issues are found, fix the spec, regenerate references if needed, and re-dispatch until approved
-3. If the loop exceeds 5 iterations, surface the problem to a human for guidance
-
-## User Review Gate
-
-After the spec review loop passes, ask the user to review the saved spec before proceeding:
-
-> "Spec complete and saved to `<path>`. Please review it and let me know if you want to make any changes before we move on to the implementation plan."
-
-Wait for the user's response. If they request changes, update the spec, re-run the spec review loop, and ask for review again. Only proceed once the user approves the saved spec.
-
-## Implementation Handoff
-
-- Invoke `plan` to create a detailed implementation plan
-- Do NOT invoke any other implementation skill. `plan` is the next step
+- If the user wants a saved, reviewed spec, hand off to `design-spec`.
+- If the user wants implementation planning and the work does not need a durable spec, hand off to `plan`.
+- If the work is high-risk, cross-cutting, or likely to need review, recommend `design-spec` before `plan`.
+- Otherwise, stop. The settled direction lives in the conversation.
 
 ## Key Principles
 
-- One question at a time: do not overwhelm the user with multiple questions
-- Present options fairly: show 2-3 viable choices with balanced treatment when trade-offs exist. Recommend one and confirm with the user with your explanation
-- Save durable artifacts: the spec should remain useful even if conversation context is lost
-- Review before handoff: the saved spec must be reviewed before transitioning to planning
-- Stay focused: keep the design aligned with the current goal
+- Keep it lightweight: the default output is a conversation, not a file
+- Ask one question at a time.
+- Present options fairly and recommend clearly.
+- Offer, do not force: artifacts and planning are opt-in next steps.
+- State assumptions when moving quickly.
+- Stay focused on the current decision.
 
 ## Diagrams
 
-When visual explanation would help, use lightweight Mermaid diagrams directly in the conversation or spec document. Mermaid works well for architecture diagrams, flowcharts, and sequence diagrams, and it renders natively on GitHub. If a diagram is awkward to express in Mermaid, use an ASCII diagram instead.
+When visual explanation would help, use lightweight Mermaid diagrams directly in the conversation. Mermaid works well for architecture diagrams, flowcharts, and sequence diagrams. If a diagram is awkward to express in Mermaid, use an ASCII diagram instead.

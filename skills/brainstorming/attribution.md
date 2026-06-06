@@ -14,20 +14,15 @@ This skill was adapted from `obra/superpowers`.
 - Source root: `https://github.com/obra/superpowers/tree/v5.0.2/skills/brainstorming`
 - Files:
   - `SKILL.md`
-  - `spec-document-reviewer-prompt.md`
 
 ## Local Files Covered
 
 - `SKILL.md`
-- `references/spec-document-reviewer-prompt.md`
 
 ## Local Adaptation Notes
 
-- Narrowed the skill trigger to underdefined or tradeoff-heavy work instead of treating every project as mandatory brainstorming.
-- Switched design save paths to `spec/spec-<slug>-YYYYMMDD.md`.
-- Reworked the workflow around presenting 2-3 viable options with balanced treatment, plus a clear recommendation.
-- Made `reference-recorder` a required dependency for generating the `## References` section in every saved spec.
-- Made spec review mandatory and required user review of the saved spec before handing off to `plan`.
-- Removed the commit requirement for saved specs unless explicitly requested.
-- Replaced Graphviz diagrams with Mermaid and allowed ASCII fallback.
-- Made review and implementation handoff wording agent-agnostic.
+- Narrowed the skill to lightweight brainstorming, option exploration, and decision shaping.
+- Split durable spec writing, reference generation, spec review, and implementation handoff into the separate `design-spec` skill.
+- Removed the mandatory saved spec, reviewer loop, user review gate, and automatic handoff to `plan`.
+- Added a lightweight checklist, process flow, and opt-in next-step prompt for spec writing, planning, or stopping.
+- Kept the option comparison, recommendation, isolation, and diagram guidance for informal design work.

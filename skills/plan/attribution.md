@@ -25,7 +25,7 @@ This skill was adapted from `obra/superpowers`.
 
 - Substantially rewritten into a plan-centric skill focused on shaping execution strategy rather than writing a document artifact.
 - Renamed the local skill identity and on-disk directory to `plan`.
-- Switched plan save paths to `plans/plan-<slug>-YYYYMMDD.md`.
+- Switched plan save paths to `plan/plan-<slug>-YYYYMMDD.md`.
 - Replaced superpowers-specific execution guidance with generic wording.
 - Reworked planning guidance around source of truth, adaptive planning depth, execution reliability, and explicit verification.
 - Made `reference-recorder` a required dependency for generating the `## References` section in every saved plan.
