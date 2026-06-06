@@ -84,9 +84,7 @@ Every plan MUST start with this header:
 ````markdown
 # [Feature Name] Implementation Plan
 
-> **For agentic workers:** Use the harness's preferred task-tracking and
-> delegation tools when available. Steps use checkbox (`- [ ]`) syntax for
-> tracking.
+> **For agentic workers:** Use the harness's preferred task-tracking and delegation tools when available. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** [One sentence describing what this changes]
 
