@@ -3,7 +3,6 @@
 ## General
 
 - Understand user intent before acting
-- Follow existing conventions (structure, tone, naming, formatting, templates)
 - Avoid large change in one go, apply changes incrementally
 - Being concise with your response
 - Any uncertainty, ask. (more details below)
