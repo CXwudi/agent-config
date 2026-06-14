@@ -94,6 +94,8 @@ link-config-to-here:
   # 7. ~/.config/opencode (Opencode)
   create_link "$HOME/.config/opencode" "opencode"
 
+  create_link "$HOME/.config/mise/config.toml" "mise_config.toml"
+
   # 8. Cline MCP settings json
   # Using the path found in .vscode-server
   CLINE_SETTINGS="$HOME/.vscode-server/data/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
