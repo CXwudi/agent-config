@@ -10,18 +10,15 @@ setup-link:
   mkdir -p ${HOME}/.pi/agent
   mkdir -p ${HOME}/.agents
   # Start linking
-  ln -sfT $(pwd)/agents ${HOME}/.config/opencode/agents
-  ln -sfT $(pwd)/prompts ${HOME}/.config/opencode/prompts
   ln -sfT $(pwd)/prompts ${HOME}/.pi/agent/prompts
   ln -sfT $(pwd)/skills ${HOME}/.agents/skills # common shared skills location supported by many agents
   ln -sfT $(pwd)/skills ${HOME}/.claude/skills
+  ln -sfT $(pwd)/skills ${HOME}/.gemini/antigravity-cli/skills
   # Linking the global instruction files
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.codex/AGENTS.md
-  ln -sfT $(pwd)/prompts/minimal.md ${HOME}/.codex/minimal.md
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.claude/CLAUDE.md
-  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.gemini/AGENTS.md
+  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.gemini/GEMINI.md
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.pi/agent/AGENTS.md
-  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.config/opencode/AGENTS.md
   echo "Symbolic links set up successfully."
 
 unset-link:
@@ -29,21 +26,16 @@ unset-link:
   set -euo pipefail
   echo "Resetting symbolic links..."
   # not using rm -rf to be safe to only delete symbolinks, not real directories
-  rm -f ${HOME}/.config/opencode/agents
-  rm -f ${HOME}/.config/opencode/prompts
   rm -f ${HOME}/.pi/agent/prompts
   rm -f ${HOME}/.agents/skills
   rm -f ${HOME}/.claude/skills
-  rm -f ${HOME}/.gemini/skills
-  rm -f ${HOME}/.codex/skills
+  rm -f ${HOME}/.gemini/antigravity-cli/skills
   # Remove the link of prompt file AGENTS.md
   rm -f ${HOME}/.codex/AGENTS.md
-  rm -f ${HOME}/.codex/minimal.md
   rm -f ${HOME}/.claude/CLAUDE.md
   rm -f ${HOME}/.gemini/AGENTS.md
   rm -f ${HOME}/.pi/agent/AGENTS.md
-  rm -f ${HOME}/.gemini/GEMINI.md # legacy Gemini context filename
-  rm -f ${HOME}/.config/opencode/AGENTS.md
+  rm -f ${HOME}/.gemini/GEMINI.md
   echo "Symbolic links reset successfully."
 
 link-config-to-here:
