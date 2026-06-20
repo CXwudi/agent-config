@@ -13,11 +13,11 @@ setup-link:
   ln -sfT $(pwd)/prompts ${HOME}/.pi/agent/prompts
   ln -sfT $(pwd)/skills ${HOME}/.agents/skills # common shared skills location supported by many agents
   ln -sfT $(pwd)/skills ${HOME}/.claude/skills
-  ln -sfT $(pwd)/skills ${HOME}/.gemini/antigravity-cli/skills
-  # Linking the global instruction files
+  ln -sfT $(pwd)/skills ${HOME}/.gemini/skills # covers antigravity-cli, which can't read from .agents/skills
+  # Linking the global AGENTS.md files
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.codex/AGENTS.md
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.claude/CLAUDE.md
-  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.gemini/GEMINI.md
+  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.gemini/config/AGENTS.md
   ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.pi/agent/AGENTS.md
   echo "Symbolic links set up successfully."
 
@@ -29,13 +29,12 @@ unset-link:
   rm -f ${HOME}/.pi/agent/prompts
   rm -f ${HOME}/.agents/skills
   rm -f ${HOME}/.claude/skills
-  rm -f ${HOME}/.gemini/antigravity-cli/skills
+  rm -f ${HOME}/.gemini/skills
   # Remove the link of prompt file AGENTS.md
   rm -f ${HOME}/.codex/AGENTS.md
   rm -f ${HOME}/.claude/CLAUDE.md
-  rm -f ${HOME}/.gemini/AGENTS.md
+  rm -f ${HOME}/.gemini/config/AGENTS.md
   rm -f ${HOME}/.pi/agent/AGENTS.md
-  rm -f ${HOME}/.gemini/GEMINI.md
   echo "Symbolic links reset successfully."
 
 link-config-to-here:
