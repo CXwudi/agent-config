@@ -85,7 +85,7 @@ link-config-to-here:
   # 4. ~/.codex/
   create_link "$HOME/.codex" ".codex"
 
-  # 5. ~/.gemini (Gemini CLI)
+  # 5. ~/.gemini (Gemini CLI & Antigravity CLI)
   create_link "$HOME/.gemini" ".gemini"
 
   # 6. ~/.pi (Pi Coding Agent)
