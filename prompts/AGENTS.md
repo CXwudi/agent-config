@@ -52,8 +52,8 @@ The following should be installed and available in the environment:
 
 ### Terminal Tools
 
-Prefer these terminal tools over any tools that provide similar functionalities.
-All these tools are installed and safe to execute:
+The system shall already have following tools are installed and ready to use.
+Use them:
 
 - `ast-grep` to search for symbols/snippets in source code based on abstract syntax tree
 - `ast-outline` to quickly peek for repo's structure, or read the declaration in a file. run `ast-outline prompt` to see usage
