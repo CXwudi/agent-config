@@ -1,12 +1,20 @@
 ---
 name: tmux-tui-agent
-description: Agent Skill for delegating work to another AI agent through its TUI in tmux. Use when launching Claude Code, Codex, Pi, or another AI agent interactively for orchestration, second opinions, verification, specialized tool access, parallel work, or any delegated task without non-interactive prompt modes.
+description: Agent Skill for spawning new AI agents with interactive TUI in tmux. Use when work can be offloaded to new or existing AI agents (exploration, code review, second opinions, parallel work, etc.). Can also be used if spawning new agents with different model families (e.g. Spawn GPT models when you are Claude Code, Spawn Claude models when you are Codex, Or spawn any other models (e.g. DeepSeek, Gemini) with Pi). Prefer harness's own subagent tools when no need for a different model.
 compatibility: Requires tmux-compatible CLI; on Windows, psmux may provide tmux-compatible commands.
 ---
 
 # tmux TUI Agent
 
 Use this skill to delegate work to another AI agent through its interactive TUI inside `tmux`/`psmux`.
+
+## Available TUI Agents And Models
+
+| TUI | Good For | Models |
+| --- | --- | --- |
+| `claude` for Claude Code | coding, code review, repo exploration | `claude --model <model>` with `opus`, `sonnet`, `haiku` |
+| `codex` for Codex CLI | coding, deep reasoning, debugging, brainstorming, etc. | `codex --model <model> -c model_reasoning_effort=<effort>` where model can be `gpt-5.5`, `gpt-5.4-mini` and effort can be `medium`, `high` and `xhigh` |
+| `pi` for Pi Coding Agent | broad selection of models. Use Gemini for code review, work review, second opinions. Use GLM, DeepSeek, etc. for general tasks | `pi --model <model> --thinking <effort>`, and effort can be `high`, `xhigh`. Use `pi --list-models` to see all available models, prefer models other than those in `claude` and `codex` (gpt) |
 
 ## Rules
 
@@ -17,10 +25,12 @@ Use this skill to delegate work to another AI agent through its interactive TUI 
 - Capture with `tmux capture-pane`; verify the result before using it.
 - Prefer a large pane for long or structured output: `-x 160 -y 260`.
 - Dump capture output to a file when you need stable post-processing.
+- Prefer built-in subagent tools (if available) when ordinary delegation is sufficient.
+- Use this skill when you need a different model family, a different AI agent runtime, or a long-lived tmux session.
 
 ## Workflow
 
-1. Find the command:
+1. Check the command:
 
    Linux/macOS shell:
 
