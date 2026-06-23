@@ -49,7 +49,7 @@ You MUST create a task for each of these items and complete them in order:
 2. Redirect to `brainstorming` if the direction is not settled
 3. Write design spec: save to `spec/spec-<slug>-YYYYMMDD.md`
 4. Invoke `reference-recorder` to generate a `## References` section
-5. Spec review loop: dispatch a reviewer subagent using `references/spec-document-reviewer-prompt.md` with precisely crafted review context, never your session history; fix issues and re-dispatch until approved, max 5 iterations, then surface to a human
+5. Spec review loop: dispatch a reviewer subagent using `references/spec-document-reviewer-prompt.md` with precisely crafted review context, never your session history; fix issues and re-dispatch until approved, max 3 iterations, then surface to a human
 6. User reviews written spec: ask the user to review the saved spec file before proceeding
 7. Transition to implementation: invoke `plan` to create the implementation plan
 
@@ -150,7 +150,7 @@ After writing the spec and generating references:
 
 1. Dispatch a reviewer subagent using `references/spec-document-reviewer-prompt.md`
 2. If issues are found, fix the spec, regenerate references if needed, and re-dispatch until approved
-3. If the loop exceeds 5 iterations, surface the problem to a human for guidance
+3. If the loop exceeds 3 iterations, surface the problem to a human for guidance
 
 ## User Review Gate
 

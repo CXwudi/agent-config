@@ -150,13 +150,11 @@ Mark especially important references clearly when needed.
 
 ## Plan Review
 
-Review every plan before handoff to ensure the scope, task order, verification, and references are clear and reliable.
+Dispatch a plan reviewer subagent using `references/plan-reviewer-prompt.md` to review the plan before handoff to ensure the scope, task order, verification, and references are clear and reliable.
 
-For smaller or straightforward tasks, a direct self-review is sufficient.
+For smaller or straightforward tasks, one review iteration may be enough. For larger, riskier, or more ambiguous tasks, multiple iterations may be needed to ensure the plan is clear and reliable.
 
-For larger, riskier, or more ambiguous tasks, dispatch a plan reviewer subagent using `references/plan-reviewer-prompt.md`. If issues are found, revise the plan and re-dispatch until approved.
-
-If the review loop exceeds 5 iterations, surface the problem to a human for guidance.
+If the review loop exceeds 3 iterations, surface the problem to a human for guidance.
 
 ## Execution Handoff
 
