@@ -102,22 +102,23 @@ this plan]
 
 ## Task Structure
 
-Use a structure like this and adapt the detail to the task:
+Create a `### Task Steps` section.
+Use a structure like this and adapt the detail to the task
 
 ````markdown
 ### Task N: [Task Name]
 
-#### N.1 Intent:
+#### N.1 Intent
 
 [What this task accomplishes]
 
-#### N.2 Files:
+#### N.2 Files
 
 - Create: `exact/path/to/new_file.py`
 - Modify: `exact/path/to/existing.py`
 - Test: `tests/exact/path/to/test_file.py`
 
-#### N.3 Dependencies:
+#### N.3 Dependencies
 
 [Earlier tasks, prerequisites, or "None"]
 
@@ -125,12 +126,12 @@ Use a structure like this and adapt the detail to the task:
 - [ ] **Step 2:** [Concrete action]
 - [ ] **Step 3:** [Concrete action]
 
-#### N.4 Verification:
+#### N.4 Verification
 
 - Run: `pytest tests/path/test_file.py -v`
 - Expect: [What should pass, change, or be observable]
 
-#### N.5 Notes:
+#### N.5 Notes
 
 - [Optional details, snippets, or edge cases only when useful]
 ````
