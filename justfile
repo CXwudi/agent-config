@@ -1,41 +1,48 @@
-setup-link:
+# Push agent configs from this repo to their target locations.
+# Accepts --clear flag for clean rsync with --delete.
+[arg('clear', long, value='true', help='Remove dest files not in source (clean sync)')]
+push clear='':
   #!/usr/bin/env bash
   set -euo pipefail
-  echo "Setting up symbolic links..."
-  # Create target directories if they don't exist
-  mkdir -p ${HOME}/.config/opencode
-  mkdir -p ${HOME}/.claude
-  mkdir -p ${HOME}/.gemini
-  mkdir -p ${HOME}/.codex
-  mkdir -p ${HOME}/.pi/agent
-  mkdir -p ${HOME}/.agents
-  # Start linking
-  ln -sfT $(pwd)/prompts ${HOME}/.pi/agent/prompts
-  ln -sfT $(pwd)/skills ${HOME}/.agents/skills # common shared skills location supported by many agents
-  ln -sfT $(pwd)/skills ${HOME}/.claude/skills
-  ln -sfT $(pwd)/skills ${HOME}/.gemini/skills # covers antigravity-cli, which can't read from .agents/skills
-  # Linking the global AGENTS.md files
-  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.codex/AGENTS.md
-  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.claude/CLAUDE.md
-  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.gemini/config/AGENTS.md
-  ln -sfT $(pwd)/prompts/AGENTS.md ${HOME}/.pi/agent/AGENTS.md
-  echo "Symbolic links set up successfully."
 
-unset-link:
-  #!/usr/bin/env bash
-  set -euo pipefail
-  echo "Resetting symbolic links..."
-  # not using rm -rf to be safe to only delete symbolinks, not real directories
-  rm -f ${HOME}/.pi/agent/prompts
-  rm -f ${HOME}/.agents/skills
-  rm -f ${HOME}/.claude/skills
-  rm -f ${HOME}/.gemini/skills
-  # Remove the link of prompt file AGENTS.md
-  rm -f ${HOME}/.codex/AGENTS.md
-  rm -f ${HOME}/.claude/CLAUDE.md
-  rm -f ${HOME}/.gemini/config/AGENTS.md
-  rm -f ${HOME}/.pi/agent/AGENTS.md
-  echo "Symbolic links reset successfully."
+  if [ "{{clear}}" = "true" ]; then
+    RSYNC_DELETE="--delete"
+    echo "Pushing agent configs (clear mode)..."
+  else
+    RSYNC_DELETE=""
+    echo "Pushing agent configs..."
+  fi
+
+  # Create target parent dirs
+  mkdir -p ~/.pi/agent ~/.agents ~/.claude ~/.gemini/config ~/.codex
+
+  # Push a source file or directory to a destination.
+  push_item() {
+    local src="$1"
+    local dst="$2"
+
+    if [ -d "$src" ]; then
+      # Trailing slash: copy contents of src into dst (not src itself)
+      mkdir -p "$dst"
+      rsync -a $RSYNC_DELETE "$src"/ "$dst"/
+      echo "  $src/ → $dst/"
+    else
+      mkdir -p "$(dirname "$dst")"
+      rsync -a $RSYNC_DELETE "$src" "$dst"
+      echo "  $src → $dst"
+    fi
+  }
+
+  push_item prompts ~/.pi/agent/prompts
+  push_item skills ~/.agents/skills
+  push_item skills ~/.claude/skills
+  push_item skills ~/.gemini/skills
+  push_item prompts/AGENTS.md ~/.codex/AGENTS.md
+  push_item prompts/AGENTS.md ~/.claude/CLAUDE.md
+  push_item prompts/AGENTS.md ~/.gemini/config/AGENTS.md
+  push_item prompts/AGENTS.md ~/.pi/agent/AGENTS.md
+
+  echo "Push complete."
 
 link-config-to-here:
   #!/usr/bin/env bash
