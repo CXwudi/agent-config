@@ -1,11 +1,9 @@
 ---
 name: fallback-web-search
-description: Agent Skill for web search. Use only when built-in web search tools are unavailable or failed, and the task requires web search
+description: Agent Skill for web search via Exa. Use when there is no web search tool, and you need latest information, verification/cross-checking, or searching/research any topic/information/documentations/news.
 ---
 
 # Exa Search
-
-Use this skill as a fallback. Only if there is no built-in web search tool, or the build-in search tool can not provide helpful results.
 
 ## Prerequisites
 
