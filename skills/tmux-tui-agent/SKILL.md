@@ -1,6 +1,6 @@
 ---
 name: tmux-tui-agent
-description: Agent Skill for spawning new AI agents with interactive TUI in tmux. Use when work can be offloaded to new or existing AI agents (exploration, code review, second opinions, parallel work, etc.). Can also be used if spawning new agents with different model families (e.g. Spawn GPT models when you are Claude Code, Spawn Claude models when you are Codex, Or spawn any other models (e.g. DeepSeek, Gemini) with Pi). Prefer harness's own subagent tools when no need for a different model.
+description: Agent Skill for spawning new AI agents with interactive TUI in tmux. Use when work can be offloaded to new or existing AI agents (exploration, code review, second opinions, parallel work, etc.). Can also be used to spawn new subagents with different model families (e.g. Spawn GPT models when you are Claude Code, Spawn Claude models when you are Codex, Or spawn any other models (e.g. DeepSeek, Gemini) with Pi). Prefer existing subagent tools when no need for a different model.
 compatibility: Requires tmux-compatible CLI; on Windows, psmux may provide tmux-compatible commands.
 ---
 
