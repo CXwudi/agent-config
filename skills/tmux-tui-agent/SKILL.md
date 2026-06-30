@@ -14,7 +14,7 @@ Use this skill to delegate work to another AI agent through its interactive TUI 
 | --- | --- | --- |
 | `claude` for Claude Code | coding, code review, repo exploration | `claude --model <model>` with `opus`, `sonnet`, `haiku` |
 | `codex` for Codex CLI | coding, deep reasoning, debugging, brainstorming, etc. | `codex --model <model> -c model_reasoning_effort=<effort>` where model can be `gpt-5.5`, `gpt-5.4-mini` and effort can be `medium`, `high` and `xhigh` |
-| `pi` for Pi Coding Agent | broad selection of models. Use `pi --list-models` to see all available models, prefer models other than those in `claude` and `codex` (gpt). Avoid `github-copilot` provider. Popular model options include Gemini for code review, work review, second opinions. Use GLM, DeepSeek, etc. for general tasks. Use default/pro variant, avoid mini/flash variant of these models | `pi --model <model> --thinking <effort>`, and effort can be `high`, `xhigh`.  |
+| `pi` for Pi Coding Agent | broad selection of models. Use `pi --list-models` to see all available models and their providers, prefer models other than those in `openai`, `anthropic` as they are available in `claude` or `codex`. Avoid `github-copilot` provider. Popular model options include Gemini for code review, work review, second opinions. Use GLM, DeepSeek, etc. for general tasks. Use default/pro variant, avoid mini/flash variant of these models | `pi --model <provider>/<model> --thinking <effort>`, and effort can be `high`, `xhigh`.  |
 
 ## Rules
 
