@@ -50,7 +50,7 @@ Use one planning process that scales with task complexity. Simpler work needs fe
 4. Break the work into incremental tasks with clear boundaries and ordering
 5. Define verification for each task and for the final integrated result
 6. Invoke `reference-recorder` skill to generate a `## References` section
-7. Review the plan and save it under `plan/`
+7. Review the plan and save it under `plan/` or user-specified location
 
 When todo tools or skills are available, use them to track planning progress.
 
@@ -69,12 +69,12 @@ Before defining tasks, map which files or areas are likely to change and why. Th
 
 ## Task Design
 
-Each task should be independently meaningful, executable, and verifiable.
+Each task should be meaningful, self-contained, and self-verifiable.
 
 - Prefer small, focused steps that reduce ambiguity and support steady progress
-- Split tasks that hide multiple responsibilities or unclear verification
+- Split tasks that hide multiple responsibilities or unclear verification. The task should be small enough that a gemini-flash/claude-sonnet/gpt-mini model or any open-source model can correctly and reliably implement it without guessing.
 - Include enough implementation detail to avoid guesswork, but do not turn the plan into a full code dump
-- Use snippets, interfaces, or pseudocode only when they remove meaningful ambiguity
+- Use snippets, interfaces, or pseudocode if they can help reduce ambiguity
 - When TDD fits the work, sequence tasks accordingly; when it does not, use the smallest reliable verification steps instead
 
 ## Plan Document Header
@@ -83,8 +83,6 @@ Every plan MUST start with this header:
 
 ````markdown
 # [Feature Name] Implementation Plan
-
-> **For agentic workers:** Use the harness's preferred task-tracking and delegation tools when available. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** [One sentence describing what this changes]
 
@@ -164,3 +162,11 @@ After saving the plan:
 > "Plan complete and saved to `<path>`. Review it and let me know how you'd like to execute it."
 
 Present the saved plan to the user and ask for execution instructions.
+
+## Plan execution
+
+When executing the plan:
+
+- mark `[ ]` boxes as completed `[x]` when item is completed
+- after each task, do a code review by spawning another subagent, and fix any valuable feedbacks
+- before moving to the next task, commit the changes
