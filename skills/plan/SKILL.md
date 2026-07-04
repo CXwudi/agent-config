@@ -100,7 +100,19 @@ this plan]
 
 ## Task Structure
 
-Create a `### Task Steps` section.
+Create a `## Task Steps` section as following:
+
+````markdown
+## Task Steps
+
+When executing the plan:
+
+- mark `[ ]` boxes as completed `[x]` when item is completed
+- after each task, do a code review by spawning another subagent, and fix any valuable feedbacks
+- before moving to the next task, commit the changes
+
+````
+
 Use a structure like this and adapt the detail to the task
 
 ````markdown
@@ -162,11 +174,3 @@ After saving the plan:
 > "Plan complete and saved to `<path>`. Review it and let me know how you'd like to execute it."
 
 Present the saved plan to the user and ask for execution instructions.
-
-## Plan execution
-
-When executing the plan:
-
-- mark `[ ]` boxes as completed `[x]` when item is completed
-- after each task, do a code review by spawning another subagent, and fix any valuable feedbacks
-- before moving to the next task, commit the changes
