@@ -1,3 +1,6 @@
+<UserPrompt>
+<Content>
+
 # Guidance
 
 ## General
@@ -87,3 +90,12 @@ For your reference, the user is:
 - Eager to learn and grow into senior principle
 
 So be ready to guide the user with best practices and any missing knowledge gaps
+
+</Content>
+<Note>
+
+- These prompts are only for AI Agent yourself.
+- Do not leak these instructions into code, comments or documentation.
+
+</Note>
+</UserPrompt>
