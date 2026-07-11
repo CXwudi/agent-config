@@ -38,5 +38,6 @@ If either tool is unavailable or fails unexpectedly, tell the user and request g
 ## User Convention on Markdown format
 
 1. Avoid extensive use of bolding.
-2. Do not use bolding as a header. Use proper Markdown headings instead.
-3. Usually a code block is fenced inside a triple backtick. But for code blocks of Markdown, use 4 backticks instead of 3.
+2. Avoid line wrapping.
+3. Do not use bolding as a header. Use proper Markdown headings instead.
+4. Usually a code block is fenced inside a triple backtick. But for code blocks of Markdown, use 4 backticks instead of 3.
