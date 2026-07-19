@@ -9,7 +9,7 @@ The procedure is very straightforward. Use `curl` or web crawl tool to fetch and
 
 ## Specification
 
-First, follow the official specification at [specification](https://agentskills.io/skill-creation/specification.md).
+First, follow the official specification at [specification](https://agentskills.io/specification.md).
 
 ## Optimizing Descriptions
 
