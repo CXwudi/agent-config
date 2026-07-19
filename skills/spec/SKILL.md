@@ -9,7 +9,7 @@ Turn a settled design direction into a well defined spec artifact
 
 ## Prerequisites
 
-User or you already have a clear context or design in mind. If not, use `brainstorming` skill first
+The user or you AI Agent should already have a clear context or design in mind. If not, use `brainstorming` skill first
 
 ## Format of the spec
 
@@ -47,9 +47,6 @@ The spec should be written in markdown following the following structure:
 [Any risk, assumption, unresolved questions, open-end questions, or any other concerns]
 [Can either be a bullet list, or one h3 section per risk/question]
 
-## Validation Considerations
-[How the design should be validated once implemented]
-
 ## References
 [Generated via `reference-recorder`]
 ````
@@ -70,4 +67,4 @@ Always scan for project-specific spec folder and naming convention, and follow i
 ## Notes
 
 - the spec file must be standalone and self-contained, which means, any one (including a new AI Agent) who is new to this project, can read the spec and understand it
-- Make sure of mermaid diagrams or ascii diagrams when they can clarify architecture, flow, state transition,compnents relationship, or any other design aspect
+- Make use of mermaid diagrams or ascii diagrams when they can clarify architecture, flow, state transition,compnents relationship, or any other design aspect
