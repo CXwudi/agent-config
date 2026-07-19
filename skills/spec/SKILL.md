@@ -61,6 +61,12 @@ Address any valuable feedback, then repeat this review process no more than 2 ti
 
 If the review agent spots a problem that needs more brainstorming, more context, more clarification or more design work, or anything that invalidate the spec, surface the problem to the user for guidance.
 
+## Writing the spec
+
+By default, the spec should be saved in `specs/spec-<slug>-YYYYMMDD.md`.
+However, project may have a different specs folder and/or different naming convention.
+Always scan for project-specific spec folder and naming convention, and follow it if found.
+
 ## Notes
 
 - the spec file must be standalone and self-contained, which means, any one (including a new AI Agent) who is new to this project, can read the spec and understand it
