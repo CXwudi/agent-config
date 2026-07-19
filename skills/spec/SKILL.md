@@ -1,6 +1,6 @@
 ---
 name: spec
-description: Agent Skill for writing a design spec. Use when the user asks to write, formalize, save, or approve a spec, design document, RFC, or a proposal.
+description: Agent Skill for writing a design spec. Use when the user asks to write, formalize, or save a spec, design document, RFC, or a proposal.
 ---
 
 # Spec
@@ -57,7 +57,7 @@ The spec should be written in markdown following the following structure:
 ## Reviewing the spec
 
 After writing the spec, spawn a subagent with fresh context window to review the spec.
-Address any valuable feedback, then repeat this review process no more than 2 times.
+Address any valuable feedback, then repeat this review process again (only 2 times in total).
 
 If the review agent spots a problem that needs more brainstorming, more context, more clarification or more design work, or anything that invalidate the spec, surface the problem to the user for guidance.
 
@@ -70,4 +70,4 @@ Always scan for project-specific spec folder and naming convention, and follow i
 ## Notes
 
 - the spec file must be standalone and self-contained, which means, any one (including a new AI Agent) who is new to this project, can read the spec and understand it
-- Make sure of mermaid diagrams or ascii diagrams to clarify explain the design.
+- Make sure of mermaid diagrams or ascii diagrams when they can clarify architecture, flow, state transition,compnents relationship, or any other design aspect
