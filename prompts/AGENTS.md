@@ -68,9 +68,9 @@ Use them:
 - `tmux` to handle background process, interactive CLI, or even spawn other AI agents.
   - `tmux` is an alias of `psmux` on Windows, which shares almost identical CLI with `tmux`.
 
-Notes:
+### Notes
 
-- On windows, if some commands failed to run, try using `powershell -Command "<command>"` to run them.
+- If you found anything mentioned here not in PATH, try the login interactive shell
 
 ## Typical Workflow
 
