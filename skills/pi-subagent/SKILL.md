@@ -17,6 +17,7 @@ Run `pi --list-models` to see all available models (or `pi --list-models <provid
 - Avoid `openai`, use `openai-codex` instead
 - Avoid `anthropic`
 - Must use `--provider` to specify the provider.
+- Always use `--thinking max` as it enable the maximum available thinking effort a model has.
 
 ## Pi Agent Setup to be known
 
