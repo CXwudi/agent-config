@@ -1,6 +1,6 @@
 ---
 name: agent-browser
-description: Agent Skill for browser automation over the Chrome DevTools Protocol connection. Use when a task requires interacting with or inspecting live web pages, forms, UI behavior, or any scraping tasks like data extraction, form filling, etc, or any browser automation tasks.
+description: Agent Skill for browser automation over the Chrome DevTools Protocol connection.
 ---
 
 # Agent Browser

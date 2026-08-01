@@ -1,6 +1,6 @@
 ---
 name: opencli
-description: Agent Skill for OpenCLI. Use when the user wants to control websites through the `opencli` CLI, run or inspect OpenCLI site/app/external adapters, use the OpenCLI browser bridge/CDP automation
+description: Agent Skill for browser automation and content retrieval via OpenCLI and browser bridge plugin.
 compatibility: Requires the OpenCLI command `opencli`.
 ---
 
@@ -10,7 +10,7 @@ OpenCLI makes websites available as CLI commands through adapters and browser br
 
 ## Prerequisites
 
-1. The `opencli` binary must be on `$PATH`.
+1. `opencli` is available in the `$PATH`.
 2. 
     ```sh
     opencli doctor
