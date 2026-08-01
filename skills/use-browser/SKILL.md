@@ -3,7 +3,7 @@ name: use-browser
 description: Agent Skill for using a browser. Use when browser access is needed
 ---
 
-# User Browser
+# Use Browser
 
 This is a combination of 2 skills, choose one of below:
 

@@ -1,13 +1,13 @@
 ---
-name: fallback-web-search
-description: Agent Skill for web search via Exa. Use when you want to search for something from internet
+name: exa
+description: Agent Skill for web search and crawl via Exa.
 ---
 
 # Exa Search
 
 ## Prerequisites
 
-`EXA_API_KEY` env var is set.
+`EXA_API_KEY` env var is available.
 
 ## Usage
 
