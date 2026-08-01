@@ -10,31 +10,18 @@ OpenCLI makes websites available as CLI commands through adapters and browser br
 
 ## Prerequisites
 
-The `opencli` binary must be on `$PATH`.
+1. The `opencli` binary must be on `$PATH`.
+2. 
+    ```sh
+    opencli doctor
+    ```
+    If `opencli doctor` reports missing daemon, missing extension, or failed connectivity, summarize the failing checks. First try again without the sandbox (for codex). If still failed, report back to the user
 
-Public Internet access is usually required for live website and adapter commands. Browser bridge commands also require OpenCLI's daemon and browser extension/CDP connection to be healthy.
+    You may inspect daemon state when useful:
 
-## Initial Checks
-
-Check at least once: `command -v opencli` or `where.exe opencli` on Windows to confirm `opencli` is available.
-
-If the command is missing, stop and ask the user to install or expose `opencli` on `$PATH`.
-
-Then run the browser bridge diagnostic for every OpenCLI task:
-
-```sh
-opencli doctor
-```
-
-If `opencli doctor` reports missing daemon, missing extension, or failed connectivity, summarize the failing checks. First try again without the sandbox (for codex). If still failed, treat doctor failures as blocking for browser-backed adapters and `opencli browser` commands; for non-browser read-only commands, continue only when the requested command does not depend on browser bridge health.
-
-You may inspect daemon state when useful:
-
-```sh
-opencli daemon status
-```
-
-Ask before restarting or stopping the daemon.
+    ```sh
+    opencli daemon status
+    ```
 
 ## Command Discovery
 
@@ -79,7 +66,5 @@ Inspect each command's help before passing flags.
 ## Safety Rules
 
 - Confirm with the user before commands that log in, post, send, purchase, subscribe, create, update, delete, upload, download private data, change profile/session defaults, install/uninstall plugins, or control daemon lifecycle.
-- Treat browser-backed interactions as remote side effects when they click, type, submit, authenticate, or change page state.
 - Do not print secrets, tokens, cookies, credentials, session exports, or private browser data. Summarize only what the task requires.
-- Prefer read-only adapter commands and structured output first. Use browser automation only when adapters cannot satisfy the task.
 - If a command fails because OpenCLI's daemon, extension, profile, or browser session is not ready, report the specific failed check and the next user-visible setup step.

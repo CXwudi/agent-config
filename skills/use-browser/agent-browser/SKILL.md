@@ -9,37 +9,25 @@ description: Agent Skill for browser automation over the Chrome DevTools Protoco
 
 `agent-browser` command is available
 
-Public Internet Access is preferred but not required
+Choose one of below options to connect to a browser:
 
-### Browser Connection
+### Option 1: Connect to existing browser via `--auto-connect` or `--cdp` (Preferred)
 
-A Chromium-based browser (e.g. Chrome, Edge, Chromium, Brave) must be running
+First check if a browser is already running with remote debugging enabled. Choose some of the following commands:
 
-Only `--auto-connect` and `--cdp` connection are allowed. If both options fail, notify the user to fix it.
-
-### Option 1: `--auto-connect` (Preferred)
-
-This will attempt to automatically find the debugging port and connect to it.
-
-Example: `agent-browser --auto-connect get-cdp`
-
-### Option 2: `--cdp` (Explicit)
-
-Use `--cdp` when you already know a CDP endpoint.
-
-This is the best choice for a known local port, a full CDP WebSocket URL, or a browser-as-a-service provider over `ws://` or `wss://`.
-
-Use `curl` to check if `http://<ip>:<port>/json/version` returns a websocket URL when connecting by local port.
-
-Examples:
-
-```bash
+```
+agent-browser --auto-connect get-cdp
+curl -v http://localhost:9222/json/version\
 agent-browser --cdp 9222 get cdp-url
 agent-browser --cdp ws://127.0.0.1:9222/devtools/browser/<id> get cdp-url
 agent-browser --cdp wss://your-provider.example.com/devtools/browser/<id> get cdp-url
 ```
 
-If both `--auto-connect` and `--cdp` fail, notify the user to start their browser with remote debugging enabled.
+### Option 2: Launch a new browser via `--remote-debugging-port <port number>`
+
+Find in the current OS the path of any Chromium-based browser, launch it with `--remote-debugging-port <port number>` option. Prefer to use existing user profile if possible.
+
+Then do the check mentioned in Option 1 to make sure browser is running
 
 ## Windows
 
