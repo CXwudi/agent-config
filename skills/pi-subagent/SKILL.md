@@ -1,6 +1,6 @@
 ---
 name: pi-subagent
-description: Agent Skill for spawning a subagent via Pi Coding Agent. Use when spawning a subagent with different models, or to save cost.
+description: Agent Skill for spawning a subagent via Pi Coding Agent. Use when spawning a subagent with various models.
 ---
 
 ## Prerequites
@@ -13,7 +13,7 @@ Otherwise stop and tell the user to install Pi Coding Agent
 
 Run `pi --list-models` to see all available models (or `pi --list-models <provider>` to see models for a specific provider)
 
-- If you don't know, by default choose `deepseek-v4-pro` from `deepseek` provider.
+- If you don't know, by default choose `deepseek-v4-flash` from `deepseek` provider.
 - Must use `--provider` to specify the provider.
 - Avoid provider `openai`, use `openai-codex` instead
 - Avoid provider `anthropic`
