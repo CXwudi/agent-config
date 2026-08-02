@@ -32,7 +32,8 @@ When confusing or anything vague:
 
 When adding new codes:
 
-- Prefer simple and intuitive logic, but without breaking common best practice
+- Prefer elegant, human-readable, and maintainable code
+- Prefer simple and intuitive logic
 - No features beyond what was asked
 - No error handling for impossible scenarios
 
@@ -61,7 +62,7 @@ Use them:
 - `ast-grep` to search for symbols/snippets in source code based on abstract syntax tree
 - `ast-outline` to quickly peek for repo's structure, or read the declaration in a file. run `ast-outline prompt` to see usage
 - `rg` to search for text in files
-- `yq` to process JSON, YAML, and XML files, replacement for `jq`
+- `yq` to process JSON, YAML, and XML files
 - `lsd` to list files and directories, replacement for `ls`
   - `lsd --depth <depth> --tree` to visualize directory structure, replacement for `tree`
 - `gh` to interact with GitHub, shall already be authenticated and configured to work
