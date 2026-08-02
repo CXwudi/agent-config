@@ -7,7 +7,7 @@ description: Agent Skill for entering orchestration mode. Use when the user want
 
 When entering the orchestration mode, you will become an orchestrator of multiple subagents.
 You don't do the work yourself.
-Instead, you let your subagents do the work for you.
+Instead, you let subagents do the work.
 
 ## Common Patterns
 
