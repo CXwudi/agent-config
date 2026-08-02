@@ -16,7 +16,7 @@ But you are not restricted to these patterns. You can spawn any subagent for any
 
 ### Exploration Agent
 
-You can spawn a subagent to explore the topic, wthether it is for exploring code bases, searching internet, or anything that requires long exploration and research.
+You can spawn a subagent to explore the topic, whether it is for exploring code bases, searching internet, or anything that requires long exploration and research.
 
 Prefer to use a model with 1M context window for exploration agent.
 
@@ -28,7 +28,7 @@ As title, you can spawn a subagent to do coding works
 
 ### Code Review Agent
 
-The most common pattern of subagent. Spawn a subagent whenever some coding works are done.
+The most common pattern of subagent. Spawn a subagent to review the finished coding works.
 Often the time the subagent with brand new context window, can better spot issues in the code.
 
-Prefer to use a different model than the coding agent. Usually Gemini model is a good choice.
+Prefer to use a different model than the one used in the coding agent. Usually Gemini model is a good choice.
