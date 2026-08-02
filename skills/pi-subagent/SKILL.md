@@ -23,3 +23,7 @@ Run `pi --list-models` to see all available models (or `pi --list-models <provid
 
 - `pi` can read the project wise `AGENTS.md` file and `.agents/skills/`
 - `pi` has a copy of the same user-wise `AGENTS.md` or `CLAUDE.md` file, and a copy of same agent skills at `~/.agents/skills/`
+
+## Other notes
+
+- `-c` option can be used to continue from the previous chat. Use it when you only spawn one subagent and want the same subagent to continue further works.

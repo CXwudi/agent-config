@@ -13,7 +13,6 @@ description: Agent Skill for working with Python. Use when writing, editing, or 
 - Prefer `ty` + `ruff` defaults unless the project specifies otherwise.
 - Use absolute imports; avoid wildcard imports.
 - Raise specific exceptions; avoid bare `except`.
-- Prefer `pytest` for tests.
 
 ## Logging
 
@@ -25,8 +24,7 @@ description: Agent Skill for working with Python. Use when writing, editing, or 
 
 - Use type hints for parameters, return types, and non-intuitive variables.
 - Prefer modern `typing`/`collections.abc` types
-- Try your best to avoid `Any` and `object` if possible; Call it out for scenarios that it is unavoidable
 - If a variable is assigned from a library function call with no return type, such variable need a type hint
-- Avoid `Protocol` for typing public facing APIs (specifically those that are mature) from third-party library.
+- Avoid `Any` and `object` if possible; Call it out for scenarios that it is unavoidable
 - Avoid `typing.cast()` if possible
 - Avoid `getattr()` if possible; prefer direct attribute/method access for known APIs.
