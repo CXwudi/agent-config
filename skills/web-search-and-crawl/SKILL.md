@@ -19,3 +19,5 @@ How to choose:
     - Defualt choice for web crawl
 - `bocha` for:
     - When content is likely in Chinese Internet (xiaohongshu, bilibili, weibo, etc.), or searching anything related to Chinese contents
+
+Otherwise, consider `use-browser` skill
