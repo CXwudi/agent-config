@@ -36,5 +36,5 @@ And navigate to `https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/refs/head
     Config: C:\Users\<USER>\.vscode\mcp.json
   ```
 
-  If this log is found, IMMEDIATELY delete these generated `officecli` skill files, and clean up the `mcp.json` file, otherwise it will cause conflicts with this current `office` skill.
+  If this log is found, IMMEDIATELY delete these generated `officecli` skill files, and clean up the `mcp.json` file. Failing to do so will cause conflicts with this current `office` skill.
 
