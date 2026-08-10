@@ -71,7 +71,8 @@ Use them:
 
 ### Notes
 
-- If you found anything mentioned here not in PATH, try the login interactive shell
+- In Linux/WSL, if `$SHELL` points to `zsh` or `bash`, use `-ilc` flag
+- In Windows, use `powershell -Command` that loads `$PROFILE` by default
 
 ## Typical Workflow
 
