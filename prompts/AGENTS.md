@@ -24,7 +24,7 @@ When confusing or anything vague:
 ## Coding Related
 
 - Prefer 2 spaces indentation instead of 4
-- Modulized. Files < 400 lines, functions < 100 lines
+- Modulized. No god classes, god files
 - At least functions and classes should be documented
 - Use minimal code that resolve the problem (More details below)
 
