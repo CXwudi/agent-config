@@ -21,26 +21,20 @@ The spec should be written in markdown following the following structure:
 ## Design Goal
 [What problem this solves and why it matters]
 
+### Out of Scope
+[What is not considered in this spec]
+
 ## Context
 [Any relevant context, background, and constraints]
 
 ## Design Decision
 [Chosen direction, full detail description of the locked design, why it was selected, and the key implications]
 [If needed, this section can be broken down into several h3 sections for clarity]
+[High recommend to include mermaid diagrams or ascii diagrams]
 
 ### Alternatives Considered
 [One h4 section per alternative]
 [Briefly note rejected alternatives, why it is rejected] 
-
-## Scopes
-
-### In Scope
-
-[What this spec covers, in bullet points]
-
-### Out of Scope
-
-[What is intentionally excluded, in bullet points]
 
 ## Risks and Open Questions
 
