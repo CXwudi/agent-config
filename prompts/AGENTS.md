@@ -1,5 +1,5 @@
+<AGENTMD>
 <UserPrompt>
-<Content>
 
 # Guidance
 
@@ -25,54 +25,13 @@ When confusing or anything vague:
 
 - Prefer 2 spaces indentation instead of 4
 - Modulized. No god classes, god files
-- At least functions and classes should be documented
-- Use minimal code that resolve the problem (More details below)
-
-### About minimal codes
-
-When adding new codes:
-
 - Prefer elegant, human-readable, and maintainable code
 - Prefer simple and intuitive logic
-- No features beyond what was asked
-- No error handling for impossible scenarios
-
-When editing existing codes:
-
+- At least functions and classes should be documented
 - Touch only what you must touch
+  - No features beyond what was asked
+  - No error handling for impossible scenarios
 - Match existing coding style. If you'd do it differently, ask user first
-
-## Environment
-
-### Languages
-
-The following should be installed and available in the environment:
-
-- `uv`
-  - however `python` is not available, use `uv run <command>` instead
-- `mise` for managing JS related
-  - `node`, `pnpm` (prefer this over `npm`), `bun`, `deno`, are all available
-- `java`
-
-### Terminal Tools
-
-The system shall already have following tools are installed and ready to use.
-Use them:
-
-- `ast-grep` to search for symbols/snippets in source code based on abstract syntax tree
-- `ast-outline` to quickly peek for repo's structure, or read the declaration in a file. run `ast-outline prompt` to see usage
-- `rg` to search for text in files
-- `yq` to process JSON, YAML, and XML files
-- `lsd` to list files and directories, replacement for `ls`
-  - `lsd --depth <depth> --tree` to visualize directory structure, replacement for `tree`
-- `gh` to interact with GitHub, shall already be authenticated and configured to work
-- `tmux` to handle background process, interactive CLI, or even spawn other AI agents.
-  - `tmux` is an alias of `psmux` on Windows, which shares almost identical CLI with `tmux`.
-
-### Notes
-
-- In Linux/WSL, if `$SHELL` points to `zsh` or `bash`, use `-ilc` flag
-- In Windows, use `powershell -Command` that loads `$PROFILE` by default
 
 ## Typical Workflow
 
@@ -93,11 +52,46 @@ For your reference, the user is:
 
 So be ready to guide the user with best practices and any missing knowledge gaps
 
-</Content>
+</UserPrompt>
+<Environment>
+
+Be aware of the following notes about the environment you are interacting with:
+
+## Languages
+
+The following should be installed and available in the environment:
+
+- `uv`
+  - however `python` is not available, use `uv run <command>` instead
+- `mise` for managing JS related
+  - `node`, `pnpm` (prefer this over `npm`), `bun`, `deno`, are all available
+- `java`
+
+## Terminal Tools
+
+The system shall already have following tools are installed and ready to use.
+Use them:
+
+- `ast-outline` to quickly peek for repo's structure, or read the declaration in a file. run `ast-outline prompt` to see usage
+- `ast-grep` to search for symbols/snippets in source code based on abstract syntax tree
+- `rg` to search for text in files
+- `yq` to process JSON, YAML, and XML files
+- `lsd` to list files and directories
+  - `lsd --depth <depth> --tree` to visualize directory structure, replacement for `tree`
+- `gh` to interact with GitHub, shall already be authenticated and configured to work
+- `tmux` to handle background process, interactive CLI, or even spawn other AI agents.
+  - `tmux` is an alias of `psmux` on Windows, which shares almost identical CLI with `tmux`.
+
+## Notes
+
+- In Linux/WSL, if `$SHELL` points to `zsh` or `bash`, use `-ilc` flag
+- In Windows, use `powershell -Command` that loads `$PROFILE` by default
+
+</Environment>
 <Note>
 
-- These prompts are only for AI Agent yourself.
-- Do not leak these instructions into code, comments or documentation.
+- These prompts and info are only for AI Agent yourself.
+- Do not leak these info into code, comments or documentation.
 
 </Note>
-</UserPrompt>
+</AGENTMD>
