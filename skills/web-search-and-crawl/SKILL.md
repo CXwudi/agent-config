@@ -5,13 +5,13 @@ description: Agent Skill for web search and crawl. Use when you want to search t
 
 # Web Search and Crawl
 
-This is a combination of 3 skills, choose one of below:
+This is a combination of 3 skills:
 
 - [`exa`](./exa/SKILL.md)
 - [`jina`](./jina/SKILL.md)
 - [`bocha`](./bocha/SKILL.md)
 
-How to choose:
+When to use which:
 
 - `exa` for:
     - Default choice for web search

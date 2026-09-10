@@ -5,12 +5,12 @@ description: Agent Skill for using a browser. Use when browser access is needed
 
 # Use Browser
 
-This is a combination of 2 skills, choose one of below:
+This is a combination of 2 skills:
 
 - [`opencli`](./opencli/SKILL.md)
 - [`agent-browser`](./agent-browser/SKILL.md)
 
-How to choose:
+When to use which:
 
 1. `agent-browser` for:
     - Web development, testing, and debugging
