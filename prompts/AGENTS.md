@@ -69,11 +69,8 @@ The following should be installed and available in the environment:
 
 ## Terminal Tools
 
-The system shall already have following tools are installed and ready to use.
-Use them:
+The system shall already have following additional tools installed and ready to use.
 
-- `ast-outline` to quickly peek for repo's structure, or read the declaration in a file. run `ast-outline prompt` to see usage
-- `ast-grep` to search for symbols/snippets in source code based on abstract syntax tree
 - `rg` to search for text in files
 - `yq` to process JSON, YAML, and XML files
 - `lsd` to list files and directories

@@ -1,12 +1,11 @@
 ---
 name: ast-grep
-description: Agent Skill for syntax-aware code search using `ast-grep`. Use when searching for code. Good at finding code patterns, structures, or relationships that are difficult to express with plain text search
-compatibility: Requires the ast-grep CLI command `ast-grep`; `sg` may be available as a shorter alias.
+description: Agent Skill for syntax-aware code search using `ast-grep`
 ---
 
-# ast-grep Ad Hoc Search
+## Prerequisites
 
-Use `ast-grep` for syntax-aware, structural source-code search when text search is too broad or fragile. This skill covers only one-off CLI searches with `ast-grep run`.
+`ast-grep` 
 
 ## Command Basics
 
