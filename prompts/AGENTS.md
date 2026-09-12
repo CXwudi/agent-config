@@ -81,7 +81,7 @@ The system shall already have following additional tools installed and ready to 
 
 ## Notes
 
-- In Linux/WSL, if `$SHELL` points to `zsh` or `bash`, use `-ilc` flag
+- In Linux/WSL, verify what `$SHELL` points it, only proceed when it is pointing to `zsh`, and should use `-ilc` flag
 - In Windows, use `powershell -Command` that loads `$PROFILE` by default
 
 </Environment>
