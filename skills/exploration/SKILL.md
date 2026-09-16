@@ -15,9 +15,9 @@ When to use which:
 - `ast-outline` for:
     - Checking the outline of a file or a directory, in a token efficient way
 - `ast-grep` for:
-    - Syntax-aware code search using `ast-grep`
+    - Syntax-aware code search using AST
 
 ## Note
 
 - Don't just limit yourself to `tree`, `ripgrep` and other typical linux commands when exploring the repo or gathering context, be aware of the above tools and proactively use them to save tokens and context windows.
-- You should always design your approach to gather context in a token efficient way.
+- You should always use a more token efficient way to gather context. So properly design your context gathering approach and use right tool for the right job.

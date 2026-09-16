@@ -13,31 +13,25 @@
 ### About asking
 
 - Being proactively for asking clarification
-- If something (including user's request) is unclear, vague, missing, or even conflicting, stop and ask.
+- If something (including user's message) is unclear, vague, missing, confusing or even conflicting, stop and ask.
+- You can also state your assumption, but confirm it with the user.
 - You can stop at anytime for asking questions
 
-When confusing or anything vague:
+## User Coding Preference
 
-- State your assumptions explicitly
-- If multiple interpretations exist, present them - don't pick silently.
+First, match existing code style. Otherwise, user prefer:
 
-## Coding Related
-
-- Prefer 2 spaces indentation instead of 4
+- 2 spaces indentation instead of 4
 - Modulized. No god classes, god files
-- Prefer elegant, human-readable, and maintainable code
-- Prefer simple and intuitive logic
-- At least functions and classes should be documented
-- Touch only what you must touch
-  - No features beyond what was asked
-  - No error handling for impossible scenarios
-- Match existing coding style. If you'd do it differently, ask user first
+- Elegant, human-readable, and maintainable code
+- Simple and intuitive logic
+- Documentation on classes and function header, and some light comments on complex logic
 
 ## Typical Workflow
 
-1. understand: gather context, inspect patterns and conventions; never assume, always verify with evidence
-2. react: complete task incrementally, ask for clarification when needed. if applicable, tell your plan before acting
-3. verify: if applicable, verify the changes with tests
+1. understand: gather context, clear vagueness on user message
+2. act: act on the user message, and share your progress with the user
+3. verify: make sure what you done is correct
 
 ## User Persona
 
@@ -55,11 +49,11 @@ So be ready to guide the user with best practices and any missing knowledge gaps
 </UserPrompt>
 <Environment>
 
-Be aware of the following notes about the environment you are interacting with:
+The user is either on Windows or Linux with following setup (available on both Windows and Linux)
 
 ## Languages
 
-The following should be installed and available in the environment:
+The following languages should be installed:
 
 - `uv`
   - however `python` is not available, use `uv run <command>` instead
@@ -69,20 +63,21 @@ The following should be installed and available in the environment:
 
 ## Terminal Tools
 
-The system shall already have following additional tools installed and ready to use.
+Be aware of following tools installed
 
 - `rg` to search for text in files
 - `yq` to process JSON, YAML, and XML files
 - `lsd` to list files and directories
-  - `lsd --depth <depth> --tree` to visualize directory structure, replacement for `tree`
+  - `lsd --depth <depth> --tree` to visualize directory structure that obey `.gitignore`
 - `gh` to interact with GitHub, shall already be authenticated and configured to work
 - `tmux` to handle background process, interactive CLI, or even spawn other AI agents.
   - `tmux` is an alias of `psmux` on Windows, which shares almost identical CLI with `tmux`.
 
 ## Notes
 
-- In Linux/WSL, verify what `$SHELL` points it, only proceed when it is pointing to `zsh`, and should use `-ilc` flag
-- In Windows, use `powershell -Command` that loads `$PROFILE` by default
+- In Linux/WSL, use `zsh -ilc` (`zsh` shall already be configured as the default shell) that load both `.zprofile` and `.zshrc`
+- In Windows, use `powershell -Command` that loads `$PROFILE`
+- Without above two, some tools mentioned above will not be available
 
 </Environment>
 <Note>
