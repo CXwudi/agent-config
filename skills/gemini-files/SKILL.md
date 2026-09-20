@@ -25,7 +25,7 @@ Global options:
 Usage:
 
 ```bash
-uv run scripts/gemini_files.py upload <file-path> [--timeout SECONDS]
+uv run scripts/gemini_files.py upload <file-path> [--timeout SECONDS] [--mime-type MIME]
 ```
 
 Examples:

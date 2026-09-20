@@ -9,8 +9,10 @@
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import logging
+import mimetypes
 import os
 import sys
 import time
@@ -26,6 +28,26 @@ DEFAULT_TIMEOUT_SECONDS: Final[int] = 300
 POLL_INTERVAL_SECONDS: Final[int] = 2
 
 logger = logging.getLogger(__name__)
+
+
+def configure_streams() -> None:
+  """Ensure UTF-8 encoding across standard streams to properly support Windows Chinese environments."""
+  if sys.platform == "win32":
+    try:
+      import ctypes
+
+      # Set Windows console code page to UTF-8 (CP 65001)
+      ctypes.windll.kernel32.SetConsoleOutputCP(65001)
+      ctypes.windll.kernel32.SetConsoleCP(65001)
+    except (AttributeError, OSError):
+      logger.debug("Failed to set Windows console code page to UTF-8.")
+
+  for stream in (sys.stdout, sys.stderr, sys.stdin):
+    if stream and hasattr(stream, "reconfigure"):
+      try:
+        stream.reconfigure(encoding="utf-8", errors="replace")
+      except (AttributeError, io.UnsupportedOperation, OSError, ValueError):
+        logger.debug("Failed to reconfigure stream encoding.")
 
 
 class GeminiFilesError(RuntimeError):
@@ -261,13 +283,24 @@ def cmd_upload(
   args: argparse.Namespace,
 ) -> tuple[str, dict[str, object]]:
   """Upload a file and wait for Gemini to finish processing it."""
-  file_path = Path(args.file_path).expanduser()
+  file_path = Path(args.file_path).expanduser().resolve()
   if not file_path.exists():
     raise GeminiFilesError(f"File not found: {file_path}")
   if not file_path.is_file():
     raise GeminiFilesError(f"Not a regular file: {file_path}")
 
-  uploaded_file = client.files.upload(file=file_path)
+  guessed_mime, _ = mimetypes.guess_type(file_path)
+  mime_type = getattr(args, "mime_type", None) or guessed_mime or "application/octet-stream"
+
+  upload_config = types.UploadFileConfig(
+    display_name=file_path.name,
+    mime_type=mime_type,
+  )
+
+  # Stream the file in binary mode to bypass header encoding issues with Chinese paths on Windows
+  with file_path.open("rb") as fp:
+    uploaded_file = client.files.upload(file=fp, config=upload_config)
+
   active_file = wait_for_file_activation(client, uploaded_file, args.timeout)
 
   resource_name = get_resource_name(active_file)
@@ -304,26 +337,18 @@ def cmd_query(
     raise GeminiFilesError(
       f"{resource_name} is not ACTIVE. Current state: {file_state}"
     )
-  if not file_obj.uri:
-    raise GeminiFilesError(
-      f"Gemini did not return a file URI for {resource_name}."
-    )
 
-  config = None
-  if args.system_prompt:
-    config = types.GenerateContentConfig(
-      system_instruction=args.system_prompt
-    )
+  config = types.GenerateContentConfig(
+    system_instruction=args.system_prompt if args.system_prompt else None,
+    # Explicitly disable AFC to avoid spurious deprecation warnings on tool-free calls.
+    # Upstream issue: https://github.com/googleapis/python-genai/issues/2902
+    automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
+  )
 
+  # Pass file_obj directly into contents rather than using deprecated Part.from_uri
   response = client.models.generate_content(
     model=args.model,
-    contents=[
-      types.Part.from_text(text=args.question),
-      types.Part.from_uri(
-        file_uri=file_obj.uri,
-        mime_type=file_obj.mime_type,
-      ),
-    ],
+    contents=[file_obj, args.question],
     config=config,
   )
   response_text = extract_response_text(response)
@@ -407,6 +432,10 @@ def build_parser() -> argparse.ArgumentParser:
   )
   upload_parser.add_argument("file_path", help="Path to a local file.")
   upload_parser.add_argument(
+    "--mime-type",
+    help="Explicit MIME type of the file (defaults to auto-detection from filename).",
+  )
+  upload_parser.add_argument(
     "--timeout",
     type=int,
     default=DEFAULT_TIMEOUT_SECONDS,
@@ -461,6 +490,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
   """Run the CLI."""
+  configure_streams()
   parser = build_parser()
   args = parser.parse_args(list(argv) if argv is not None else None)
 
