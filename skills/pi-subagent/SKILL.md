@@ -3,7 +3,7 @@ name: pi-subagent
 description: Agent Skill for spawning a subagent via Pi Coding Agent. Use when spawning a subagent with various models.
 ---
 
-## Prerequites
+## Prerequisites
 
 `pi --help` resolves and returns the help menu
 
@@ -13,7 +13,7 @@ Otherwise stop and tell the user to install Pi Coding Agent
 
 Run `pi --list-models` to see all available models (or `pi --list-models <provider>` to see models for a specific provider)
 
-- If you don't know, by default choose `deepseek-v4-flash` from `deepseek` provider.
+- If you don't know, by default choose the latest `flash` model from `deepseek` provider.
 - Must use `--provider` to specify the provider.
 - Avoid provider `openai`, use `openai-codex` instead
 - Avoid provider `anthropic`
@@ -22,7 +22,7 @@ Run `pi --list-models` to see all available models (or `pi --list-models <provid
 ## Pi Agent Setup to be known
 
 - `pi` can read the project wise `AGENTS.md` file and `.agents/skills/`
-- `pi` has a copy of the same user-wise `AGENTS.md` or `CLAUDE.md` file, and a copy of same agent skills at `~/.agents/skills/`
+- `pi` has a copy of the same user-wise `AGENTS.md` or `CLAUDE.md` file, and a copy of the same agent skills at `~/.agents/skills/`
 
 ## Other notes
 
