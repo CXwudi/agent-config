@@ -16,4 +16,7 @@ When to use which:
     - Web development, testing, and debugging
     - Launch new browser
 2. `opencli` for:
-    - Anti-automation detection
+    - Robust automation
+    - Bypass automation detection
+
+Both are capable for reusing user's existing browser session

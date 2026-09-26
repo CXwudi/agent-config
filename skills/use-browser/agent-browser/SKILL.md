@@ -27,8 +27,6 @@ agent-browser --cdp wss://your-provider.example.com/devtools/browser/<id> get cd
 
 Find in the current OS the path of any Chromium-based browser, launch it with `--remote-debugging-port <port number>` option. Prefer to use existing user profile if possible.
 
-Then do the check mentioned in Option 1 to make sure browser is running
-
 ## Windows
 
 If you are on Windows, read [windows-specific-convenience](windows-specific-convenience.md) before running your first `agent-browser` command.

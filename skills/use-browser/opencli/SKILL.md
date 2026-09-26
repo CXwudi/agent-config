@@ -1,12 +1,12 @@
 ---
 name: opencli
-description: Agent Skill for browser automation and content retrieval via OpenCLI and browser bridge plugin.
+description: Agent Skill for browser automation via OpenCLI and its browser bridge plugin.
 compatibility: Requires the OpenCLI command `opencli`.
 ---
 
 # OpenCLI
 
-OpenCLI makes websites available as CLI commands through adapters and browser bridge automation.
+OpenCLI for browser automation.
 
 ## Prerequisites
 
@@ -25,43 +25,23 @@ OpenCLI makes websites available as CLI commands through adapters and browser br
 
 ## Command Discovery
 
-Do not assume adapter names, command names, arguments, or flags. Discover the current CLI surface from help output:
+Discover the current CLI surface from help output:
 
 ```sh
-opencli --help
-opencli list -f yaml
-opencli <site-or-adapter> --help -f yaml
-opencli <site-or-adapter> <command> --help -f yaml
 opencli browser --help
 ```
 
 Prefer `-f yaml` or `-f json` when available so command arguments, options, access level, browser requirements, and output columns are structured.
 
+We are not using any OpenCLI adapters in this skill, do not use OpenCLI adapters unless user told you to use so.
+
 ## Common Workflows
-
-For site/app/external adapters:
-
-1. Use `opencli list -f yaml` to find relevant adapters.
-1. Inspect the adapter with `opencli <adapter> --help -f yaml`.
-1. Inspect the exact command with `opencli <adapter> <command> --help -f yaml`.
-1. Choose output format intentionally, usually `-f yaml` or `-f json` for downstream reasoning.
-
-For direct browser control:
 
 1. Make sure `opencli doctor` runs successfully once before proceeding.
 1. Read `opencli browser --help` and the relevant subcommand help.
 1. Pick a descriptive browser session name and reuse it across related calls.
 1. Use `opencli browser <session> state` to inspect interactive element indices before clicking, typing, selecting, uploading, or dragging.
 
-For adapter development or verification:
-
-```sh
-opencli validate <target>
-opencli verify <target>
-opencli convention-audit <target>
-```
-
-Inspect each command's help before passing flags.
 
 ## Safety Rules
 
