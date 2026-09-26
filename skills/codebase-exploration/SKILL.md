@@ -1,6 +1,6 @@
 ---
 name: exploration
-description: Agent Skill for exploring the directory. Use when gathering context from local files
+description: Agent Skill for exploring the codebase. Use when gathering context in the codebase
 ---
 
 # Exploration
