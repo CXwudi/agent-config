@@ -5,10 +5,11 @@ description: Agent Skill for exploring the codebase. Use when gathering context 
 
 # Exploration
 
-This is a combination of 2 skills:
+This is a combination of 3 skills:
 
 - [ast-outline](ast-outline/SKILL.md)
 - [ast-grep](ast-grep/SKILL.md)
+- [ripwire](ripwire/SKILL.md)
 
 When to use which:
 
@@ -16,6 +17,8 @@ When to use which:
     - Checking the outline of a file or a directory, in a token efficient way
 - `ast-grep` for:
     - Syntax-aware code search using AST
+- `ripwire` for:
+    - Codebase indexing and relationship graph
 
 ## Note
 
