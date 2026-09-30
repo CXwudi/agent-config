@@ -1,5 +1,5 @@
 ---
-name: exploration
+name: codebase-exploration
 description: Agent Skill for exploring the codebase. Use when gathering context in the codebase
 ---
 
