@@ -5,15 +5,16 @@ description: Agent Skill for inspecting GraphQL schemas. Use before making Graph
 
 # GraphQL Inspection
 
-- Fetch the published schema using `curl` into a temp directory, or retrieve it through introspection at the documented GraphQL endpoint with the required authentication.
-- Avoid reading the whole schema. Identify whether it is SDL (`.graphql`) or JSON introspection data before inspecting it.
-- For SDL, use `rg` to locate relevant definitions, then read only those sections. Inspect schema roots, fields, arguments, input types, enums, scalars, directives, and related types. Do not parse SDL with `yq`.
-- For JSON introspection data, use `yq`/`rg` to inspect relevant types and fields. Schema metadata is typically under `data.__schema` or `__schema`; follow `ofType` wrappers for `NON_NULL` and `LIST` types.
+- Fetch the published schema using `curl` into a temp directory
+- Avoid reading the whole schema. Identify whether it is SDL (`.graphql`) or JSON introspection.
+- For SDL (`.graphql`), use `rg` to locate relevant definitions, then read only those sections.
+- For JSON introspection (`.json`), use `yq`/`rg` to inspect relevant types and fields.
+- Look for Schema metadata to understand the input and output shapes.
 
 ## Safety And Context Rules
 
-- Do not invent endpoint URLs, authentication requirements, fields, arguments, types, or enum values. Verify them from the schema or official documentation, or label them as caller-provided assumptions.
-- If the schema is ambiguous, inspect descriptions, related types, and official documentation before choosing an operation.
+- Do not invent endpoint URLs, authentication requirements, fields, arguments, types, or enum values. Verify them from the schema, or label them as caller-provided assumptions.
+- If the schema is ambiguous, inspect descriptions, related types, or even find and consult official documentation before choosing an operation.
 - If multiple operations could satisfy the goal, use the best candidates and explain the tradeoff briefly.
 - Inspect the response's `errors` as well as `data`; GraphQL errors can occur even with HTTP 200.
 - If the schema cannot be fetched, queried, or parsed, report the command attempted with credentials redacted, the failure, and the next concrete thing that can be done.
