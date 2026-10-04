@@ -13,3 +13,7 @@ Supporting:
 1. Codex CLI
 1. Pi Coding Agent
 1. Antigravity CLI
+
+## Tasks
+
+Tasks are run with [mise](https://mise.jdx.dev), check [`mise.toml`](mise.toml)
