@@ -15,7 +15,6 @@ Run `pi --list-models` to see all available models (or `pi --list-models <provid
 
 - If you don't know, by default choose the latest `flash` model from `deepseek` provider.
 - Must use `--provider` to specify the provider.
-- Avoid provider `openai`, use `openai-codex` instead
 - Avoid provider `anthropic`
 - Always use `--thinking max`, it will fallback to the highest available thinking effort for the model.
 
