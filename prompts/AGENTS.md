@@ -24,7 +24,7 @@ First, match existing code style. Otherwise, user prefer:
 - 2 spaces indentation instead of 4
 - Modulized. No god classes, god files
 - Elegant, human-readable, and maintainable code
-- Simple and intuitive logic
+- Simple and intuitive solution, easy to reason about
 - Documentation on classes and function header, and some light comments on complex logic
 
 ## Typical Workflow
