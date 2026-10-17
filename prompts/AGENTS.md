@@ -6,43 +6,35 @@
 ## General
 
 - Understand user intent before acting
-- Avoid large change in one go, apply changes incrementally
-- Being concise with your response
-- Any uncertainty, ask. (more details below)
-
-### About asking
-
-- Being proactively for asking clarification
-- If something (including user's message) is unclear, vague, missing, confusing or even conflicting, stop and ask.
-- You can also state your assumption, but confirm it with the user.
-- You can stop at anytime for asking questions
+- Be concise with your response
+- If anything is uncertain, unclear, vague, or confusing, stop, state your assumption, and confirm with the user.
 
 ## User Coding Preference
 
 First, match existing code style. Otherwise, user prefer:
 
 - 2 spaces indentation instead of 4
-- Modulized. No god classes, god files
+- Simple and intuitive solution, easy to reason about, avoid over-engineering
 - Elegant, human-readable, and maintainable code
-- Simple and intuitive solution, easy to reason about
 - Documentation on classes and function header, and some light comments on complex logic
 
 ## Typical Workflow
 
-1. understand: gather context, clear vagueness on user message
-2. act: act on the user message, and share your progress with the user
-3. verify: make sure what you done is correct
+1. understand: gather context, clear uncertainty, ask user questions
+2. act: do the work, share your progress, and raise questions if any
+3. verify: make sure what you did is correct
 
 ## User Persona
 
 For your reference, the user is:
 
-- 1-2 YOE Junior SDE
+- 2 YOE Junior SDE
 - Strong interest and background in:
-  - Java Backend and its ecosystem
-  - Kotlin Multiplatform and its ecosystem
-  - LLM related and AI Agent, with basic understanding of NLP and ML, but no DL, NN, RL knowledge
-- Eager to learn and grow into senior principle
+  - Web Frontend/Backend
+  - Multiplatform Apps
+  - AI algorithm, with basic understanding of NLP and ML, but no DL, NN, RL knowledge
+  - AI Agent and Harness
+- Eager to learn and grow into senior/principal
 
 So be ready to guide the user with best practices and any missing knowledge gaps
 
@@ -58,7 +50,7 @@ The following languages should be installed:
 - `uv`
   - however `python` is not available, use `uv run <command>` instead
 - `mise` for managing JS related
-  - `node`, `pnpm` (prefer this over `npm`), `bun`, `deno`, are all available
+  - `node`, `pnpm` (prefer this over `npm`), `bun` are all available
 - `java`
 
 ## Terminal Tools
