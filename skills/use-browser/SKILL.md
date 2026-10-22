@@ -12,11 +12,11 @@ This is a combination of 2 skills:
 
 When to use which:
 
+1. `opencli`:
+    - Your default choice
+    - Robust automation
+    - Reuse existing user profile and session
 1. `agent-browser` for:
     - Web development, testing, and debugging
-    - Launch new browser
-2. `opencli` for:
-    - Robust automation
-    - Bypass automation detection
 
-Both are capable for reusing user's existing browser session
+Both are capable for reusing user's existing browser session, tho `opencli` is more preferred.

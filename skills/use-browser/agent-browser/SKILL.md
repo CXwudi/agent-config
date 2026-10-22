@@ -16,8 +16,8 @@ Choose one of below options to connect to a browser:
 First check if a browser is already running with remote debugging enabled. Choose some of the following commands:
 
 ```
-agent-browser --auto-connect get-cdp
-curl -v http://localhost:9222/json/version\
+agent-browser --auto-connect get cdp-url
+curl --fail --silent --show-error http://127.0.0.1:9222/json/version
 agent-browser --cdp 9222 get cdp-url
 agent-browser --cdp ws://127.0.0.1:9222/devtools/browser/<id> get cdp-url
 agent-browser --cdp wss://your-provider.example.com/devtools/browser/<id> get cdp-url
@@ -25,13 +25,15 @@ agent-browser --cdp wss://your-provider.example.com/devtools/browser/<id> get cd
 
 ### If no browser with remote debugging enabled is found
 
-Find in the current OS the path of any Chromium-based browser,
-launch it with `<browser executable> --remote-debugging-port <port number>`.
-Then connect to it with `--auto-connect` or `--cdp`.
+Find in the current OS the path of any Chromium-based browser.
+Make sure no other browser is running, if there is, ask the user if it is safe to close it. When user confirms, close it gently.
+Then launch it with `<browser executable> --remote-debugging-port <port number>`.
+
+Then you can use `agent-browser` to connect to it with `--auto-connect` or `--cdp`.
 
 Note: 
 - Do not use `agent-browser` to launch the browser.
-- Do not specify any profile to launch, use user's existing profile.
+- You must use the user's existing profile, in order to reuse the existing session and cookies. Do not use a new profile. Do not use a clone of the existing profile.
 
 ## Windows
 
