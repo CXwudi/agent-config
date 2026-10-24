@@ -8,6 +8,7 @@
 - Understand user intent before acting
 - Be concise with your response
 - If anything is uncertain, unclear, vague, or confusing: stop, state your assumption, and confirm with the user.
+- Protect sensitive info from leaking, such as API Key, passwords, user address, private keys, etc.
 
 ## User Coding Preference
 
