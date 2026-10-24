@@ -9,9 +9,7 @@ description: Agent Skill for browser automation over the Chrome DevTools Protoco
 
 `agent-browser` command is available
 
-Choose one of below options to connect to a browser:
-
-### Connect to existing browser via `--auto-connect` or `--cdp` (Preferred)
+### Connect to existing browser via `--auto-connect` or `--cdp`
 
 First check if a browser is already running with remote debugging enabled. Choose some of the following commands:
 
@@ -26,14 +24,15 @@ agent-browser --cdp wss://your-provider.example.com/devtools/browser/<id> get cd
 ### If no browser with remote debugging enabled is found
 
 Find in the current OS the path of any Chromium-based browser.
-Make sure no other browser is running, if there is, ask the user if it is safe to close it. When user confirms, close it gently.
-Then launch it with `<browser executable> --remote-debugging-port <port number>`.
+Make sure no other processes of the same browser is running, if there is, confirm with the user if it is safe to close it.
+
+Then launch it with `<browser executable> --remote-debugging-port <port number>`. It should by default use user's default profile.
 
 Then you can use `agent-browser` to connect to it with `--auto-connect` or `--cdp`.
 
 Note: 
 - Do not use `agent-browser` to launch the browser.
-- You must use the user's existing profile, in order to reuse the existing session and cookies. Do not use a new profile. Do not use a clone of the existing profile.
+- You must use the existing user's profile, in order to reuse the existing session and cookies. Do not use a new profile. Do not use a clone of a profile.
 
 ## Windows
 

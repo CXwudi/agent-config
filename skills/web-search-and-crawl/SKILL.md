@@ -15,9 +15,12 @@ When to use which:
 
 - `exa` for:
     - Default choice for web search
+    - Can also do web crawl 
 - `jina` for:
-    - Defualt choice for web crawl
+    - Default choice for web crawl
+    - Can also do web search
 - `bocha` for:
-    - When content is likely in Chinese Internet (xiaohongshu, bilibili, weibo, etc.), or searching anything related to Chinese contents
+    - For searching contents likely from Chinese Internet (xiaohongshu, bilibili, weibo, etc.)
+
 
 Otherwise, consider `use-browser` skill
