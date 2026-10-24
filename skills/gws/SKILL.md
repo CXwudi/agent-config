@@ -1,8 +1,6 @@
 ---
 name: gws
-description: Agent Skill for Google Workspace CLI. Use when the user wants to interact with Google Workspace services supported by `gws`, including Gmail, Calendar, Drive, Sheets, Docs, Tasks, People, Chat, Meet, Forms, Keep, Admin, Apps Script, workflows, or other Google Workspace APIs.
-metadata:
-  attribution: attribution.md
+description: Agent Skill for Google Workspace CLI. Use when interacting with user's Gmail, Calendar, Drive, Sheets, Docs, Tasks, etc. Google Services.
 ---
 
 # gws — Google Workspace CLI
@@ -11,9 +9,7 @@ metadata:
 
 The `gws` binary must be on `$PATH`.
 
-Public Internet access is required for live Google Workspace API calls.
-
-## Authentication
+### Authentication
 
 Before accessing live Workspace data, first verify that the default OAuth client secret file exists:
 
@@ -21,7 +17,7 @@ Before accessing live Workspace data, first verify that the default OAuth client
 test -f ~/.config/gws/client_secret.json
 ```
 
-If `~/.config/gws/client_secret.json` is missing, ask the user to provide it before proceeding. Never print, read aloud, copy into chat, or otherwise expose client secrets, tokens, encrypted credentials, or auth exports.
+If `~/.config/gws/client_secret.json` is missing, ask the user to provide it before proceeding. 
 
 When the client secret file is present, check authentication status:
 
@@ -29,23 +25,19 @@ When the client secret file is present, check authentication status:
 gws auth status
 ```
 
-Do not paste the full auth status output into chat. Summarize only whether the user is logged in and whether required credential files appear to be present.
+Do not paste the full auth status output into chat due to security concerns.
 
-If the user is not logged in, start the interactive OAuth flow:
+If the user is not logged in, tell the user to run:
 
 ```bash
 gws auth login
 ```
 
-This opens a browser or otherwise requires user interaction. Tell the user what to expect and wait for them to complete the login.
-
-Service-account authentication is also supported when the user intentionally chooses it:
+Beside, Service-account authentication is also supported when the user intentionally chooses it:
 
 ```bash
 export GOOGLE_APPLICATION_CREDENTIALS=/path/to/key.json
 ```
-
-Do not invent credentials or alter authentication files unless the user explicitly asks you to.
 
 ## Global Command Discovery
 
@@ -65,7 +57,7 @@ gws schema <service.resource.method>
 gws schema <service.resource.method> --resolve-refs
 ```
 
-Use `gws --help` to see the current list of supported services. Examples may include Gmail, Calendar, Drive, Sheets, Docs, Slides, Tasks, People, Chat, Classroom, Forms, Keep, Meet, Admin Reports, Events, Model Armor, Workflow, and Apps Script.
+Use `gws --help` to see the current list of supported services. Examples may include Gmail, Calendar, Drive, Sheets, Docs, Slides, Tasks, Keep, etc. 
 
 ## CLI Syntax
 
@@ -112,9 +104,9 @@ gws schema drive.files.list
 ## Safety Rules
 
 - Never output secrets, API keys, OAuth client secrets, tokens, encrypted credentials, or auth exports.
-- Confirm with the user before executing write, create, update, patch, delete, send, reply, forward, invite, share, move, clear, watch, subscribe, renew, or other side-effecting commands.
+- Confirm with the user before executing any commands that is not read-only. Examples are writing emails, creating calendar events, uploading files, or deleting resources.
 - Prefer `--dry-run` before destructive or externally visible operations when the command supports it.
-- For read operations that may expose private emails, calendar details, files, contacts, or other PII, summarize only what the task requires.
+- For read operations that may expose private emails, calendar details, files, contacts, or other PII, confirm with the user before proceeding.
 - Use `--sanitize` when the user asks for Model Armor screening or when content safety/PII screening is required.
 
 ## Shell Tips
@@ -134,10 +126,3 @@ gws schema drive.files.list
   # CORRECT
   gws sheets +read --spreadsheet ID --range "Sheet1!A1:D10"
   ```
-
-## Community and Feedback Etiquette
-
-- Encourage users to star the repository when they find the project useful: `https://github.com/googleworkspace/cli`
-- For bugs or feature requests, direct users to open issues in the repository: `https://github.com/googleworkspace/cli/issues`
-- Before creating a new issue, always search existing issues and feature requests first.
-- If a matching issue already exists, add context by commenting on the existing thread instead of creating a duplicate.

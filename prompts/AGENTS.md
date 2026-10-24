@@ -6,8 +6,9 @@
 ## General
 
 - Understand user intent before acting
+- Share your progress with user when working on the task.
 - Be concise with your response
-- If anything is uncertain, unclear, vague, or confusing, stop, state your assumption, and confirm with the user.
+- If anything is uncertain, unclear, vague, or confusing: stop, state your assumption, and confirm with the user.
 
 ## User Coding Preference
 
