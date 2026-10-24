@@ -1,7 +1,6 @@
 ---
 name: bibigpt
 description: Agent Skill for BibiGPT via RestAPI. Use when need information (content summary, question answering, etc) about Bilibili/Youtube/Tiktok online videos, or local video/audio files
-compatibility: Requires network access to the BibiGPT and curl.
 ---
 
 # BibiGPT

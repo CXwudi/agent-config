@@ -10,7 +10,7 @@ description: Agent Skill for working with Python. Use when writing, editing, or 
 - For complex python projects, use OOP and Dependency Injection pattern.
 - Use `uv run` to execute Python scripts. Do not assume `python` or `python3` commands are available.
 - For standalone or one-off python scripts, declare libraries within the script using PEP 723.
-- Prefer `ty` + `ruff` defaults unless the project specifies otherwise.
+- Prefer `ty` + `ruff` for linting and formatting.
 - Use absolute imports; avoid wildcard imports.
 - Raise specific exceptions; avoid bare `except`.
 

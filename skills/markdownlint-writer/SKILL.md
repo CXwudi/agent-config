@@ -1,6 +1,6 @@
 ---
 name: markdownlint-writer
-description: Agent Skill for finalizing markdownlint-compliant Markdown. Use before git commit, when the user indicates the task is done, when you complete a meaningful phase of work, or when the user explicitly requests Markdown cleanup.
+description: Agent Skill for finalizing markdownlint-compliant Markdown. Use before git commit, when the task or phase of work is done, or when the user explicitly requests Markdown cleanup.
 ---
 
 # Markdownlint Writer
