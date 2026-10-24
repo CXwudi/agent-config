@@ -12,7 +12,6 @@ Supporting:
 1. Claude Code
 1. Codex CLI
 1. Pi Coding Agent
-1. Antigravity CLI
 
 ## Tasks
 

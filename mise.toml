@@ -36,10 +36,8 @@ push_item() {
 push_item prompts ~/.pi/agent/prompts
 push_item skills ~/.agents/skills
 push_item skills ~/.claude/skills
-push_item skills ~/.gemini/skills
 push_item prompts/AGENTS.md ~/.codex/AGENTS.md
 push_item prompts/AGENTS.md ~/.claude/CLAUDE.md
-push_item prompts/AGENTS.md ~/.gemini/config/AGENTS.md
 push_item prompts/AGENTS.md ~/.pi/agent/AGENTS.md
 
 echo "Push complete."
@@ -86,9 +84,6 @@ create_link "$HOME/.agents" ".agents"
 # 4. ~/.codex/
 create_link "$HOME/.codex" ".codex"
 
-# 5. ~/.gemini (Gemini CLI & Antigravity CLI)
-create_link "$HOME/.gemini" ".gemini"
-
 # 6. ~/.pi (Pi Coding Agent)
 create_link "$HOME/.pi" ".pi"
 
@@ -96,10 +91,6 @@ create_link "$HOME/.pi" ".pi"
 create_link "$HOME/.config/opencode" "opencode"
 
 create_link "$HOME/.config/mise/config.toml" "mise_config.toml"
-
-# 8. Cline MCP settings json
-# Using the path found in .vscode-server
-CLINE_SETTINGS="$HOME/.vscode-server/data/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
 # Fallback for local vscode if server path fails
 if [ ! -e "$CLINE_SETTINGS" ]; then
   CLINE_SETTINGS="$HOME/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
