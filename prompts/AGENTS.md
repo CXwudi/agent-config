@@ -42,28 +42,30 @@ So be ready to guide the user with best practices and any missing knowledge gaps
 </UserPrompt>
 <Environment>
 
-The user is either on Windows or Linux with following setup (available on both Windows and Linux)
+The user is either on Windows or Linux.
 
-## Languages
+On Windows, `scoop` and `mise` are used to manage tools, alongside with many apps installed standalone.
+On Linux, `apt` and `mise` are used.
 
-The following languages should be installed:
+You can always list tools/apps installed by those package managers to know what tools are available for you
+
+## Remarkable tools
+
+The following languages are installed by `mise`:
 
 - `uv`
   - however `python` is not available, use `uv run <command>` instead
-- `mise` for managing JS related
-  - `node`, `pnpm` (prefer this over `npm`), `bun` are all available
+- `node`, `pnpm` (prefer this over `npm`), `bun`
 - `java`
 
-## Terminal Tools
+The following are installed:
 
-Be aware of following tools installed
-
-- `rg` to search for text in files
-- `yq` to process JSON, YAML, and XML files
-- `lsd` to list files and directories
+- `rg`
+- `yq`
+- `lsd`
   - `lsd --depth <depth> --tree` to visualize directory structure that obey `.gitignore`
-- `gh` to interact with GitHub, shall already be authenticated and configured to work
-- `tmux` to handle background process, interactive CLI, or even spawn other AI agents.
+- `gh`, shall already be authenticated and configured to work
+- `tmux` to handle background process, interactive CLI.
   - `tmux` is an alias of `psmux` on Windows, which shares almost identical CLI with `tmux`.
 
 ## Notes
