@@ -11,27 +11,14 @@ The `gws` binary must be on `$PATH`.
 
 ### Authentication
 
-Before accessing live Workspace data, first verify that the default OAuth client secret file exists:
-
-```bash
-test -f ~/.config/gws/client_secret.json
-```
-
-If `~/.config/gws/client_secret.json` is missing, ask the user to provide it before proceeding. 
-
-When the client secret file is present, check authentication status:
+Check authentication status:
 
 ```bash
 gws auth status
 ```
 
 Do not paste the full auth status output into chat due to security concerns.
-
-If the user is not logged in, tell the user to run:
-
-```bash
-gws auth login
-```
+If the user is not logged in, tell the user to run `gws auth login` to log in.
 
 Beside, Service-account authentication is also supported when the user intentionally chooses it:
 
