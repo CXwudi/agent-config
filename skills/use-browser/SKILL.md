@@ -19,4 +19,7 @@ When to use which:
 1. `agent-browser` for:
     - Web development, testing, and debugging
 
-Both are capable for reusing user's existing browser session, tho `opencli` is more preferred.
+## Notes
+
+- Open the browser with the existing user's profile, to reuse the existing session and cookies, and persist new sessions for future use by AI Agents and user. No new profile, no temp profile, no clone of a profile.
+- Both are capable for reusing user's existing browser session, tho `opencli` is more preferred.

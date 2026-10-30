@@ -1,12 +1,12 @@
 ---
 name: bitwarden-plugin-login
-description: Agent Skill for safely logging into using Bitwarden browser extension. Use when you want to login to a website or account on behalf of the user
+description: Agent Skill for safely logging into website or app using Bitwarden browser extension. Use when you want to login to a website or account on behalf of the user
 ---
 # Bitwarden Plugin Login
 
 ## Prerequisites
 
-1. Load the `use-browser` skill, or have Computer Use ready
+1. Load the `use-browser` or `use-computer` skill
 2. `BITWARDEN_PIN` environment variable is available
 
 ## Workflow
@@ -18,5 +18,6 @@ Then when you login to a website or an account, you should be able to login usin
 
 ## Notes
 
+- When opening the browser, use the existing user's profile, so that the Bitwarden extension is available. No new profile, no temp profile, no clone of a profile. 
 - Absolute no for revealing the password in the chat.
 - So far no login for finance related accounts (e.g. bank accounts, investment accounts). Ask for user confirmation before you do so.
