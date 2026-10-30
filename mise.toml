@@ -14,7 +14,7 @@ else
 fi
 
 # Create target parent dirs
-mkdir -p ~/.pi/agent ~/.agents ~/.claude ~/.gemini/config ~/.codex
+mkdir -p ~/.pi/agent ~/.agents ~/.claude ~/.codex
 
 # Push a source file or directory to a destination.
 push_item() {
@@ -33,9 +33,9 @@ push_item() {
   fi
 }
 
-push_item prompts ~/.pi/agent/prompts
 push_item skills ~/.agents/skills
 push_item skills ~/.claude/skills
+push_item prompts/AGENTS.md ~/.agents/AGENTS.md
 push_item prompts/AGENTS.md ~/.codex/AGENTS.md
 push_item prompts/AGENTS.md ~/.claude/CLAUDE.md
 push_item prompts/AGENTS.md ~/.pi/agent/AGENTS.md
@@ -87,7 +87,10 @@ create_link "$HOME/.codex" ".codex"
 # 6. ~/.pi (Pi Coding Agent)
 create_link "$HOME/.pi" ".pi"
 
-# 7. ~/.config/opencode (Opencode)
+# 7. ~/.dsh (DeepSeek Harness)
+create_link "$HOME/.dsh" ".dsh"
+
+# 8. ~/.config/opencode (Opencode)
 create_link "$HOME/.config/opencode" "opencode"
 
 create_link "$HOME/.config/mise/config.toml" "mise_config.toml"
