@@ -1,6 +1,6 @@
 ---
 name: mineru
-description: Agent Skill for parsing PDF and documents into Markdown via MinerU Open API. Use when converting PDFs or documents to Markdown. Also use when the PDF or document is scanned copy, or contains complex layouts. Also use when you can not get meaningful content from it when using other tools.
+description: Agent Skill for parsing PDF and documents into Markdown via MinerU Open API. Use when converting PDFs or documents to Markdown. Also use when the PDF or document is scanned copy, or contains complex layouts. Also use when you can not get meaningful content from PDF or document when using other tools.
 ---
 
 # MinerU
