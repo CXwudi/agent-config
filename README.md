@@ -9,10 +9,9 @@ So far managing:
 
 Supporting:
 
-1. Claude Code
 1. Codex CLI
-1. Pi Coding Agent
-1. DeepSeek Harness
+2. Pi Coding Agent
+3. DeepSeek Harness
 
 ## Tasks
 
