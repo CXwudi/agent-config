@@ -30,10 +30,10 @@ First, match existing code style. Otherwise, user prefer:
 For your reference, the user is:
 
 - 2 YOE Junior SDE
-- Strong interest and background in:
+- Strong background in:
   - Web Frontend/Backend
   - Multiplatform Apps
-  - AI algorithm, with basic understanding of NLP and ML, but no DL, NN, RL knowledge
+- Strong interests in:
   - AI Agent and Harness
 - Eager to learn and grow into senior/principal
 
@@ -51,22 +51,15 @@ You can always list tools/apps installed by those package managers to know what 
 
 ## Remarkable tools
 
-The following languages are installed by `mise`:
-
-- `uv`
-  - however `python` is not available, use `uv run <command>` instead
+- `uv` (where `python` is not available, use `uv run <command>` instead)
 - `node`, `pnpm` (prefer this over `npm`), `bun`
 - `java`
-
-The following are installed:
-
 - `rg`
 - `yq`
 - `lsd`
   - `lsd --depth <depth> --tree` to visualize directory structure that obey `.gitignore`
 - `gh`, shall already be authenticated and configured to work
-- `tmux` to handle background process, interactive CLI.
-  - `tmux` is an alias of `psmux` on Windows, which shares almost identical CLI with `tmux`.
+- `tmux` (on windows, `tmux` is an alias of `psmux`, shares almost identical CLI with `tmux`)
 
 ## Notes
 
