@@ -34,7 +34,6 @@ push_item() {
 }
 
 push_item skills ~/.agents/skills
-push_item skills ~/.claude/skills
 push_item prompts/AGENTS.md ~/.agents/AGENTS.md
 push_item prompts/AGENTS.md ~/.codex/AGENTS.md
 push_item prompts/AGENTS.md ~/.pi/agent/AGENTS.md
@@ -71,33 +70,11 @@ create_link() {
   fi
 }
 
-# 1. ~/.claude.json
-create_link "$HOME/.claude.json" ".claude.json"
-
-# 2. ~/.claude/
-create_link "$HOME/.claude" ".claude"
-
-# 3. ~/.agents/
 create_link "$HOME/.agents" ".agents"
-
-# 4. ~/.codex/
 create_link "$HOME/.codex" ".codex"
-
-# 6. ~/.pi (Pi Coding Agent)
 create_link "$HOME/.pi" ".pi"
-
-# 7. ~/.dsh (DeepSeek Harness)
 create_link "$HOME/.dsh" ".dsh"
-
-# 8. ~/.config/opencode (Opencode)
-create_link "$HOME/.config/opencode" "opencode"
-
 create_link "$HOME/.config/mise/config.toml" "mise_config.toml"
-# Fallback for local vscode if server path fails
-if [ ! -e "$CLINE_SETTINGS" ]; then
-  CLINE_SETTINGS="$HOME/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
-fi
-create_link "$CLINE_SETTINGS" "cline_mcp_settings.json"
 
 echo "Symlink creation complete."
 '''
