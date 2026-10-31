@@ -31,12 +31,12 @@ Headers: `Authorization: Bearer ${MINERU_TOKEN}`, `Content-Type: application/jso
    curl -sS -X PUT -T "doc.pdf" "<file_url>"
    ```
 
-3. Poll `GET /extract-results/batch/{batch_id}` (or `GET /extract/task/{task_id}`) until `state` is `done`, then download and unzip `full_zip_url` to get `full.md` and extracted assets.
+3. Poll `GET /extract-results/batch/{batch_id}` (or `GET /extract/task/{task_id}`) until `state` is `done`, then download and unzip `full_zip_url` to get `full.md` and extracted assets. (both fields are somewhere in the response JSON)
 
 ## Notes
 
 - Official API documentation: `https://mineru.net/apiManage/docs`
 - Precision Extract API limits: max 200 MB / 200 pages per file.
-   - You can split large files into smaller files
+  - You can split large files into smaller files
 - Remote URL mode cannot access GitHub or AWS URLs directly due to server network restrictions
-   - You can download locally and use local file upload instead.
+  - You can download locally and use local file upload instead.
