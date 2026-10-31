@@ -37,7 +37,6 @@ push_item skills ~/.agents/skills
 push_item skills ~/.claude/skills
 push_item prompts/AGENTS.md ~/.agents/AGENTS.md
 push_item prompts/AGENTS.md ~/.codex/AGENTS.md
-push_item prompts/AGENTS.md ~/.claude/CLAUDE.md
 push_item prompts/AGENTS.md ~/.pi/agent/AGENTS.md
 
 echo "Push complete."
