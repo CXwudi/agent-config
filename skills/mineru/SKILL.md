@@ -1,37 +1,15 @@
 ---
 name: mineru
-description: Agent Skill for parsing PDF and complex documents (preserving layout, formulas, tables, charts, etc.) into Markdown via MinerU Open API. Use when converting PDFs or documents to Markdown.
+description: Agent Skill for parsing PDF and documents into Markdown via MinerU Open API. Use when converting PDFs or documents to Markdown. Also use when the PDF or document is scanned copy, or contains complex layouts. Also use when you can not get meaningful content from it when using other tools.
 ---
 
 # MinerU
 
 ## Prerequisites
 
-Requires MinerU API token from environment variable `MINERU_TOKEN`. If not set, ask the user to provide it.
+environment variable `MINERU_TOKEN` is available. If not set, ask the user to provide it.
 
 ## Usage
-
-### Option 1: Official CLI (Preferred)
-
-Run via `pnpm dlx mineru-open-api` (or `mineru-open-api` if installed in `$PATH`). It handles pre-signed file upload, task polling, and result extraction automatically.
-
-Inspect available flags first:
-
-```sh
-pnpm dlx mineru-open-api extract --help
-```
-
-Examples:
-
-```sh
-# Extract local PDF or URL to Markdown on stdout
-pnpm dlx mineru-open-api extract report.pdf
-
-# Extract and save Markdown + extracted assets (images/tables/charts) to a directory
-pnpm dlx mineru-open-api extract report.pdf -o ./output/
-```
-
-### Option 2: REST API
 
 Base URL: `https://mineru.net/api/v4`
 Headers: `Authorization: Bearer ${MINERU_TOKEN}`, `Content-Type: application/json`
@@ -59,4 +37,6 @@ Headers: `Authorization: Bearer ${MINERU_TOKEN}`, `Content-Type: application/jso
 
 - Official API documentation: `https://mineru.net/apiManage/docs`
 - Precision Extract API limits: max 200 MB / 200 pages per file.
-- Remote URL mode cannot access GitHub or AWS URLs directly due to server network restrictions; download them locally and use local file upload instead.
+   - You can split large files into smaller files
+- Remote URL mode cannot access GitHub or AWS URLs directly due to server network restrictions
+   - You can download locally and use local file upload instead.
